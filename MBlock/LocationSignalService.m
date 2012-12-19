@@ -8,7 +8,7 @@
 
 #import "LocationSignalService.h"
 
-static const uint8_t kLocationSignalType = 0x0b;
+static const uint8_t kLocationSignalType = 0x20;
 
 @implementation LocationSignalService {
 @private
@@ -56,7 +56,7 @@ static const uint8_t kLocationSignalType = 0x0b;
 	[super stop];
 }
 
-- (BOOL)acceptsSignalType:(int8_t)signalType {
+- (BOOL)acceptsSignalType:(int32_t)signalType {
 	return signalType == kLocationSignalType;
 }
 

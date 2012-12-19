@@ -25,8 +25,8 @@ static const double kSignalAmplification = 1000.0; // signals are multiplied by 
 
 // Helpers
 
-- (void)sendSignal:(uint8_t)signalType withData:(NSData *)data;
-- (BOOL)acceptsSignalType:(int8_t)signalType;
+- (void)sendSignal:(int32_t)signalType withData:(NSData *)data;
+- (BOOL)acceptsSignalType:(int32_t)signalType;
 - (void)logData:(NSData *)data;
 
 @end

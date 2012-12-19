@@ -9,7 +9,7 @@
 #import "MotionSignalService.h"
 #import <CoreMotion/CoreMotion.h>
 
-static const uint8_t kMotionSignalType = 0x0a;
+static const int32_t kMotionSignalType = 0x10;
 
 @implementation MotionSignalService {
 @private
@@ -63,7 +63,7 @@ static const uint8_t kMotionSignalType = 0x0a;
 	[super stop];
 }
 
-- (BOOL)acceptsSignalType:(int8_t)signalType {
+- (BOOL)acceptsSignalType:(int32_t)signalType {
 	return signalType == kMotionSignalType;
 }
 

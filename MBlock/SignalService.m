@@ -8,7 +8,7 @@
 
 #import "SignalService.h"
 
-static const int kPacketHeaderWidth = sizeof(uint8_t) * 7;
+static const int kPacketHeaderWidth = sizeof(int32_t) * 3;
 
 @implementation SignalService
 
@@ -28,37 +28,32 @@ static const int kPacketHeaderWidth = sizeof(uint8_t) * 7;
 	_running = NO;
 }
 
-- (void)sendSignal:(uint8_t)signalType withData:(NSData *)data {
+- (void)sendSignal:(int32_t)signalType withData:(NSData *)data {
 	const int packetLength = kPacketHeaderWidth + [data length];
-	uint8_t *packet = malloc(packetLength);
-	packet[0] = 0x60;
-	packet[1] = 0x0d;
-	packet[2] = 0xf0;
-	packet[3] = 0x0d;
-	packet[4] = signalType;
-	uint16_t *dataLength = (uint16_t *)&packet[5];
-	*dataLength = (uint16_t)[data length];
-	memcpy(&packet[7], [data bytes], [data length]);
+	int32_t *packet = malloc(packetLength);
+	packet[0] = 0x600df00d;
+	packet[1] = signalType;
+	packet[2] = [data length] / sizeof(int32_t);
+	memcpy(&packet[3], [data bytes], [data length]);
 	NSData *packetData = [NSData dataWithBytes:packet length:packetLength];
 	free(packet);
 	[self.dataClient sendData:packetData];
-	//[self logPacket:packetData];
+	[self logPacket:packetData];
 }
 
 - (BOOL)acceptsPacket:(NSData *)packetData {
 	if ([packetData length] < kPacketHeaderWidth) {
 		return NO;
 	}
-	const uint8_t *packet = (uint8_t *)[packetData bytes];
-	const BOOL magic = packet[0] == 0x60 && packet[1] == 0x0d && packet[2] == 0xf0 && packet[3] == 0x0d;
-	if (!magic) {
+	const int32_t *packet = (int32_t *)[packetData bytes];
+	if (packet[0] != 0x600df00d) {
 		return NO;
 	}
-	if (![self acceptsSignalType:packet[4]]) {
+	if (![self acceptsSignalType:packet[1]]) {
 		return NO;
 	}
-	const uint16_t *dataLength = (uint16_t *)&packet[5];
-	if (*dataLength != ([packetData length] - kPacketHeaderWidth)) {
+	const int dataLength = packet[2] * sizeof(int32_t);
+	if (dataLength != ([packetData length] - kPacketHeaderWidth)) {
 		return NO;
 	}
 	return YES;
@@ -66,13 +61,13 @@ static const int kPacketHeaderWidth = sizeof(uint8_t) * 7;
 
 - (void)logPacket:(NSData *)packetData {
 	if ([self acceptsPacket:packetData]) {
-		const uint8_t *packet = (uint8_t *)[packetData bytes];
-		NSData *data = [NSData dataWithBytes:&packet[7] length:([packetData length] - kPacketHeaderWidth)];
+		const int32_t *packet = (int32_t *)[packetData bytes];
+		NSData *data = [NSData dataWithBytes:&packet[3] length:([packetData length] - kPacketHeaderWidth)];
 		[self logData:data];
 	}
 }
 
-- (BOOL)acceptsSignalType:(int8_t)signalType {
+- (BOOL)acceptsSignalType:(int32_t)signalType {
 	return NO;
 }
 
