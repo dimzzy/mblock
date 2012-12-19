@@ -19,6 +19,7 @@
 		1F96CD60167EEA1A00C63FEE /* UDPClientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96CD5F167EEA1A00C63FEE /* UDPClientCell.m */; };
 		1F96CD63167EEA8300C63FEE /* UDPClientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F96CD62167EEA8300C63FEE /* UDPClientCell.xib */; };
 		1F96CD66167EED1B00C63FEE /* UITableView+BALoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96CD65167EED1B00C63FEE /* UITableView+BALoading.m */; };
+		1FCFB9C9168280750018CAD5 /* MUserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCFB9C8168280750018CAD5 /* MUserPreferences.m */; };
 		1FF11164167BAAD100972344 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF11163167BAAD100972344 /* UIKit.framework */; };
 		1FF11166167BAAD100972344 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF11165167BAAD100972344 /* Foundation.framework */; };
 		1FF11168167BAAD100972344 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF11167167BAAD100972344 /* CoreGraphics.framework */; };
@@ -57,6 +58,8 @@
 		1F96CD62167EEA8300C63FEE /* UDPClientCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UDPClientCell.xib; sourceTree = "<group>"; };
 		1F96CD64167EED1B00C63FEE /* UITableView+BALoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+BALoading.h"; sourceTree = "<group>"; };
 		1F96CD65167EED1B00C63FEE /* UITableView+BALoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BALoading.m"; sourceTree = "<group>"; };
+		1FCFB9C7168280750018CAD5 /* MUserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUserPreferences.h; sourceTree = "<group>"; };
+		1FCFB9C8168280750018CAD5 /* MUserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUserPreferences.m; sourceTree = "<group>"; };
 		1FF1115F167BAAD100972344 /* MBlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF11163167BAAD100972344 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1FF11165167BAAD100972344 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -154,6 +157,8 @@
 				1F153A4A167FEA520046C7EC /* SignalServiceCell.h */,
 				1F153A4B167FEA520046C7EC /* SignalServiceCell.m */,
 				1F153A47167FEA2D0046C7EC /* SignalServiceCell.xib */,
+				1FCFB9C7168280750018CAD5 /* MUserPreferences.h */,
+				1FCFB9C8168280750018CAD5 /* MUserPreferences.m */,
 				1FF1116A167BAAD100972344 /* Supporting Files */,
 			);
 			path = MBlock;
@@ -254,6 +259,7 @@
 				1F153A4C167FEA520046C7EC /* SignalServiceCell.m in Sources */,
 				1F153A4F167FEF480046C7EC /* BAKeyboardTracker.m in Sources */,
 				1F153A56167FFD7F0046C7EC /* LocationSignalService.m in Sources */,
+				1FCFB9C9168280750018CAD5 /* MUserPreferences.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

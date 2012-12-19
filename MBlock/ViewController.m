@@ -12,6 +12,7 @@
 #import "UITableView+BALoading.h"
 #import "BAKeyboardTracker.h"
 #import "AppDelegate.h"
+#import "MUserPreferences.h"
 
 static const NSInteger kIPAddressViewTag = 101;
 static const NSInteger kPortViewTag = 102;
@@ -29,8 +30,8 @@ static const NSInteger kPortViewTag = 102;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.IPAddress = @"127.0.0.1";
-	self.port = 25000;
+	self.IPAddress = [MUserPreferences instance].IPAddress;
+	self.port = [MUserPreferences instance].port;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -52,8 +53,10 @@ static const NSInteger kPortViewTag = 102;
 - (void)textDidChange:(UITextField *)textField {
 	if (textField.tag == kIPAddressViewTag) {
 		self.IPAddress = textField.text;
+		[MUserPreferences instance].IPAddress = self.IPAddress;
 	} else if (textField.tag == kPortViewTag) {
 		self.port = [textField.text intValue];
+		[MUserPreferences instance].port = self.port;
 	}
 }
 
