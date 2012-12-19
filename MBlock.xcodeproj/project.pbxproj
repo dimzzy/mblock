@@ -312,7 +312,7 @@
 				GCC_PREFIX_HEADER = "MBlock/MBlock-Prefix.pch";
 				INFOPLIST_FILE = "MBlock/MBlock-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A879F08B-D373-4A47-8870-386AE8B4C949";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "05A602C7-871E-4DFC-90D4-A60417E491F7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = AdHoc;
