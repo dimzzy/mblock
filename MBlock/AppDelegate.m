@@ -23,6 +23,7 @@
 
 - (void)setDataClient:(UDPClient *)dataClient {
 	_dataClient = dataClient;
+	[UIApplication sharedApplication].idleTimerDisabled = dataClient.connected;
 	for (SignalService *service in self.signalServices) {
 		[service stop];
 		service.dataClient = dataClient;
