@@ -17,12 +17,12 @@ static const int32_t kMotionSignalType = 0x10;
 }
 
 - (NSString *)info {
-	return @"The acceleration that the user is giving to the device.";
+	return @"Measurements of the attitude and acceleration of a device.";
 }
 
 - (id)init {
 	if ((self = [super init])) {
-		_frequency = 10.0;
+		_frequency = 2.0;
 	}
 	return self;
 }
@@ -41,12 +41,16 @@ static const int32_t kMotionSignalType = 0x10;
 		 if (!strongSelf) {
 			 return;
 		 }
+		 int32_t s[6];
+		 CMAttitude *t = motion.attitude;
+		 s[0] = (int32_t)(t.roll * kSignalAmplification);
+		 s[1] = (int32_t)(t.pitch * kSignalAmplification);
+		 s[2] = (int32_t)(t.yaw * kSignalAmplification);
 		 CMAcceleration a = motion.userAcceleration;
-		 int32_t s[3];
-		 s[0] = (int32_t)(a.x * kSignalAmplification);
-		 s[1] = (int32_t)(a.y * kSignalAmplification);
-		 s[2] = (int32_t)(a.z * kSignalAmplification);
-		 __block NSData *data = [NSData dataWithBytes:&s[0] length:(sizeof(int32_t) * 3)];
+		 s[3] = (int32_t)(a.x * kSignalAmplification);
+		 s[4] = (int32_t)(a.y * kSignalAmplification);
+		 s[5] = (int32_t)(a.z * kSignalAmplification);
+		 __block NSData *data = [NSData dataWithBytes:&s[0] length:(sizeof(int32_t) * sizeof(s))];
 		 dispatch_async(dispatch_get_main_queue(), ^{
 			 [strongSelf sendSignal:kMotionSignalType withData:data];
 		 });
@@ -69,10 +73,13 @@ static const int32_t kMotionSignalType = 0x10;
 
 - (void)logData:(NSData *)data {
 	const int32_t *s = (int32_t *)[data bytes];
-	const double x = (double)s[0] / kSignalAmplification;
-	const double y = (double)s[1] / kSignalAmplification;
-	const double z = (double)s[2] / kSignalAmplification;
-	NSLog(@"Motion: %f, %f, %f", x, y, z);
+	const double roll = (double)s[0] / kSignalAmplification;
+	const double pitch = (double)s[1] / kSignalAmplification;
+	const double yaw = (double)s[2] / kSignalAmplification;
+	const double x = (double)s[3] / kSignalAmplification;
+	const double y = (double)s[4] / kSignalAmplification;
+	const double z = (double)s[5] / kSignalAmplification;
+	NSLog(@"Motion: %f, %f, %f, %f, %f, %f", roll, pitch, yaw, x, y, z);
 }
 
 @end

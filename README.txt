@@ -5,8 +5,9 @@ Signal services send data via UDP protocol. Each packet is an array of int32_t i
 [2] length of the payload (rest of the packet)
 [3...] payload and its content depends on signal type
 
-Motion: payload contains three integers which represent x, y and z components of device's acceleration.
-Palyload size is thus 3. Values are multiplied by 1000.
+Motion: payload contains three integers which represent roll, pitch and yaw of the device's orientation (Euler angles)
+followed by x, y and z components of device's acceleration.
+Palyload size is thus 6. Values are multiplied by 1000.
 
 Location: payload contains three integers which represent latitude, longitude and altitude of the device.
 Palyload size is thus 3. Values are multiplied by 1000.
