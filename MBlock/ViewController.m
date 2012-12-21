@@ -28,10 +28,16 @@ static const NSInteger kPortViewTag = 102;
 	BAKeyboardTracker *_keyboardTracker;
 }
 
+- (void)tableTap:(UIGestureRecognizer *)recognizer {
+	[self.tableView endEditing:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.IPAddress = [MUserPreferences instance].IPAddress;
 	self.port = [MUserPreferences instance].port;
+	[self.tableView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
+																				 action:@selector(tableTap:)]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
