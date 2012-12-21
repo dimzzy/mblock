@@ -11,6 +11,7 @@
 		1F153A4C167FEA520046C7EC /* SignalServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F153A4B167FEA520046C7EC /* SignalServiceCell.m */; };
 		1F153A4F167FEF480046C7EC /* BAKeyboardTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F153A4E167FEF480046C7EC /* BAKeyboardTracker.m */; };
 		1F153A56167FFD7F0046C7EC /* LocationSignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F153A55167FFD7F0046C7EC /* LocationSignalService.m */; };
+		1F2CBA051684B6BB008C43A5 /* ProximitySignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CBA041684B6BB008C43A5 /* ProximitySignalService.m */; };
 		1F52130C167EBAB700E93D65 /* UDPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F52130B167EBAB700E93D65 /* UDPServer.m */; };
 		1F521310167EBAFB00E93D65 /* UDPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F52130F167EBAFB00E93D65 /* UDPClient.m */; };
 		1F521314167ED88100E93D65 /* MotionSignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F521313167ED88100E93D65 /* MotionSignalService.m */; };
@@ -43,6 +44,8 @@
 		1F153A4E167FEF480046C7EC /* BAKeyboardTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAKeyboardTracker.m; sourceTree = "<group>"; };
 		1F153A54167FFD7F0046C7EC /* LocationSignalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSignalService.h; sourceTree = "<group>"; };
 		1F153A55167FFD7F0046C7EC /* LocationSignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSignalService.m; sourceTree = "<group>"; };
+		1F2CBA031684B6BB008C43A5 /* ProximitySignalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProximitySignalService.h; sourceTree = "<group>"; };
+		1F2CBA041684B6BB008C43A5 /* ProximitySignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProximitySignalService.m; sourceTree = "<group>"; };
 		1F52130A167EBAB700E93D65 /* UDPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPServer.h; sourceTree = "<group>"; };
 		1F52130B167EBAB700E93D65 /* UDPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPServer.m; sourceTree = "<group>"; };
 		1F52130E167EBAFB00E93D65 /* UDPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPClient.h; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				1F521313167ED88100E93D65 /* MotionSignalService.m */,
 				1F153A54167FFD7F0046C7EC /* LocationSignalService.h */,
 				1F153A55167FFD7F0046C7EC /* LocationSignalService.m */,
+				1F2CBA031684B6BB008C43A5 /* ProximitySignalService.h */,
+				1F2CBA041684B6BB008C43A5 /* ProximitySignalService.m */,
 				1FF11172167BAAD100972344 /* AppDelegate.h */,
 				1FF11173167BAAD100972344 /* AppDelegate.m */,
 				1FF1117B167BAAD100972344 /* ViewController.h */,
@@ -260,6 +265,7 @@
 				1F153A4F167FEF480046C7EC /* BAKeyboardTracker.m in Sources */,
 				1F153A56167FFD7F0046C7EC /* LocationSignalService.m in Sources */,
 				1FCFB9C9168280750018CAD5 /* MUserPreferences.m in Sources */,
+				1F2CBA051684B6BB008C43A5 /* ProximitySignalService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

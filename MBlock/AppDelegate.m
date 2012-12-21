@@ -11,6 +11,7 @@
 #import "UDPClient.h"
 #import "MotionSignalService.h"
 #import "LocationSignalService.h"
+#import "ProximitySignalService.h"
 
 @implementation AppDelegate {
 @private
@@ -34,6 +35,7 @@
 	_signalServices = [NSArray arrayWithObjects:
 					   [[MotionSignalService alloc] init],
 					   [[LocationSignalService alloc] init],
+					   [[ProximitySignalService alloc] init],
 					   nil];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
