@@ -38,7 +38,7 @@ static const int kPacketHeaderWidth = sizeof(int32_t) * 3;
 	NSData *packetData = [NSData dataWithBytes:packet length:packetLength];
 	free(packet);
 	[self.dataClient sendData:packetData];
-	//[self logPacket:packetData];
+	[self logPacket:packetData];
 }
 
 - (BOOL)acceptsPacket:(NSData *)packetData {

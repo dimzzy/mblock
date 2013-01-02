@@ -29,10 +29,13 @@ static const uint8_t kLocationSignalType = 0x20;
 	didUpdateToLocation:(CLLocation *)newLocation
 		   fromLocation:(CLLocation *)oldLocation
 {
-	int32_t s[3];
+	int32_t s[6];
 	s[0] = (int32_t)(newLocation.coordinate.latitude * kSignalAmplification);
 	s[1] = (int32_t)(newLocation.coordinate.longitude * kSignalAmplification);
 	s[2] = (int32_t)(newLocation.altitude * kSignalAmplification);
+	s[3] = 0;
+	s[4] = 0;
+	s[5] = 0;
 	NSData *data = [NSData dataWithBytes:&s[0] length:(sizeof(int32_t) * sizeof(s))];
 	[self sendSignal:kLocationSignalType withData:data];
 }

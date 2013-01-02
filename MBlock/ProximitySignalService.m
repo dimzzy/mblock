@@ -46,8 +46,13 @@ static const int32_t kProximitySignalType = 0x30;
 }
 
 - (void)proximityStateDidChange:(NSNotification *)notification {
-	int32_t s[1];
+	int32_t s[6];
 	s[0] = (int32_t)[UIDevice currentDevice].proximityState;
+	s[1] = 0;
+	s[2] = 0;
+	s[3] = 0;
+	s[4] = 0;
+	s[5] = 0;
 	NSData *data = [NSData dataWithBytes:&s[0] length:(sizeof(int32_t))];
 	[self sendSignal:kProximitySignalType withData:data];
 }
