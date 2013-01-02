@@ -53,7 +53,7 @@ static const int32_t kProximitySignalType = 0x30;
 	s[3] = 0;
 	s[4] = 0;
 	s[5] = 0;
-	NSData *data = [NSData dataWithBytes:&s[0] length:(sizeof(int32_t))];
+	NSData *data = [NSData dataWithBytes:&s[0] length:(sizeof(int32_t) * sizeof(s))];
 	[self sendSignal:kProximitySignalType withData:data];
 }
 
