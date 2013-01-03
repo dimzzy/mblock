@@ -55,7 +55,7 @@
 		1F521313167ED88100E93D65 /* MotionSignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionSignalService.m; sourceTree = "<group>"; };
 		1F521316167ED9D100E93D65 /* SignalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalService.h; sourceTree = "<group>"; };
 		1F521317167ED9D100E93D65 /* SignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalService.m; sourceTree = "<group>"; };
-		1F83F1DA168002D80014CFDD /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		1F83F1DA168002D80014CFDD /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = ../README.txt; sourceTree = "<group>"; };
 		1F96CD5E167EEA1A00C63FEE /* UDPClientCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPClientCell.h; sourceTree = "<group>"; };
 		1F96CD5F167EEA1A00C63FEE /* UDPClientCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPClientCell.m; sourceTree = "<group>"; };
 		1F96CD62167EEA8300C63FEE /* UDPClientCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UDPClientCell.xib; sourceTree = "<group>"; };
@@ -103,7 +103,6 @@
 		1FF11154167BAAD100972344 = {
 			isa = PBXGroup;
 			children = (
-				1F83F1DA168002D80014CFDD /* README.txt */,
 				1FF11169167BAAD100972344 /* MBlock */,
 				1FF11162167BAAD100972344 /* Frameworks */,
 				1FF11160167BAAD100972344 /* Products */,
@@ -134,10 +133,31 @@
 		1FF11169167BAAD100972344 /* MBlock */ = {
 			isa = PBXGroup;
 			children = (
-				1F153A4D167FEF480046C7EC /* BAKeyboardTracker.h */,
-				1F153A4E167FEF480046C7EC /* BAKeyboardTracker.m */,
-				1F96CD64167EED1B00C63FEE /* UITableView+BALoading.h */,
-				1F96CD65167EED1B00C63FEE /* UITableView+BALoading.m */,
+				1FFDFF4D169631D40049B8DF /* UI */,
+				1FFDFF4B169631CB0049B8DF /* Services */,
+				1FF1116A167BAAD100972344 /* Supporting Files */,
+			);
+			path = MBlock;
+			sourceTree = "<group>";
+		};
+		1FF1116A167BAAD100972344 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F83F1DA168002D80014CFDD /* README.txt */,
+				1FF1116B167BAAD100972344 /* MBlock-Info.plist */,
+				1FF1116C167BAAD100972344 /* InfoPlist.strings */,
+				1FF1116F167BAAD100972344 /* main.m */,
+				1FF11171167BAAD100972344 /* MBlock-Prefix.pch */,
+				1FF11175167BAAD100972344 /* Default.png */,
+				1FF11177167BAAD100972344 /* Default@2x.png */,
+				1FF11179167BAAD100972344 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FFDFF4B169631CB0049B8DF /* Services */ = {
+			isa = PBXGroup;
+			children = (
 				1F521311167ED6F300E93D65 /* DataClient.h */,
 				1F52130E167EBAFB00E93D65 /* UDPClient.h */,
 				1F52130F167EBAFB00E93D65 /* UDPClient.m */,
@@ -151,6 +171,17 @@
 				1F153A55167FFD7F0046C7EC /* LocationSignalService.m */,
 				1F2CBA031684B6BB008C43A5 /* ProximitySignalService.h */,
 				1F2CBA041684B6BB008C43A5 /* ProximitySignalService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		1FFDFF4D169631D40049B8DF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1F153A4D167FEF480046C7EC /* BAKeyboardTracker.h */,
+				1F153A4E167FEF480046C7EC /* BAKeyboardTracker.m */,
+				1F96CD64167EED1B00C63FEE /* UITableView+BALoading.h */,
+				1F96CD65167EED1B00C63FEE /* UITableView+BALoading.m */,
 				1FF11172167BAAD100972344 /* AppDelegate.h */,
 				1FF11173167BAAD100972344 /* AppDelegate.m */,
 				1FF1117B167BAAD100972344 /* ViewController.h */,
@@ -164,23 +195,8 @@
 				1F153A47167FEA2D0046C7EC /* SignalServiceCell.xib */,
 				1FCFB9C7168280750018CAD5 /* MUserPreferences.h */,
 				1FCFB9C8168280750018CAD5 /* MUserPreferences.m */,
-				1FF1116A167BAAD100972344 /* Supporting Files */,
 			);
-			path = MBlock;
-			sourceTree = "<group>";
-		};
-		1FF1116A167BAAD100972344 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1FF1116B167BAAD100972344 /* MBlock-Info.plist */,
-				1FF1116C167BAAD100972344 /* InfoPlist.strings */,
-				1FF1116F167BAAD100972344 /* main.m */,
-				1FF11171167BAAD100972344 /* MBlock-Prefix.pch */,
-				1FF11175167BAAD100972344 /* Default.png */,
-				1FF11177167BAAD100972344 /* Default@2x.png */,
-				1FF11179167BAAD100972344 /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

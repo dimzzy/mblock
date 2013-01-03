@@ -50,7 +50,7 @@ static const int32_t kMotionSignalType = 0x10;
 		 s[3] = (int32_t)(a.x * kSignalAmplification);
 		 s[4] = (int32_t)(a.y * kSignalAmplification);
 		 s[5] = (int32_t)(a.z * kSignalAmplification);
-		 __block NSData *data = [NSData dataWithBytes:&s[0] length:(sizeof(int32_t) * sizeof(s))];
+		 __block NSData *data = [NSData dataWithBytes:&s[0] length:sizeof(s)];
 		 dispatch_async(dispatch_get_main_queue(), ^{
 			 [strongSelf sendSignal:kMotionSignalType withData:data];
 		 });
