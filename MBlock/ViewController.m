@@ -90,6 +90,11 @@ static const NSInteger kPortViewTag = 102;
 	}
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	[textField resignFirstResponder];
+	return YES;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return 2;
 }
@@ -112,8 +117,10 @@ static const NSInteger kPortViewTag = 102;
 			if (loaded) {
 				cell.IPAddressView.tag = kIPAddressViewTag;
 				[cell.IPAddressView addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
+				cell.IPAddressView.delegate = self;
 				cell.portView.tag = kPortViewTag;
 				[cell.portView addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
+				cell.portView.delegate = self;
 				[cell.connectedView addTarget:self action:@selector(connect:) forControlEvents:UIControlEventTouchUpInside];
 			}
 			cell.IPAddressView.text = self.IPAddress;
