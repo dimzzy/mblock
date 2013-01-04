@@ -27,10 +27,12 @@ static const int32_t kProximitySignalType = 0x30;
 		return;
 	}
 	[UIDevice currentDevice].proximityMonitoringEnabled = YES;
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(proximityStateDidChange:)
-												 name:UIDeviceProximityStateDidChangeNotification
-											   object:nil];
+	if (!self.continuous) {
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(proximityStateDidChange:)
+													 name:UIDeviceProximityStateDidChangeNotification
+												   object:nil];
+	}
 	[super start];
 }
 
@@ -38,14 +40,22 @@ static const int32_t kProximitySignalType = 0x30;
 	if (!self.running) {
 		return;
 	}
+	[UIDevice currentDevice].proximityMonitoringEnabled = NO;
 	[[NSNotificationCenter defaultCenter] removeObserver:self
 													name:UIDeviceProximityStateDidChangeNotification
 												  object:nil];
-	[UIDevice currentDevice].proximityMonitoringEnabled = NO;
 	[super stop];
 }
 
 - (void)proximityStateDidChange:(NSNotification *)notification {
+	[self sendState];
+}
+
+- (void)sendTimedSignal:(NSTimer *)timer {
+	[self sendState];
+}
+
+- (void)sendState {
 	int32_t s[6];
 	s[0] = (int32_t)[UIDevice currentDevice].proximityState;
 	s[1] = 0;

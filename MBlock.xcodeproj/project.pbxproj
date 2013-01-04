@@ -34,6 +34,7 @@
 		1FF11180167BAAD100972344 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FF1117E167BAAD100972344 /* ViewController.xib */; };
 		1FF1118B167BAD1E00972344 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF1118A167BAD1E00972344 /* CoreLocation.framework */; };
 		1FF1118D167BAD2600972344 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF1118C167BAD2600972344 /* CoreMotion.framework */; };
+		1FFDFF5016976B990049B8DF /* EventfulSignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFF4F16976B990049B8DF /* EventfulSignalService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,8 @@
 		1FF1118A167BAD1E00972344 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1FF1118C167BAD2600972344 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		1FF1118E167BB2B800972344 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1FFDFF4E16976B990049B8DF /* EventfulSignalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventfulSignalService.h; sourceTree = "<group>"; };
+		1FFDFF4F16976B990049B8DF /* EventfulSignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventfulSignalService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 				1F52130B167EBAB700E93D65 /* UDPServer.m */,
 				1F521316167ED9D100E93D65 /* SignalService.h */,
 				1F521317167ED9D100E93D65 /* SignalService.m */,
+				1FFDFF4E16976B990049B8DF /* EventfulSignalService.h */,
+				1FFDFF4F16976B990049B8DF /* EventfulSignalService.m */,
 				1F521312167ED88100E93D65 /* MotionSignalService.h */,
 				1F521313167ED88100E93D65 /* MotionSignalService.m */,
 				1F153A54167FFD7F0046C7EC /* LocationSignalService.h */,
@@ -282,6 +287,7 @@
 				1F153A56167FFD7F0046C7EC /* LocationSignalService.m in Sources */,
 				1FCFB9C9168280750018CAD5 /* MUserPreferences.m in Sources */,
 				1F2CBA051684B6BB008C43A5 /* ProximitySignalService.m in Sources */,
+				1FFDFF5016976B990049B8DF /* EventfulSignalService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

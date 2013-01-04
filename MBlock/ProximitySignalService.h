@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Dmitry Stadnik. All rights reserved.
 //
 
-#import "SignalService.h"
+#import "EventfulSignalService.h"
 
-@interface ProximitySignalService : SignalService
+@interface ProximitySignalService : EventfulSignalService
 
 @end

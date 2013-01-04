@@ -11,6 +11,6 @@
 
 @interface MotionSignalService : SignalService
 
-@property double frequency; // default is 10 which means 10 samples per second
+@property double frequency; // Hz
 
 @end
