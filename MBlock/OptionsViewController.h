@@ -1,17 +1,16 @@
 //
-//  EventfulSignalService.h
+//  OptionsViewController.h
 //  MBlock
 //
 //  Created by Dmitry Stadnik on 1/4/13.
 //  Copyright (c) 2013 Dmitry Stadnik. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "SignalService.h"
 
-@interface EventfulSignalService : SignalService
+@interface OptionsViewController : UITableViewController
 
-@property BOOL continuous;
-
-- (void)sendTimedSignal:(NSTimer *)timer;
+@property SignalService *signalService;
 
 @end

@@ -17,6 +17,8 @@ static const double kSignalAmplification = 1000.0; // signals are multiplied by 
 @property(readonly) BOOL running;
 @property(readonly) NSString *info;
 
+@property double frequency; // Hz
+
 - (void)start;
 - (void)stop;
 

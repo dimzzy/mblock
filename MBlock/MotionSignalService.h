@@ -11,6 +11,4 @@
 
 @interface MotionSignalService : SignalService
 
-@property double frequency; // Hz
-
 @end

@@ -15,4 +15,10 @@
 @property(copy) NSString *IPAddress;
 @property int port;
 
+@property double motionFrequency;
+@property BOOL locationContinuous;
+@property double locationFrequency;
+@property BOOL proximityContinuous;
+@property double proximityFrequency;
+
 @end

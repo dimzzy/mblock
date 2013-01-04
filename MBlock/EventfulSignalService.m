@@ -14,8 +14,6 @@
 
 - (id)init {
 	if ((self = [super init])) {
-		self.continuous = NO;
-		self.frequency = 10.0;
 	}
 	return self;
 }

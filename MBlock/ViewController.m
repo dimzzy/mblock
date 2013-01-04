@@ -13,6 +13,7 @@
 #import "BAKeyboardTracker.h"
 #import "AppDelegate.h"
 #import "MUserPreferences.h"
+#import "OptionsViewController.h"
 
 static const NSInteger kIPAddressViewTag = 101;
 static const NSInteger kPortViewTag = 102;
@@ -36,8 +37,8 @@ static const NSInteger kPortViewTag = 102;
     [super viewDidLoad];
 	self.IPAddress = [MUserPreferences instance].IPAddress;
 	self.port = [MUserPreferences instance].port;
-	[self.tableView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
-																				 action:@selector(tableTap:)]];
+//	[self.tableView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
+//																				 action:@selector(tableTap:)]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -156,6 +157,19 @@ static const NSInteger kPortViewTag = 102;
 		return kSignalServiceCellHeight;
 	}
 	return 0;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.section == 1) {
+		SignalService *signalService = [self.signalServices objectAtIndex:indexPath.row];
+		if (!signalService.running) {
+			OptionsViewController *controller = [[OptionsViewController alloc] initWithStyle:UITableViewStyleGrouped];
+			controller.title = @"Service Options";
+			controller.signalService = signalService;
+			[self.navigationController pushViewController:controller animated:YES];
+		}
+	}
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

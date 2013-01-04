@@ -35,6 +35,11 @@
 		1FF1118B167BAD1E00972344 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF1118A167BAD1E00972344 /* CoreLocation.framework */; };
 		1FF1118D167BAD2600972344 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF1118C167BAD2600972344 /* CoreMotion.framework */; };
 		1FFDFF5016976B990049B8DF /* EventfulSignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFF4F16976B990049B8DF /* EventfulSignalService.m */; };
+		1FFDFF53169771580049B8DF /* ContinuousOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFF52169771580049B8DF /* ContinuousOptionCell.m */; };
+		1FFDFF56169771800049B8DF /* FrequencyOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFF551697717F0049B8DF /* FrequencyOptionCell.m */; };
+		1FFDFF58169771A40049B8DF /* ContinuousOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FFDFF57169771A40049B8DF /* ContinuousOptionCell.xib */; };
+		1FFDFF5A169772AF0049B8DF /* FrequencyOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FFDFF59169772AF0049B8DF /* FrequencyOptionCell.xib */; };
+		1FFDFF6516977C400049B8DF /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFF6416977C3F0049B8DF /* OptionsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +90,14 @@
 		1FF1118E167BB2B800972344 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		1FFDFF4E16976B990049B8DF /* EventfulSignalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventfulSignalService.h; sourceTree = "<group>"; };
 		1FFDFF4F16976B990049B8DF /* EventfulSignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventfulSignalService.m; sourceTree = "<group>"; };
+		1FFDFF51169771580049B8DF /* ContinuousOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinuousOptionCell.h; sourceTree = "<group>"; };
+		1FFDFF52169771580049B8DF /* ContinuousOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContinuousOptionCell.m; sourceTree = "<group>"; };
+		1FFDFF541697717F0049B8DF /* FrequencyOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrequencyOptionCell.h; sourceTree = "<group>"; };
+		1FFDFF551697717F0049B8DF /* FrequencyOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrequencyOptionCell.m; sourceTree = "<group>"; };
+		1FFDFF57169771A40049B8DF /* ContinuousOptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContinuousOptionCell.xib; sourceTree = "<group>"; };
+		1FFDFF59169772AF0049B8DF /* FrequencyOptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FrequencyOptionCell.xib; sourceTree = "<group>"; };
+		1FFDFF6316977C3F0049B8DF /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		1FFDFF6416977C3F0049B8DF /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +211,14 @@
 				1F153A4A167FEA520046C7EC /* SignalServiceCell.h */,
 				1F153A4B167FEA520046C7EC /* SignalServiceCell.m */,
 				1F153A47167FEA2D0046C7EC /* SignalServiceCell.xib */,
+				1FFDFF6316977C3F0049B8DF /* OptionsViewController.h */,
+				1FFDFF6416977C3F0049B8DF /* OptionsViewController.m */,
+				1FFDFF51169771580049B8DF /* ContinuousOptionCell.h */,
+				1FFDFF52169771580049B8DF /* ContinuousOptionCell.m */,
+				1FFDFF57169771A40049B8DF /* ContinuousOptionCell.xib */,
+				1FFDFF541697717F0049B8DF /* FrequencyOptionCell.h */,
+				1FFDFF551697717F0049B8DF /* FrequencyOptionCell.m */,
+				1FFDFF59169772AF0049B8DF /* FrequencyOptionCell.xib */,
 				1FCFB9C7168280750018CAD5 /* MUserPreferences.h */,
 				1FCFB9C8168280750018CAD5 /* MUserPreferences.m */,
 			);
@@ -263,6 +284,8 @@
 				1F96CD63167EEA8300C63FEE /* UDPClientCell.xib in Resources */,
 				1F153A48167FEA2D0046C7EC /* SignalServiceCell.xib in Resources */,
 				1F83F1DB168002D80014CFDD /* README.txt in Resources */,
+				1FFDFF58169771A40049B8DF /* ContinuousOptionCell.xib in Resources */,
+				1FFDFF5A169772AF0049B8DF /* FrequencyOptionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +311,9 @@
 				1FCFB9C9168280750018CAD5 /* MUserPreferences.m in Sources */,
 				1F2CBA051684B6BB008C43A5 /* ProximitySignalService.m in Sources */,
 				1FFDFF5016976B990049B8DF /* EventfulSignalService.m in Sources */,
+				1FFDFF53169771580049B8DF /* ContinuousOptionCell.m in Sources */,
+				1FFDFF56169771800049B8DF /* FrequencyOptionCell.m in Sources */,
+				1FFDFF6516977C400049B8DF /* OptionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

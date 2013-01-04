@@ -22,7 +22,6 @@ static const int32_t kMotionSignalType = 0x10;
 
 - (id)init {
 	if ((self = [super init])) {
-		_frequency = 2.0;
 	}
 	return self;
 }

@@ -12,6 +12,7 @@
 #import "MotionSignalService.h"
 #import "LocationSignalService.h"
 #import "ProximitySignalService.h"
+#import "MUserPreferences.h"
 
 @implementation AppDelegate {
 @private
@@ -32,16 +33,22 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	_signalServices = [NSArray arrayWithObjects:
-					   [[MotionSignalService alloc] init],
-					   [[LocationSignalService alloc] init],
-					   [[ProximitySignalService alloc] init],
-					   nil];
+	MotionSignalService *motionService = [[MotionSignalService alloc] init];
+	motionService.frequency = [MUserPreferences instance].motionFrequency;
+	LocationSignalService *locationService = [[LocationSignalService alloc] init];
+	locationService.continuous = [MUserPreferences instance].locationContinuous;
+	locationService.frequency = [MUserPreferences instance].locationFrequency;
+	ProximitySignalService *proximityService = [[ProximitySignalService alloc] init];
+	proximityService.continuous = [MUserPreferences instance].proximityContinuous;
+	proximityService.frequency = [MUserPreferences instance].proximityFrequency;
+	_signalServices = [NSArray arrayWithObjects:motionService, locationService, proximityService, nil];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 	self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-	self.window.rootViewController = self.viewController;
+	self.viewController.title = @"MBlock";
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+	self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
     return YES;
 }
