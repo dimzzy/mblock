@@ -16,6 +16,8 @@
 		1F521310167EBAFB00E93D65 /* UDPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F52130F167EBAFB00E93D65 /* UDPClient.m */; };
 		1F521314167ED88100E93D65 /* MotionSignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F521313167ED88100E93D65 /* MotionSignalService.m */; };
 		1F521318167ED9D100E93D65 /* SignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F521317167ED9D100E93D65 /* SignalService.m */; };
+		1F59A5631697924700F744C3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F59A5611697924700F744C3 /* Icon.png */; };
+		1F59A5641697924700F744C3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F59A5621697924700F744C3 /* Icon@2x.png */; };
 		1F83F1DB168002D80014CFDD /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1F83F1DA168002D80014CFDD /* README.txt */; };
 		1F96CD60167EEA1A00C63FEE /* UDPClientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96CD5F167EEA1A00C63FEE /* UDPClientCell.m */; };
 		1F96CD63167EEA8300C63FEE /* UDPClientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F96CD62167EEA8300C63FEE /* UDPClientCell.xib */; };
@@ -61,6 +63,8 @@
 		1F521313167ED88100E93D65 /* MotionSignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionSignalService.m; sourceTree = "<group>"; };
 		1F521316167ED9D100E93D65 /* SignalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalService.h; sourceTree = "<group>"; };
 		1F521317167ED9D100E93D65 /* SignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalService.m; sourceTree = "<group>"; };
+		1F59A5611697924700F744C3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		1F59A5621697924700F744C3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		1F83F1DA168002D80014CFDD /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = ../README.txt; sourceTree = "<group>"; };
 		1F96CD5E167EEA1A00C63FEE /* UDPClientCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPClientCell.h; sourceTree = "<group>"; };
 		1F96CD5F167EEA1A00C63FEE /* UDPClientCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPClientCell.m; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				1FF1116C167BAAD100972344 /* InfoPlist.strings */,
 				1FF1116F167BAAD100972344 /* main.m */,
 				1FF11171167BAAD100972344 /* MBlock-Prefix.pch */,
+				1F59A5611697924700F744C3 /* Icon.png */,
+				1F59A5621697924700F744C3 /* Icon@2x.png */,
 				1FF11175167BAAD100972344 /* Default.png */,
 				1FF11177167BAAD100972344 /* Default@2x.png */,
 				1FF11179167BAAD100972344 /* Default-568h@2x.png */,
@@ -286,6 +292,8 @@
 				1F83F1DB168002D80014CFDD /* README.txt in Resources */,
 				1FFDFF58169771A40049B8DF /* ContinuousOptionCell.xib in Resources */,
 				1FFDFF5A169772AF0049B8DF /* FrequencyOptionCell.xib in Resources */,
+				1F59A5631697924700F744C3 /* Icon.png in Resources */,
+				1F59A5641697924700F744C3 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
