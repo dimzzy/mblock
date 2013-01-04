@@ -1,6 +1,7 @@
 Signal services send data via UDP protocol. Each packet is an array of int32_t integers and has the following structure:
 
 [0] 0x60, 0x0d, 0xf0, 0x0d aka 'GOODFOOD'
+[1] timestamp (milliseconds from midnight of Jan 1, 1970)
 [1] signal type: 0x10 for motion, 0x20 for location, 0x30 for proximity.
 [2] length of the payload (rest of the packet)
 [3...] payload and its content depends on signal type

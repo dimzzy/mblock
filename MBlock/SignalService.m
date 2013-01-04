@@ -7,8 +7,9 @@
 //
 
 #import "SignalService.h"
+#include <sys/time.h>
 
-static const int kPacketHeaderWidth = sizeof(int32_t) * 3;
+static const int kPacketHeaderWidth = sizeof(int32_t) * 4;
 
 @implementation SignalService
 
@@ -28,17 +29,24 @@ static const int kPacketHeaderWidth = sizeof(int32_t) * 3;
 	_running = NO;
 }
 
+- (int)currentTimeMillis {
+	struct timeval tv;
+	gettimeofday(&tv, NULL);
+	return (tv.tv_sec) * 1000 + (tv.tv_usec) / 1000;
+}
+
 - (void)sendSignal:(int32_t)signalType withData:(NSData *)data {
 	const int packetLength = kPacketHeaderWidth + [data length];
 	int32_t *packet = malloc(packetLength);
 	packet[0] = 0x600df00d;
-	packet[1] = signalType;
-	packet[2] = [data length] / sizeof(int32_t);
-	memcpy(&packet[3], [data bytes], [data length]);
+	packet[1] = [self currentTimeMillis];
+	packet[2] = signalType;
+	packet[3] = [data length] / sizeof(int32_t);
+	memcpy(&packet[4], [data bytes], [data length]);
 	NSData *packetData = [NSData dataWithBytes:packet length:packetLength];
 	free(packet);
 	[self.dataClient sendData:packetData];
-	//[self logPacket:packetData];
+	[self logPacket:packetData];
 }
 
 - (BOOL)acceptsPacket:(NSData *)packetData {
@@ -49,10 +57,10 @@ static const int kPacketHeaderWidth = sizeof(int32_t) * 3;
 	if (packet[0] != 0x600df00d) {
 		return NO;
 	}
-	if (![self acceptsSignalType:packet[1]]) {
+	if (![self acceptsSignalType:packet[2]]) {
 		return NO;
 	}
-	const int dataLength = packet[2] * sizeof(int32_t);
+	const int dataLength = packet[3] * sizeof(int32_t);
 	if (dataLength != ([packetData length] - kPacketHeaderWidth)) {
 		return NO;
 	}
@@ -62,7 +70,8 @@ static const int kPacketHeaderWidth = sizeof(int32_t) * 3;
 - (void)logPacket:(NSData *)packetData {
 	if ([self acceptsPacket:packetData]) {
 		const int32_t *packet = (int32_t *)[packetData bytes];
-		NSData *data = [NSData dataWithBytes:&packet[3] length:([packetData length] - kPacketHeaderWidth)];
+		NSLog(@"Packet: at %d msec, type %02x, %d bytes", packet[1], packet[2], packet[3]);
+		NSData *data = [NSData dataWithBytes:&packet[4] length:([packetData length] - kPacketHeaderWidth)];
 		[self logData:data];
 	}
 }
