@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#import "SignalService.h"
+#import "EventfulSignalService.h"
 
-@interface LocationSignalService : SignalService <CLLocationManagerDelegate>
+@interface LocationSignalService : EventfulSignalService <CLLocationManagerDelegate>
 
 @end
