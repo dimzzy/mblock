@@ -20,6 +20,8 @@
 	  [NSNumber numberWithDouble:10.0],   @"location_frequency",
 	  [NSNumber numberWithBool:NO],       @"proximity_continuous",
 	  [NSNumber numberWithDouble:10.0],   @"proximity_frequency",
+	  [NSNumber numberWithBool:NO],       @"touch_continuous",
+	  [NSNumber numberWithDouble:10.0],   @"touch_frequency",
 	  nil]];
 }
 
@@ -91,6 +93,24 @@
 
 - (void)setProximityFrequency:(double)frequency {
 	[[NSUserDefaults standardUserDefaults] setDouble:frequency forKey:@"proximity_frequency"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (BOOL)touchContinuous {
+	return [[NSUserDefaults standardUserDefaults] boolForKey:@"touch_continuous"];
+}
+
+- (void)setTouchContinuous:(BOOL)continuous {
+	[[NSUserDefaults standardUserDefaults] setBool:continuous forKey:@"touch_continuous"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (double)touchFrequency {
+	return [[NSUserDefaults standardUserDefaults] doubleForKey:@"touch_frequency"];
+}
+
+- (void)setTouchFrequency:(double)frequency {
+	[[NSUserDefaults standardUserDefaults] setDouble:frequency forKey:@"touch_frequency"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 

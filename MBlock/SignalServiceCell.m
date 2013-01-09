@@ -19,4 +19,22 @@
     return self;
 }
 
+- (BOOL)runnable {
+	return !self.runningView.hidden;
+}
+
+- (void)setRunnable:(BOOL)runnable {
+	if (self.runnable == runnable) {
+		return;
+	}
+	self.runningView.hidden = !runnable;
+	CGRect titleFrame = self.titleView.frame;
+	CGRect runFrame = self.runningView.frame;
+	if (runnable) {
+		titleFrame.size.width = runFrame.origin.x - 10.0;
+	} else {
+		titleFrame.size.width = runFrame.origin.x + runFrame.size.width - titleFrame.origin.x;
+	}
+}
+
 @end

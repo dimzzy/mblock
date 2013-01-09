@@ -20,5 +20,7 @@
 @property double locationFrequency;
 @property BOOL proximityContinuous;
 @property double proximityFrequency;
+@property BOOL touchContinuous;
+@property double touchFrequency;
 
 @end

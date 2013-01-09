@@ -12,6 +12,7 @@
 #import "MotionSignalService.h"
 #import "LocationSignalService.h"
 #import "ProximitySignalService.h"
+#import "TouchSignalService.h"
 #import "MUserPreferences.h"
 
 @implementation AppDelegate {
@@ -32,6 +33,10 @@
 	}
 }
 
+- (UINavigationController *)navigationController {
+	return (UINavigationController *)self.window.rootViewController;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	MotionSignalService *motionService = [[MotionSignalService alloc] init];
 	motionService.frequency = [MUserPreferences instance].motionFrequency;
@@ -41,7 +46,10 @@
 	ProximitySignalService *proximityService = [[ProximitySignalService alloc] init];
 	proximityService.continuous = [MUserPreferences instance].proximityContinuous;
 	proximityService.frequency = [MUserPreferences instance].proximityFrequency;
-	_signalServices = [NSArray arrayWithObjects:motionService, locationService, proximityService, nil];
+	TouchSignalService *touchService = [[TouchSignalService alloc] init];
+	touchService.continuous = [MUserPreferences instance].touchContinuous;
+	touchService.frequency = [MUserPreferences instance].touchFrequency;
+	_signalServices = [NSArray arrayWithObjects:motionService, locationService, proximityService, touchService, nil];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.

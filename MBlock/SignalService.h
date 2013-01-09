@@ -11,6 +11,14 @@
 
 static const double kSignalAmplification = 1000.0; // signals are multiplied by this value and sent as ints
 
+@protocol ActionableService <NSObject>
+
+- (NSString *)serviceActionTitle;
+- (void)performServiceAction;
+
+@end
+
+
 @interface SignalService : NSObject
 
 @property(assign) id<DataClient> dataClient;

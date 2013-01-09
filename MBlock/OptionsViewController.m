@@ -13,6 +13,7 @@
 #import "MotionSignalService.h"
 #import "LocationSignalService.h"
 #import "ProximitySignalService.h"
+#import "TouchSignalService.h"
 #import "MUserPreferences.h"
 
 @implementation OptionsViewController
@@ -39,6 +40,8 @@
 		return 2;
 	} else if ([self.signalService isKindOfClass:[ProximitySignalService class]]) {
 		return 2;
+	} else if ([self.signalService isKindOfClass:[TouchSignalService class]]) {
+		return 2;
 	}
     return 0;
 }
@@ -55,6 +58,8 @@
 			[MUserPreferences instance].locationContinuous = continuous;
 		} else if ([self.signalService isKindOfClass:[ProximitySignalService class]]) {
 			[MUserPreferences instance].proximityContinuous = continuous;
+		} else if ([self.signalService isKindOfClass:[TouchSignalService class]]) {
+			[MUserPreferences instance].touchContinuous = continuous;
 		}
 	};
 	return cell;
@@ -73,6 +78,8 @@
 			[MUserPreferences instance].locationFrequency = frequency;
 		} else if ([self.signalService isKindOfClass:[ProximitySignalService class]]) {
 			[MUserPreferences instance].proximityFrequency = frequency;
+		} else if ([self.signalService isKindOfClass:[TouchSignalService class]]) {
+			[MUserPreferences instance].touchFrequency = frequency;
 		}
 	};
 	return cell;
@@ -104,6 +111,15 @@
 			}
 		}
 		return nil;
+	} else if ([self.signalService isKindOfClass:[TouchSignalService class]]) {
+		if (indexPath.section == 0) {
+			if (indexPath.row == 0) {
+				return [self makeContinuousOptionCell:tableView];
+			} else if (indexPath.row == 1) {
+				return [self makeFrequencyOptionCell:tableView];
+			}
+		}
+		return nil;
 	}
     return nil;
 }
@@ -126,6 +142,15 @@
 		}
 		return 0;
 	} else if ([self.signalService isKindOfClass:[ProximitySignalService class]]) {
+		if (indexPath.section == 0) {
+			if (indexPath.row == 0) {
+				return kContinuousOptionCellHeight;
+			} else if (indexPath.row == 1) {
+				return kFrequencyOptionCellHeight;
+			}
+		}
+		return 0;
+	} else if ([self.signalService isKindOfClass:[TouchSignalService class]]) {
 		if (indexPath.section == 0) {
 			if (indexPath.row == 0) {
 				return kContinuousOptionCellHeight;

@@ -18,6 +18,10 @@
 		1F521318167ED9D100E93D65 /* SignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F521317167ED9D100E93D65 /* SignalService.m */; };
 		1F59A5631697924700F744C3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F59A5611697924700F744C3 /* Icon.png */; };
 		1F59A5641697924700F744C3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F59A5621697924700F744C3 /* Icon@2x.png */; };
+		1F59A5681697941000F744C3 /* TouchInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A5671697941000F744C3 /* TouchInputView.m */; };
+		1F59A56B169B225C00F744C3 /* TouchSignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A56A169B225C00F744C3 /* TouchSignalService.m */; };
+		1F59A576169B4CDA00F744C3 /* TouchInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A575169B4CDA00F744C3 /* TouchInputViewController.m */; };
+		1F59A579169B4F9D00F744C3 /* UIView+BACookie.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A578169B4F9D00F744C3 /* UIView+BACookie.m */; };
 		1F83F1DB168002D80014CFDD /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1F83F1DA168002D80014CFDD /* README.txt */; };
 		1F96CD60167EEA1A00C63FEE /* UDPClientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96CD5F167EEA1A00C63FEE /* UDPClientCell.m */; };
 		1F96CD63167EEA8300C63FEE /* UDPClientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F96CD62167EEA8300C63FEE /* UDPClientCell.xib */; };
@@ -65,6 +69,14 @@
 		1F521317167ED9D100E93D65 /* SignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalService.m; sourceTree = "<group>"; };
 		1F59A5611697924700F744C3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		1F59A5621697924700F744C3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		1F59A5661697941000F744C3 /* TouchInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchInputView.h; sourceTree = "<group>"; };
+		1F59A5671697941000F744C3 /* TouchInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchInputView.m; sourceTree = "<group>"; };
+		1F59A569169B225C00F744C3 /* TouchSignalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchSignalService.h; sourceTree = "<group>"; };
+		1F59A56A169B225C00F744C3 /* TouchSignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchSignalService.m; sourceTree = "<group>"; };
+		1F59A574169B4CDA00F744C3 /* TouchInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchInputViewController.h; sourceTree = "<group>"; };
+		1F59A575169B4CDA00F744C3 /* TouchInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchInputViewController.m; sourceTree = "<group>"; };
+		1F59A577169B4F9D00F744C3 /* UIView+BACookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BACookie.h"; sourceTree = "<group>"; };
+		1F59A578169B4F9D00F744C3 /* UIView+BACookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BACookie.m"; sourceTree = "<group>"; };
 		1F83F1DA168002D80014CFDD /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = ../README.txt; sourceTree = "<group>"; };
 		1F96CD5E167EEA1A00C63FEE /* UDPClientCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPClientCell.h; sourceTree = "<group>"; };
 		1F96CD5F167EEA1A00C63FEE /* UDPClientCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPClientCell.m; sourceTree = "<group>"; };
@@ -195,6 +207,8 @@
 				1F153A55167FFD7F0046C7EC /* LocationSignalService.m */,
 				1F2CBA031684B6BB008C43A5 /* ProximitySignalService.h */,
 				1F2CBA041684B6BB008C43A5 /* ProximitySignalService.m */,
+				1F59A569169B225C00F744C3 /* TouchSignalService.h */,
+				1F59A56A169B225C00F744C3 /* TouchSignalService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -202,6 +216,8 @@
 		1FFDFF4D169631D40049B8DF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1F59A577169B4F9D00F744C3 /* UIView+BACookie.h */,
+				1F59A578169B4F9D00F744C3 /* UIView+BACookie.m */,
 				1F153A4D167FEF480046C7EC /* BAKeyboardTracker.h */,
 				1F153A4E167FEF480046C7EC /* BAKeyboardTracker.m */,
 				1F96CD64167EED1B00C63FEE /* UITableView+BALoading.h */,
@@ -227,6 +243,10 @@
 				1FFDFF59169772AF0049B8DF /* FrequencyOptionCell.xib */,
 				1FCFB9C7168280750018CAD5 /* MUserPreferences.h */,
 				1FCFB9C8168280750018CAD5 /* MUserPreferences.m */,
+				1F59A5661697941000F744C3 /* TouchInputView.h */,
+				1F59A5671697941000F744C3 /* TouchInputView.m */,
+				1F59A574169B4CDA00F744C3 /* TouchInputViewController.h */,
+				1F59A575169B4CDA00F744C3 /* TouchInputViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -322,6 +342,10 @@
 				1FFDFF53169771580049B8DF /* ContinuousOptionCell.m in Sources */,
 				1FFDFF56169771800049B8DF /* FrequencyOptionCell.m in Sources */,
 				1FFDFF6516977C400049B8DF /* OptionsViewController.m in Sources */,
+				1F59A5681697941000F744C3 /* TouchInputView.m in Sources */,
+				1F59A56B169B225C00F744C3 /* TouchSignalService.m in Sources */,
+				1F59A576169B4CDA00F744C3 /* TouchInputViewController.m in Sources */,
+				1F59A579169B4F9D00F744C3 /* UIView+BACookie.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

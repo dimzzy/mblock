@@ -10,6 +10,7 @@
 #import "UDPClientCell.h"
 #import "SignalServiceCell.h"
 #import "UITableView+BALoading.h"
+#import "UIView+BACookie.h"
 #import "BAKeyboardTracker.h"
 #import "AppDelegate.h"
 #import "MUserPreferences.h"
@@ -91,6 +92,11 @@ static const NSInteger kPortViewTag = 102;
 	}
 }
 
+- (IBAction)performServiceAction:(UIButton *)sender {
+	id<ActionableService> actionableService = sender.cookie;
+	[actionableService performServiceAction];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	[textField resignFirstResponder];
 	return YES;
@@ -137,12 +143,18 @@ static const NSInteger kPortViewTag = 102;
 																							  loaded:&loaded];
 		if (loaded) {
 			[cell.runningView addTarget:self action:@selector(startStopSignalService:) forControlEvents:UIControlEventTouchUpInside];
+			[cell.actionButton addTarget:self action:@selector(performServiceAction:) forControlEvents:UIControlEventTouchUpInside];
 		}
 		cell.titleView.text = signalService.info;
 		cell.runningView.tag = indexPath.row;
 		cell.runningView.on = signalService.running;
 		AppDelegate *appd = (AppDelegate *)[UIApplication sharedApplication].delegate;
 		cell.runningView.enabled = appd.dataClient.connected;
+		if ([signalService conformsToProtocol:@protocol(ActionableService)]) {
+			cell.actionButton.cookie = signalService;
+			id<ActionableService> actionableService = (id<ActionableService>)signalService;
+			[cell.actionButton setTitle:[actionableService serviceActionTitle] forState:UIControlStateNormal];
+		}
 		return cell;
 	}
 	return nil;
@@ -154,6 +166,10 @@ static const NSInteger kPortViewTag = 102;
 			return kUDPClientCellHeight;
 		}
 	} else if (indexPath.section == 1) {
+		SignalService *signalService = [self.signalServices objectAtIndex:indexPath.row];
+		if ([signalService conformsToProtocol:@protocol(ActionableService)]) {
+			return kSignalServiceCellExtHeight;
+		}
 		return kSignalServiceCellHeight;
 	}
 	return 0;

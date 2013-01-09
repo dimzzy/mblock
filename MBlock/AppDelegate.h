@@ -16,6 +16,7 @@
 
 @property(strong, nonatomic) UIWindow *window;
 @property(strong, nonatomic) ViewController *viewController;
+@property(readonly) UINavigationController *navigationController;
 
 @property UDPClient *dataClient;
 @property(readonly) NSArray *signalServices;
