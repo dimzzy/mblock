@@ -8,6 +8,6 @@
 
 #import "Block.h"
 
-@interface TouchInputBlock : Block <Actionable>
+@interface TouchInputBlock : Block <Actionable, NSCoding>
 
 @end

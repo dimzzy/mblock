@@ -14,6 +14,16 @@
 	return @"Prints signal to console.";
 }
 
+- (id)initWithCoder:(NSCoder *)coder {
+	if ((self = [super initWithCoder:coder])) {
+	}
+	return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+	[super encodeWithCoder:coder];
+}
+
 - (void)sendSignal:(Signal *)signal {
 	NSMutableString *str = [NSMutableString string];
 	[str appendFormat:@"~ %02x [%d]", signal.type, signal.width];

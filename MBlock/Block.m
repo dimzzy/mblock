@@ -17,6 +17,15 @@
 	[self stop];
 }
 
+- (id)initWithCoder:(NSCoder *)coder {
+	if ((self = [super init])) {
+	}
+	return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+}
+
 - (NSMutableSet *)signalReceivers {
 	if (!_signalReceivers) {
 		_signalReceivers = [[NSMutableSet alloc] init];

@@ -23,6 +23,20 @@ static const int kPacketMinWidth = 6;
 	return @"Sends signal via UDP socket.";
 }
 
+- (id)initWithCoder:(NSCoder *)coder {
+	if ((self = [super initWithCoder:coder])) {
+		_IPAddress = [coder decodeObjectForKey:@"ip_address"];
+		_port = [coder decodeIntForKey:@"port"];
+	}
+	return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+	[coder encodeObject:_IPAddress forKey:@"ip_address"];
+	[coder encodeInt:_port forKey:@"port"];
+	[super encodeWithCoder:coder];
+}
+
 - (void)start {
 	if (self.running) {
 		return;

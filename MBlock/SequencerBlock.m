@@ -18,6 +18,18 @@
 	return @"Resends last received signal at the specified frequency.";
 }
 
+- (id)initWithCoder:(NSCoder *)coder {
+	if ((self = [super initWithCoder:coder])) {
+		_frequency = [coder decodeDoubleForKey:@"frequency"];
+	}
+	return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+	[coder encodeDouble:_frequency forKey:@"frequency"];
+	[super encodeWithCoder:coder];
+}
+
 - (void)start {
 	if (self.running) {
 		return;

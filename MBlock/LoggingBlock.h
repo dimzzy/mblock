@@ -8,6 +8,6 @@
 
 #import "Block.h"
 
-@interface LoggingBlock : Block
+@interface LoggingBlock : Block <NSCoding>
 
 @end

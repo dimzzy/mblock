@@ -8,7 +8,7 @@
 
 #import "Block.h"
 
-@interface GroupBlock : Block
+@interface GroupBlock : Block <NSCoding>
 
 @property(readonly) NSArray *blocks; // [:Block]
 

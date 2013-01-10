@@ -8,7 +8,7 @@
 
 #import "Block.h"
 
-@interface UDPSenderBlock : Block
+@interface UDPSenderBlock : Block <NSCoding>
 
 @property NSString *IPAddress;
 @property int port;

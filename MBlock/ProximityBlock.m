@@ -18,6 +18,16 @@
 	return @"Checks if device is close to the user.";
 }
 
+- (id)initWithCoder:(NSCoder *)coder {
+	if ((self = [super initWithCoder:coder])) {
+	}
+	return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+	[super encodeWithCoder:coder];
+}
+
 + (NSArray *)labels {
 	static NSArray *labels;
 	if (!labels) {

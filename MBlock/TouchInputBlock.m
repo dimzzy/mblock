@@ -16,6 +16,16 @@
 	return @"Reports coordinates of the fingers on the screen.";
 }
 
+- (id)initWithCoder:(NSCoder *)coder {
+	if ((self = [super initWithCoder:coder])) {
+	}
+	return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+	[super encodeWithCoder:coder];
+}
+
 - (void)start {
 	if (self.running) {
 		return;

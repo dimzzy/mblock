@@ -24,7 +24,7 @@
 @end
 
 
-@interface Block : NSObject <SignalReceiver>
+@interface Block : NSObject <SignalReceiver, NSCoding>
 
 @property(readonly) NSMutableSet *signalReceivers; // {:SignalReceiver}
 @property(readonly) BOOL unique; // only a single instance is allowed

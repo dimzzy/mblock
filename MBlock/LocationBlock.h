@@ -9,6 +9,6 @@
 #import "Block.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface LocationBlock : Block <CLLocationManagerDelegate>
+@interface LocationBlock : Block <CLLocationManagerDelegate, NSCoding>
 
 @end

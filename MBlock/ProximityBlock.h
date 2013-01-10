@@ -8,6 +8,6 @@
 
 #import "Block.h"
 
-@interface ProximityBlock : Block
+@interface ProximityBlock : Block <NSCoding>
 
 @end

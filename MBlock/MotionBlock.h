@@ -8,7 +8,7 @@
 
 #import "Block.h"
 
-@interface MotionBlock : Block
+@interface MotionBlock : Block <NSCoding>
 
 @property double frequency; // Hz
 

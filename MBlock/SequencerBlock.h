@@ -8,7 +8,7 @@
 
 #import "Block.h"
 
-@interface SequencerBlock : Block
+@interface SequencerBlock : Block <NSCoding>
 
 @property double frequency; // Hz
 
