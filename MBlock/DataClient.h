@@ -12,5 +12,6 @@
 
 - (BOOL)connected;
 - (BOOL)sendData:(NSData *)data;
+- (BOOL)sendData:(const void *)data length:(size_t)length;
 
 @end

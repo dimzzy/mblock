@@ -26,6 +26,15 @@
 		1F96CD60167EEA1A00C63FEE /* UDPClientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96CD5F167EEA1A00C63FEE /* UDPClientCell.m */; };
 		1F96CD63167EEA8300C63FEE /* UDPClientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F96CD62167EEA8300C63FEE /* UDPClientCell.xib */; };
 		1F96CD66167EED1B00C63FEE /* UITableView+BALoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96CD65167EED1B00C63FEE /* UITableView+BALoading.m */; };
+		1FC76E3C169DFFDE003BDDF8 /* Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E3B169DFFDE003BDDF8 /* Signal.m */; };
+		1FC76E40169E07B3003BDDF8 /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E3F169E07B3003BDDF8 /* Block.m */; };
+		1FC76E43169E1092003BDDF8 /* UDPSenderBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E42169E1092003BDDF8 /* UDPSenderBlock.m */; };
+		1FC76E46169E1B59003BDDF8 /* MotionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E45169E1B59003BDDF8 /* MotionBlock.m */; };
+		1FC76E49169E2402003BDDF8 /* EventfulBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E48169E2402003BDDF8 /* EventfulBlock.m */; };
+		1FC76E4C169E2507003BDDF8 /* LocationBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E4B169E2506003BDDF8 /* LocationBlock.m */; };
+		1FC76E4F169E27EB003BDDF8 /* LoggingBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E4E169E27EA003BDDF8 /* LoggingBlock.m */; };
+		1FC76E53169E2CB2003BDDF8 /* ProximityBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E52169E2CB2003BDDF8 /* ProximityBlock.m */; };
+		1FC76E56169E2F57003BDDF8 /* TouchInputBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E55169E2F57003BDDF8 /* TouchInputBlock.m */; };
 		1FCFB9C9168280750018CAD5 /* MUserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCFB9C8168280750018CAD5 /* MUserPreferences.m */; };
 		1FF11164167BAAD100972344 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF11163167BAAD100972344 /* UIKit.framework */; };
 		1FF11166167BAAD100972344 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF11165167BAAD100972344 /* Foundation.framework */; };
@@ -83,6 +92,24 @@
 		1F96CD62167EEA8300C63FEE /* UDPClientCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UDPClientCell.xib; sourceTree = "<group>"; };
 		1F96CD64167EED1B00C63FEE /* UITableView+BALoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+BALoading.h"; sourceTree = "<group>"; };
 		1F96CD65167EED1B00C63FEE /* UITableView+BALoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BALoading.m"; sourceTree = "<group>"; };
+		1FC76E3A169DFFDE003BDDF8 /* Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signal.h; sourceTree = "<group>"; };
+		1FC76E3B169DFFDE003BDDF8 /* Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Signal.m; sourceTree = "<group>"; };
+		1FC76E3E169E07B3003BDDF8 /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
+		1FC76E3F169E07B3003BDDF8 /* Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Block.m; sourceTree = "<group>"; };
+		1FC76E41169E1092003BDDF8 /* UDPSenderBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPSenderBlock.h; sourceTree = "<group>"; };
+		1FC76E42169E1092003BDDF8 /* UDPSenderBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPSenderBlock.m; sourceTree = "<group>"; };
+		1FC76E44169E1B59003BDDF8 /* MotionBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionBlock.h; sourceTree = "<group>"; };
+		1FC76E45169E1B59003BDDF8 /* MotionBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionBlock.m; sourceTree = "<group>"; };
+		1FC76E47169E2402003BDDF8 /* EventfulBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventfulBlock.h; sourceTree = "<group>"; };
+		1FC76E48169E2402003BDDF8 /* EventfulBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventfulBlock.m; sourceTree = "<group>"; };
+		1FC76E4A169E2506003BDDF8 /* LocationBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBlock.h; sourceTree = "<group>"; };
+		1FC76E4B169E2506003BDDF8 /* LocationBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationBlock.m; sourceTree = "<group>"; };
+		1FC76E4D169E27EA003BDDF8 /* LoggingBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingBlock.h; sourceTree = "<group>"; };
+		1FC76E4E169E27EA003BDDF8 /* LoggingBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingBlock.m; sourceTree = "<group>"; };
+		1FC76E51169E2CB2003BDDF8 /* ProximityBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProximityBlock.h; sourceTree = "<group>"; };
+		1FC76E52169E2CB2003BDDF8 /* ProximityBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProximityBlock.m; sourceTree = "<group>"; };
+		1FC76E54169E2F57003BDDF8 /* TouchInputBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchInputBlock.h; sourceTree = "<group>"; };
+		1FC76E55169E2F57003BDDF8 /* TouchInputBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchInputBlock.m; sourceTree = "<group>"; };
 		1FCFB9C7168280750018CAD5 /* MUserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUserPreferences.h; sourceTree = "<group>"; };
 		1FCFB9C8168280750018CAD5 /* MUserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUserPreferences.m; sourceTree = "<group>"; };
 		1FF1115F167BAAD100972344 /* MBlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +159,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FC76E50169E2C6E003BDDF8 /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				1FC76E3A169DFFDE003BDDF8 /* Signal.h */,
+				1FC76E3B169DFFDE003BDDF8 /* Signal.m */,
+				1FC76E3E169E07B3003BDDF8 /* Block.h */,
+				1FC76E3F169E07B3003BDDF8 /* Block.m */,
+				1FC76E47169E2402003BDDF8 /* EventfulBlock.h */,
+				1FC76E48169E2402003BDDF8 /* EventfulBlock.m */,
+				1FC76E4D169E27EA003BDDF8 /* LoggingBlock.h */,
+				1FC76E4E169E27EA003BDDF8 /* LoggingBlock.m */,
+				1F521311167ED6F300E93D65 /* DataClient.h */,
+				1F52130E167EBAFB00E93D65 /* UDPClient.h */,
+				1F52130F167EBAFB00E93D65 /* UDPClient.m */,
+				1F52130A167EBAB700E93D65 /* UDPServer.h */,
+				1F52130B167EBAB700E93D65 /* UDPServer.m */,
+				1FC76E41169E1092003BDDF8 /* UDPSenderBlock.h */,
+				1FC76E42169E1092003BDDF8 /* UDPSenderBlock.m */,
+				1FC76E44169E1B59003BDDF8 /* MotionBlock.h */,
+				1FC76E45169E1B59003BDDF8 /* MotionBlock.m */,
+				1FC76E4A169E2506003BDDF8 /* LocationBlock.h */,
+				1FC76E4B169E2506003BDDF8 /* LocationBlock.m */,
+				1FC76E51169E2CB2003BDDF8 /* ProximityBlock.h */,
+				1FC76E52169E2CB2003BDDF8 /* ProximityBlock.m */,
+				1FC76E54169E2F57003BDDF8 /* TouchInputBlock.h */,
+				1FC76E55169E2F57003BDDF8 /* TouchInputBlock.m */,
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
 		1FF11154167BAAD100972344 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +222,7 @@
 		1FF11169167BAAD100972344 /* MBlock */ = {
 			isa = PBXGroup;
 			children = (
+				1FC76E50169E2C6E003BDDF8 /* Blocks */,
 				1FFDFF4D169631D40049B8DF /* UI */,
 				1FFDFF4B169631CB0049B8DF /* Services */,
 				1FF1116A167BAAD100972344 /* Supporting Files */,
@@ -192,11 +250,6 @@
 		1FFDFF4B169631CB0049B8DF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				1F521311167ED6F300E93D65 /* DataClient.h */,
-				1F52130E167EBAFB00E93D65 /* UDPClient.h */,
-				1F52130F167EBAFB00E93D65 /* UDPClient.m */,
-				1F52130A167EBAB700E93D65 /* UDPServer.h */,
-				1F52130B167EBAB700E93D65 /* UDPServer.m */,
 				1F521316167ED9D100E93D65 /* SignalService.h */,
 				1F521317167ED9D100E93D65 /* SignalService.m */,
 				1FFDFF4E16976B990049B8DF /* EventfulSignalService.h */,
@@ -346,6 +399,15 @@
 				1F59A56B169B225C00F744C3 /* TouchSignalService.m in Sources */,
 				1F59A576169B4CDA00F744C3 /* TouchInputViewController.m in Sources */,
 				1F59A579169B4F9D00F744C3 /* UIView+BACookie.m in Sources */,
+				1FC76E3C169DFFDE003BDDF8 /* Signal.m in Sources */,
+				1FC76E40169E07B3003BDDF8 /* Block.m in Sources */,
+				1FC76E43169E1092003BDDF8 /* UDPSenderBlock.m in Sources */,
+				1FC76E46169E1B59003BDDF8 /* MotionBlock.m in Sources */,
+				1FC76E49169E2402003BDDF8 /* EventfulBlock.m in Sources */,
+				1FC76E4C169E2507003BDDF8 /* LocationBlock.m in Sources */,
+				1FC76E4F169E27EB003BDDF8 /* LoggingBlock.m in Sources */,
+				1FC76E53169E2CB2003BDDF8 /* ProximityBlock.m in Sources */,
+				1FC76E56169E2F57003BDDF8 /* TouchInputBlock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

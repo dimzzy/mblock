@@ -46,6 +46,10 @@
 }
 
 - (BOOL)sendData:(NSData *)data {
+	return [self sendData:[data bytes] length:[data length]];
+}
+
+- (BOOL)sendData:(const void *)data length:(size_t)length {
 	if (![self connected]) {
 		return NO;
 	}
@@ -55,9 +59,7 @@
 	destination.sin_family = AF_INET;
 	inet_aton([self.IPAddress UTF8String] , &destination.sin_addr);
 	destination.sin_port = htons(self.port);
-
-	return sendto(_socket, [data bytes], [data length], 0,
-				  (struct sockaddr *)&destination, sizeof(destination)) == [data length];
+	return sendto(_socket, data, length, 0, (struct sockaddr *)&destination, sizeof(destination)) == length;
 }
 
 @end
