@@ -10,26 +10,16 @@
 #import "TouchInputViewController.h"
 #import "AppDelegate.h"
 
-@implementation TouchInputBlock {
-	NSMutableArray *_touchInfos;
-}
+@implementation TouchInputBlock
 
 - (NSString *)info {
 	return @"Reports coordinates of the fingers on the screen.";
-}
-
-- (id)init {
-	if ((self = [super init])) {
-		_touchInfos = [NSMutableArray array];
-	}
-	return self;
 }
 
 - (void)start {
 	if (self.running) {
 		return;
 	}
-	[_touchInfos removeAllObjects];
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(touchesDidChange:)
 												 name:TouchesDidChangeNotification
@@ -49,21 +39,10 @@
 
 - (void)touchesDidChange:(NSNotification *)notification {
 	TouchInputView *view = [notification object];
-	[_touchInfos removeAllObjects];
-	[_touchInfos addObjectsFromArray:view.touchInfos];
-	if (!self.continuous) {
-		[self sendState];
-	}
-}
-
-- (void)sendTimedSignal:(NSTimer *)timer {
-	[self sendState];
-}
-
-- (void)sendState {
-	NSMutableArray *values = [NSMutableArray arrayWithCapacity:([_touchInfos count] * 3)];
-	NSMutableArray *labels = [NSMutableArray arrayWithCapacity:([_touchInfos count] * 3)];
-	[_touchInfos enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+	NSArray *touchInfos = view.touchInfos;
+	NSMutableArray *values = [NSMutableArray arrayWithCapacity:([touchInfos count] * 3)];
+	NSMutableArray *labels = [NSMutableArray arrayWithCapacity:([touchInfos count] * 3)];
+	[touchInfos enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 		TouchInfo *touchInfo = obj;
 		[values addObject:[NSNumber numberWithDouble:touchInfo.identifier]];
 		[values addObject:[NSNumber numberWithDouble:touchInfo.x]];

@@ -31,12 +31,10 @@
 		return;
 	}
 	[UIDevice currentDevice].proximityMonitoringEnabled = YES;
-	if (!self.continuous) {
-		[[NSNotificationCenter defaultCenter] addObserver:self
-												 selector:@selector(proximityStateDidChange:)
-													 name:UIDeviceProximityStateDidChangeNotification
-												   object:nil];
-	}
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(proximityStateDidChange:)
+												 name:UIDeviceProximityStateDidChangeNotification
+											   object:nil];
 	[super start];
 }
 
@@ -52,14 +50,6 @@
 }
 
 - (void)proximityStateDidChange:(NSNotification *)notification {
-	[self sendState];
-}
-
-- (void)sendTimedSignal:(NSTimer *)timer {
-	[self sendState];
-}
-
-- (void)sendState {
 	NSMutableArray *values = [NSMutableArray arrayWithCapacity:1];
 	[values addObject:[NSNumber numberWithDouble:[UIDevice currentDevice].proximityState]];
 	[self sendSignal:[[Signal alloc] initWithType:kProximitySignalType

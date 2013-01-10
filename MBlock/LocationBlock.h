@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Dmitry Stadnik. All rights reserved.
 //
 
-#import "EventfulBlock.h"
+#import "Block.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface LocationBlock : EventfulBlock <CLLocationManagerDelegate>
+@interface LocationBlock : Block <CLLocationManagerDelegate>
 
 @end

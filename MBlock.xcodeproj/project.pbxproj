@@ -30,11 +30,12 @@
 		1FC76E40169E07B3003BDDF8 /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E3F169E07B3003BDDF8 /* Block.m */; };
 		1FC76E43169E1092003BDDF8 /* UDPSenderBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E42169E1092003BDDF8 /* UDPSenderBlock.m */; };
 		1FC76E46169E1B59003BDDF8 /* MotionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E45169E1B59003BDDF8 /* MotionBlock.m */; };
-		1FC76E49169E2402003BDDF8 /* EventfulBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E48169E2402003BDDF8 /* EventfulBlock.m */; };
 		1FC76E4C169E2507003BDDF8 /* LocationBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E4B169E2506003BDDF8 /* LocationBlock.m */; };
 		1FC76E4F169E27EB003BDDF8 /* LoggingBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E4E169E27EA003BDDF8 /* LoggingBlock.m */; };
 		1FC76E53169E2CB2003BDDF8 /* ProximityBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E52169E2CB2003BDDF8 /* ProximityBlock.m */; };
 		1FC76E56169E2F57003BDDF8 /* TouchInputBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E55169E2F57003BDDF8 /* TouchInputBlock.m */; };
+		1FC76E59169F09B0003BDDF8 /* GroupBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E58169F09B0003BDDF8 /* GroupBlock.m */; };
+		1FC76E5C169F14B5003BDDF8 /* SequencerBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E5B169F14B5003BDDF8 /* SequencerBlock.m */; };
 		1FCFB9C9168280750018CAD5 /* MUserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCFB9C8168280750018CAD5 /* MUserPreferences.m */; };
 		1FF11164167BAAD100972344 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF11163167BAAD100972344 /* UIKit.framework */; };
 		1FF11166167BAAD100972344 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF11165167BAAD100972344 /* Foundation.framework */; };
@@ -100,8 +101,6 @@
 		1FC76E42169E1092003BDDF8 /* UDPSenderBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPSenderBlock.m; sourceTree = "<group>"; };
 		1FC76E44169E1B59003BDDF8 /* MotionBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionBlock.h; sourceTree = "<group>"; };
 		1FC76E45169E1B59003BDDF8 /* MotionBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionBlock.m; sourceTree = "<group>"; };
-		1FC76E47169E2402003BDDF8 /* EventfulBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventfulBlock.h; sourceTree = "<group>"; };
-		1FC76E48169E2402003BDDF8 /* EventfulBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventfulBlock.m; sourceTree = "<group>"; };
 		1FC76E4A169E2506003BDDF8 /* LocationBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBlock.h; sourceTree = "<group>"; };
 		1FC76E4B169E2506003BDDF8 /* LocationBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationBlock.m; sourceTree = "<group>"; };
 		1FC76E4D169E27EA003BDDF8 /* LoggingBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingBlock.h; sourceTree = "<group>"; };
@@ -110,6 +109,10 @@
 		1FC76E52169E2CB2003BDDF8 /* ProximityBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProximityBlock.m; sourceTree = "<group>"; };
 		1FC76E54169E2F57003BDDF8 /* TouchInputBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchInputBlock.h; sourceTree = "<group>"; };
 		1FC76E55169E2F57003BDDF8 /* TouchInputBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchInputBlock.m; sourceTree = "<group>"; };
+		1FC76E57169F09B0003BDDF8 /* GroupBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupBlock.h; sourceTree = "<group>"; };
+		1FC76E58169F09B0003BDDF8 /* GroupBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupBlock.m; sourceTree = "<group>"; };
+		1FC76E5A169F14B5003BDDF8 /* SequencerBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequencerBlock.h; sourceTree = "<group>"; };
+		1FC76E5B169F14B5003BDDF8 /* SequencerBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequencerBlock.m; sourceTree = "<group>"; };
 		1FCFB9C7168280750018CAD5 /* MUserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUserPreferences.h; sourceTree = "<group>"; };
 		1FCFB9C8168280750018CAD5 /* MUserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUserPreferences.m; sourceTree = "<group>"; };
 		1FF1115F167BAAD100972344 /* MBlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,8 +169,10 @@
 				1FC76E3B169DFFDE003BDDF8 /* Signal.m */,
 				1FC76E3E169E07B3003BDDF8 /* Block.h */,
 				1FC76E3F169E07B3003BDDF8 /* Block.m */,
-				1FC76E47169E2402003BDDF8 /* EventfulBlock.h */,
-				1FC76E48169E2402003BDDF8 /* EventfulBlock.m */,
+				1FC76E57169F09B0003BDDF8 /* GroupBlock.h */,
+				1FC76E58169F09B0003BDDF8 /* GroupBlock.m */,
+				1FC76E5A169F14B5003BDDF8 /* SequencerBlock.h */,
+				1FC76E5B169F14B5003BDDF8 /* SequencerBlock.m */,
 				1FC76E4D169E27EA003BDDF8 /* LoggingBlock.h */,
 				1FC76E4E169E27EA003BDDF8 /* LoggingBlock.m */,
 				1F521311167ED6F300E93D65 /* DataClient.h */,
@@ -403,11 +408,12 @@
 				1FC76E40169E07B3003BDDF8 /* Block.m in Sources */,
 				1FC76E43169E1092003BDDF8 /* UDPSenderBlock.m in Sources */,
 				1FC76E46169E1B59003BDDF8 /* MotionBlock.m in Sources */,
-				1FC76E49169E2402003BDDF8 /* EventfulBlock.m in Sources */,
 				1FC76E4C169E2507003BDDF8 /* LocationBlock.m in Sources */,
 				1FC76E4F169E27EB003BDDF8 /* LoggingBlock.m in Sources */,
 				1FC76E53169E2CB2003BDDF8 /* ProximityBlock.m in Sources */,
 				1FC76E56169E2F57003BDDF8 /* TouchInputBlock.m in Sources */,
+				1FC76E59169F09B0003BDDF8 /* GroupBlock.m in Sources */,
+				1FC76E5C169F14B5003BDDF8 /* SequencerBlock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

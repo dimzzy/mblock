@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Dmitry Stadnik. All rights reserved.
 //
 
-#import "EventfulBlock.h"
+#import "Block.h"
 
-@interface ProximityBlock : EventfulBlock
+@interface ProximityBlock : Block
 
 @end

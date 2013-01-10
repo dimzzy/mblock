@@ -52,17 +52,7 @@
 	didUpdateToLocation:(CLLocation *)newLocation
 		   fromLocation:(CLLocation *)oldLocation
 {
-	if (!self.continuous) {
-		[self sendLocation];
-	}
-}
-
-- (void)sendTimedSignal:(NSTimer *)timer {
-	[self sendLocation];
-}
-
-- (void)sendLocation {
-	CLLocation *l = [_locationManager location];
+	CLLocation *l = newLocation;
 	NSMutableArray *values = [NSMutableArray arrayWithCapacity:3];
 	[values addObject:[NSNumber numberWithDouble:l.coordinate.latitude]];
 	[values addObject:[NSNumber numberWithDouble:l.coordinate.longitude]];
