@@ -22,6 +22,9 @@
 		1F59A56B169B225C00F744C3 /* TouchSignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A56A169B225C00F744C3 /* TouchSignalService.m */; };
 		1F59A576169B4CDA00F744C3 /* TouchInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A575169B4CDA00F744C3 /* TouchInputViewController.m */; };
 		1F59A579169B4F9D00F744C3 /* UIView+BACookie.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A578169B4F9D00F744C3 /* UIView+BACookie.m */; };
+		1F80CD2E16A0BED400211FF8 /* BlockOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80CD2D16A0BED400211FF8 /* BlockOptionsViewController.m */; };
+		1F80CD3116A0CD0A00211FF8 /* SocketOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80CD3016A0CD0A00211FF8 /* SocketOptionCell.m */; };
+		1F80CD3316A0CD7300211FF8 /* SocketOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F80CD3216A0CD7300211FF8 /* SocketOptionCell.xib */; };
 		1F83F1DB168002D80014CFDD /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1F83F1DA168002D80014CFDD /* README.txt */; };
 		1F96CD60167EEA1A00C63FEE /* UDPClientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96CD5F167EEA1A00C63FEE /* UDPClientCell.m */; };
 		1F96CD63167EEA8300C63FEE /* UDPClientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F96CD62167EEA8300C63FEE /* UDPClientCell.xib */; };
@@ -90,6 +93,11 @@
 		1F59A575169B4CDA00F744C3 /* TouchInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchInputViewController.m; sourceTree = "<group>"; };
 		1F59A577169B4F9D00F744C3 /* UIView+BACookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BACookie.h"; sourceTree = "<group>"; };
 		1F59A578169B4F9D00F744C3 /* UIView+BACookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BACookie.m"; sourceTree = "<group>"; };
+		1F80CD2C16A0BED400211FF8 /* BlockOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockOptionsViewController.h; sourceTree = "<group>"; };
+		1F80CD2D16A0BED400211FF8 /* BlockOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockOptionsViewController.m; sourceTree = "<group>"; };
+		1F80CD2F16A0CD0A00211FF8 /* SocketOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketOptionCell.h; sourceTree = "<group>"; };
+		1F80CD3016A0CD0A00211FF8 /* SocketOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketOptionCell.m; sourceTree = "<group>"; };
+		1F80CD3216A0CD7300211FF8 /* SocketOptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocketOptionCell.xib; sourceTree = "<group>"; };
 		1F83F1DA168002D80014CFDD /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = ../README.txt; sourceTree = "<group>"; };
 		1F96CD5E167EEA1A00C63FEE /* UDPClientCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPClientCell.h; sourceTree = "<group>"; };
 		1F96CD5F167EEA1A00C63FEE /* UDPClientCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPClientCell.m; sourceTree = "<group>"; };
@@ -210,6 +218,14 @@
 				1FC76E81169F6A0E003BDDF8 /* BlockCell.h */,
 				1FC76E82169F6A0E003BDDF8 /* BlockCell.m */,
 				1FC76E84169F6A21003BDDF8 /* BlockCell.xib */,
+				1F80CD2C16A0BED400211FF8 /* BlockOptionsViewController.h */,
+				1F80CD2D16A0BED400211FF8 /* BlockOptionsViewController.m */,
+				1FFDFF541697717F0049B8DF /* FrequencyOptionCell.h */,
+				1FFDFF551697717F0049B8DF /* FrequencyOptionCell.m */,
+				1FFDFF59169772AF0049B8DF /* FrequencyOptionCell.xib */,
+				1F80CD2F16A0CD0A00211FF8 /* SocketOptionCell.h */,
+				1F80CD3016A0CD0A00211FF8 /* SocketOptionCell.m */,
+				1F80CD3216A0CD7300211FF8 /* SocketOptionCell.xib */,
 			);
 			name = "Blocks UI";
 			sourceTree = "<group>";
@@ -331,9 +347,6 @@
 				1FFDFF51169771580049B8DF /* ContinuousOptionCell.h */,
 				1FFDFF52169771580049B8DF /* ContinuousOptionCell.m */,
 				1FFDFF57169771A40049B8DF /* ContinuousOptionCell.xib */,
-				1FFDFF541697717F0049B8DF /* FrequencyOptionCell.h */,
-				1FFDFF551697717F0049B8DF /* FrequencyOptionCell.m */,
-				1FFDFF59169772AF0049B8DF /* FrequencyOptionCell.xib */,
 			);
 			name = "Services UI";
 			sourceTree = "<group>";
@@ -402,6 +415,7 @@
 				1F59A5631697924700F744C3 /* Icon.png in Resources */,
 				1F59A5641697924700F744C3 /* Icon@2x.png in Resources */,
 				1FC76E85169F6A21003BDDF8 /* BlockCell.xib in Resources */,
+				1F80CD3316A0CD7300211FF8 /* SocketOptionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +460,8 @@
 				1FC76E5C169F14B5003BDDF8 /* SequencerBlock.m in Sources */,
 				1FC76E80169F6963003BDDF8 /* GroupBlockViewController.m in Sources */,
 				1FC76E83169F6A0E003BDDF8 /* BlockCell.m in Sources */,
+				1F80CD2E16A0BED400211FF8 /* BlockOptionsViewController.m in Sources */,
+				1F80CD3116A0CD0A00211FF8 /* SocketOptionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

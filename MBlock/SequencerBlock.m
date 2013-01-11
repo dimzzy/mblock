@@ -18,6 +18,14 @@
 	return @"Resends last received signal at the specified frequency.";
 }
 
+- (double)minFrequency {
+	return 1.0;
+}
+
+- (double)maxFrequency {
+	return 100.0;
+}
+
 - (id)init {
 	if ((self = [super init])) {
 		_frequency = 10.0;

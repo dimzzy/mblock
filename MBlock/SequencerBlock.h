@@ -11,5 +11,7 @@
 @interface SequencerBlock : Block <NSCoding>
 
 @property double frequency; // Hz
+@property(readonly) double minFrequency;
+@property(readonly) double maxFrequency;
 
 @end

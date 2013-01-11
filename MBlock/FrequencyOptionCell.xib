@@ -69,7 +69,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Frequency at which signal is sent (1-20 Hz)</string>
+								<string key="IBUIText">Frequency at which signal is sent (%g-%g Hz)</string>
 								<object class="NSColor" key="IBUITextColor" id="107132203">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MCAwIDAAA</bytes>
@@ -99,14 +99,13 @@
 								<string key="NSFrame">{{10, 75}, {280, 20}}</string>
 								<reference key="NSSuperview" ref="796467730"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Current frequency: </string>
+								<string key="IBUIText">Current frequency: %g Hz</string>
 								<reference key="IBUITextColor" ref="107132203"/>
 								<reference key="IBUIHighlightedColor" ref="492023079"/>
 								<int key="IBUIBaselineAdjustment">0</int>

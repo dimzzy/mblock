@@ -63,11 +63,11 @@
 	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-	ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-	viewController.title = @"MBlock";
+//	ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+//	viewController.title = @"MBlock";
 
-//	GroupBlockViewController *viewController = [[GroupBlockViewController alloc] initWithStyle:UITableViewStyleGrouped];
-//	viewController.groupBlock = groupBlock;
+	GroupBlockViewController *viewController = [[GroupBlockViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	viewController.groupBlock = groupBlock;
 
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
 	self.window.rootViewController = navController;

@@ -21,6 +21,7 @@ typedef void (^FrequencyOptionUpdater)(double frequency);
 @property double frequency;
 @property(readonly) double normalizedFrequency;
 
+- (void)updateFrequencyLimits;
 - (IBAction)frequencyViewDidChange:(UISlider *)source;
 
 @end

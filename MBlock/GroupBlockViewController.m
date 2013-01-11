@@ -17,6 +17,7 @@
 #import "LocationBlock.h"
 #import "ProximityBlock.h"
 #import "TouchInputBlock.h"
+#import "BlockOptionsViewController.h"
 
 @interface GroupBlockViewController ()
 
@@ -196,6 +197,11 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	Block *block = [self.groupBlock.blocks objectAtIndex:indexPath.row];
+	BlockOptionsViewController *controller = [[BlockOptionsViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	controller.block = block;
+	controller.title = @"Options";
+	[self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

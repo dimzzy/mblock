@@ -11,26 +11,24 @@
 @implementation FrequencyOptionCell {
 @private
 	double _frequency;
-	NSString *_prefix;
-}
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+	NSString *_frequencyLimitsFormat;
+	NSString *_currentFrequencyFormat;
 }
 
 - (void)awakeFromNib {
-	_prefix = self.currentFrequencyView.text;
+	_frequencyLimitsFormat = self.titleView.text;
+	_currentFrequencyFormat = self.currentFrequencyView.text;
 	_frequency = self.frequencyView.value;
+	[self updateFrequencyLimits];
 	[self updateCurrentValueText];
 }
 
+- (double)normalizedFrequency:(double)frequency {
+	return nearbyint(frequency * 2.0) / 2.0;
+}
+
 - (double)normalizedFrequency {
-	return nearbyint(_frequency * 2.0) / 2.0;
+	return [self normalizedFrequency:_frequency];
 }
 
 - (double)frequency {
@@ -54,8 +52,13 @@
 	_updater(self.normalizedFrequency);
 }
 
+- (void)updateFrequencyLimits {
+	self.titleView.text = [NSString stringWithFormat:_frequencyLimitsFormat,
+						   self.frequencyView.minimumValue, self.frequencyView.maximumValue];
+}
+
 - (void)updateCurrentValueText {
-	self.currentFrequencyView.text = [NSString stringWithFormat:@"%@ %g Hz", _prefix, self.normalizedFrequency];
+	self.currentFrequencyView.text = [NSString stringWithFormat:_currentFrequencyFormat, self.normalizedFrequency];
 }
 
 @end
