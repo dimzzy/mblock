@@ -14,6 +14,10 @@
 #import "ProximitySignalService.h"
 #import "TouchSignalService.h"
 #import "MUserPreferences.h"
+#import "GroupBlock.h"
+#import "MotionBlock.h"
+#import "LoggingBlock.h"
+#import "GroupBlockViewController.h"
 
 @implementation AppDelegate {
 @private
@@ -51,11 +55,21 @@
 	touchService.frequency = [MUserPreferences instance].touchFrequency;
 	_signalServices = [NSArray arrayWithObjects:motionService, locationService, proximityService, touchService, nil];
 
+	GroupBlock *groupBlock = [[GroupBlock alloc] init];
+	MotionBlock *motionBlock = [[MotionBlock alloc] init];
+	LoggingBlock *loggingBlock = [[LoggingBlock alloc] init];
+	[groupBlock addBlock:motionBlock];
+	[groupBlock addBlock:loggingBlock];
+	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-	self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-	self.viewController.title = @"MBlock";
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+
+	ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+	viewController.title = @"MBlock";
+
+//	GroupBlockViewController *viewController = [[GroupBlockViewController alloc] initWithStyle:UITableViewStyleGrouped];
+//	viewController.groupBlock = groupBlock;
+
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
 	self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
     return YES;

@@ -13,6 +13,8 @@
 @property(readonly) NSArray *blocks; // [:Block]
 
 - (void)addBlock:(Block *)block;
+- (void)insertBlock:(Block *)block atIndex:(NSUInteger)index;
 - (void)removeBlockAtIndex:(NSUInteger)index;
+- (void)moveBlockAtIndex:(NSUInteger)index toIndex:(NSUInteger)index;
 
 @end

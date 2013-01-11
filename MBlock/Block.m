@@ -8,10 +8,7 @@
 
 #import "Block.h"
 
-@implementation Block {
-@private
-	NSMutableSet *_signalReceivers;
-}
+@implementation Block
 
 - (void)dealloc {
 	[self stop];
@@ -19,18 +16,15 @@
 
 - (id)initWithCoder:(NSCoder *)coder {
 	if ((self = [super init])) {
+		_signalReceiver = [coder decodeObjectForKey:@"signalReceiver"];
 	}
 	return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
-}
-
-- (NSMutableSet *)signalReceivers {
-	if (!_signalReceivers) {
-		_signalReceivers = [[NSMutableSet alloc] init];
+	if ([_signalReceiver conformsToProtocol:@protocol(NSCoding)]) {
+		[coder encodeObject:_signalReceiver forKey:@"signalReceiver"];
 	}
-	return _signalReceivers;
 }
 
 - (void)receiveSignal:(Signal *)signal {
@@ -38,9 +32,7 @@
 }
 
 - (void)sendSignal:(Signal *)signal {
-	for (id<SignalReceiver> receiver in self.signalReceivers) {
-		[receiver receiveSignal:signal];
-	}
+	[self.signalReceiver receiveSignal:signal];
 }
 
 - (void)start {

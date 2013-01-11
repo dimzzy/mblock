@@ -10,12 +10,9 @@
 #import "SignalService.h"
 #import "UDPClient.h"
 
-@class ViewController;
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property(strong, nonatomic) UIWindow *window;
-@property(strong, nonatomic) ViewController *viewController;
 @property(readonly) UINavigationController *navigationController;
 
 @property UDPClient *dataClient;

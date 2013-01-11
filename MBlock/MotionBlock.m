@@ -22,6 +22,13 @@
 	return @"Measurements of the attitude and acceleration of a device.";
 }
 
+- (id)init {
+	if ((self = [super init])) {
+		_frequency = 10.0;
+	}
+	return self;
+}
+
 - (id)initWithCoder:(NSCoder *)coder {
 	if ((self = [super initWithCoder:coder])) {
 		_frequency = [coder decodeDoubleForKey:@"frequency"];

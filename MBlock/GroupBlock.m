@@ -10,7 +10,7 @@
 
 @interface GroupSink : NSObject <SignalReceiver>
 
-@property NSSet *signalReceivers; // {:SignalReceiver}
+@property(unsafe_unretained) GroupBlock *host;
 
 @end
 
@@ -18,9 +18,7 @@
 @implementation GroupSink
 
 - (void)receiveSignal:(Signal *)signal {
-	for (id<SignalReceiver> receiver in self.signalReceivers) {
-		[receiver receiveSignal:signal];
-	}
+	[self.host.signalReceiver receiveSignal:signal];
 }
 
 @end
@@ -48,15 +46,17 @@
 		NSArray *blocks = [coder decodeObjectForKey:@"blocks"];
 		if ([blocks count] > 0) {
 			[self.mutableBlocks addObjectsFromArray:blocks];
-			for (int i = 0; i < [self.mutableBlocks count]; i++) {
-				Block *block = [self.mutableBlocks objectAtIndex:i];
-				if (i < ([self.mutableBlocks count] - 1)) {
-					Block *nextBlock = [self.mutableBlocks objectAtIndex:(i + 1)];
-					[block.signalReceivers addObject:nextBlock];
-				} else {
-					[block.signalReceivers addObject:self.groupSink];
-				}
-			}
+//			for (int i = 0; i < [self.mutableBlocks count]; i++) {
+//				Block *block = [self.mutableBlocks objectAtIndex:i];
+//				if (i < ([self.mutableBlocks count] - 1)) {
+//					Block *nextBlock = [self.mutableBlocks objectAtIndex:(i + 1)];
+//					block.signalReceiver = nextBlock;
+//				} else {
+//					block.signalReceiver = self.groupSink;
+//				}
+//			}
+			Block *lastBlock = [self.mutableBlocks lastObject];
+			lastBlock.signalReceiver = self.groupSink;
 		}
 	}
 	return self;
@@ -70,7 +70,7 @@
 - (id<SignalReceiver>)groupSink {
 	if (!_groupSink) {
 		_groupSink = [[GroupSink alloc] init];
-		_groupSink.signalReceivers = self.signalReceivers;
+		_groupSink.host = self;
 	}
 	return _groupSink;
 }
@@ -88,29 +88,55 @@
 
 - (void)addBlock:(Block *)block {
 	Block *lastBlock = [self.mutableBlocks lastObject];
-	[lastBlock.signalReceivers removeObject:self.groupSink];
-	[lastBlock.signalReceivers addObject:block];
-	[block.signalReceivers addObject:self.groupSink];
+	lastBlock.signalReceiver = block;
+	block.signalReceiver = self.groupSink;
 	[self.mutableBlocks addObject:block];
+}
+
+- (void)insertBlock:(Block *)block atIndex:(NSUInteger)index {
+	Block *prevBlock = nil;
+	if (index > 0) {
+		prevBlock = [self.mutableBlocks objectAtIndex:(index - 1)];
+		prevBlock.signalReceiver = block;
+	}
+	Block *nextBlock = nil;
+	if (index < [self.mutableBlocks count]) {
+		nextBlock = [self.mutableBlocks objectAtIndex:index];
+		block.signalReceiver = nextBlock;
+	} else {
+		block.signalReceiver = self.groupSink;
+	}
+	[self.mutableBlocks insertObject:block atIndex:index];
 }
 
 - (void)removeBlockAtIndex:(NSUInteger)index {
 	Block *block = [self.mutableBlocks objectAtIndex:index];
+	block.signalReceiver = nil;
 	Block *prevBlock = nil;
 	if (index > 0) {
 		prevBlock = [self.mutableBlocks objectAtIndex:(index - 1)];
-		[prevBlock.signalReceivers removeObject:block];
 	}
 	Block *nextBlock = nil;
 	if (index < [self.mutableBlocks count] - 1) {
 		nextBlock = [self.mutableBlocks objectAtIndex:(index + 1)];
-		[block.signalReceivers removeObject:nextBlock];
-		[prevBlock.signalReceivers addObject:nextBlock];
+		prevBlock.signalReceiver = nextBlock;
 	} else {
-		[block.signalReceivers removeObject:self.groupSink];
-		[prevBlock.signalReceivers addObject:self.groupSink];
+		prevBlock.signalReceiver = self.groupSink;
 	}
 	[self.mutableBlocks removeObjectAtIndex:index];
+}
+
+- (void)moveBlockAtIndex:(NSUInteger)index toIndex:(NSUInteger)toIndex {
+	if (index == toIndex) {
+		return;
+	}
+	Block *block = [self.mutableBlocks objectAtIndex:index];
+	[self removeBlockAtIndex:index];
+	if (toIndex < index) {
+		[self insertBlock:block atIndex:toIndex];
+	} else {
+		[self insertBlock:block atIndex:(toIndex - 1)];
+	}
 }
 
 - (void)sendSignal:(Signal *)signal {
