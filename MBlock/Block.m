@@ -50,11 +50,17 @@
 	}
 }
 
-- (void)observeChangesToProperty:(NSString *)propertyName {
+- (void)addObserverForProperty:(NSString *)propertyName {
 	[self addObserver:self
 		   forKeyPath:propertyName
 			  options:0
 			  context:(__bridge void *)[self blockObservationContext]];
+}
+
+- (void)removeObserverForProperty:(NSString *)propertyName {
+	[self removeObserver:self
+			  forKeyPath:propertyName
+				 context:(__bridge void *)[self blockObservationContext]];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -63,7 +69,6 @@
 					   context:(void *)context
 {
 	if (object == self && context == (__bridge void *)[self blockObservationContext]) {
-		NSLog(@"prop");
 		[self blockDidChange];
 	}
 }

@@ -17,6 +17,7 @@
 #import "LocationBlock.h"
 #import "ProximityBlock.h"
 #import "TouchInputBlock.h"
+#import "SineBlock.h"
 #import "BlockOptionsViewController.h"
 
 @interface GroupBlockViewController ()
@@ -55,6 +56,7 @@
 		[[MotionBlock alloc] init],
 		[[LocationBlock alloc] init],
 		[[ProximityBlock alloc] init],
+		[[SineBlock alloc] init],
 		[[TouchInputBlock alloc] init]
 		];
 	}
@@ -69,7 +71,8 @@
 		case 3: return [[MotionBlock alloc] init];
 		case 4: return [[LocationBlock alloc] init];
 		case 5: return [[ProximityBlock alloc] init];
-		case 6: return [[TouchInputBlock alloc] init];
+		case 6: return [[SineBlock alloc] init];
+		case 7: return [[TouchInputBlock alloc] init];
 	}
 	return nil;
 }

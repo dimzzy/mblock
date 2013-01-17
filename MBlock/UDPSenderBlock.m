@@ -23,12 +23,17 @@ static const int kPacketMinWidth = 6;
 	return @"Sends signal via UDP socket.";
 }
 
+- (void)dealloc {
+	[self removeObserver:self forKeyPath:@"IPAddress"];
+	[self removeObserver:self forKeyPath:@"port"];
+}
+
 - (id)init {
 	if ((self = [super init])) {
 		_IPAddress = @"127.0.0.1";
 		_port = 25000;
-		[self observeChangesToProperty:@"IPAddress"];
-		[self observeChangesToProperty:@"port"];
+		[self addObserverForProperty:@"IPAddress"];
+		[self addObserverForProperty:@"port"];
 	}
 	return self;
 }
@@ -37,8 +42,8 @@ static const int kPacketMinWidth = 6;
 	if ((self = [super initWithCoder:coder])) {
 		_IPAddress = [coder decodeObjectForKey:@"ip_address"];
 		_port = [coder decodeIntForKey:@"port"];
-		[self observeChangesToProperty:@"IPAddress"];
-		[self observeChangesToProperty:@"port"];
+		[self addObserverForProperty:@"IPAddress"];
+		[self addObserverForProperty:@"port"];
 	}
 	return self;
 }

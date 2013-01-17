@@ -12,6 +12,7 @@
 @private
 	NSTimer *_sendTimer;
 	Signal *_signal;
+	NSUInteger _samplesCount;
 }
 
 - (NSString *)info {
@@ -26,10 +27,17 @@
 	return 100.0;
 }
 
+- (void)dealloc {
+	[self removeObserverForProperty:@"frequency"];
+	[self removeObserverForProperty:@"average"];
+}
+
 - (id)init {
 	if ((self = [super init])) {
 		_frequency = 10.0;
-		[self observeChangesToProperty:@"frequency"];
+		_average = NO;
+		[self addObserverForProperty:@"frequency"];
+		[self addObserverForProperty:@"average"];
 	}
 	return self;
 }
@@ -37,13 +45,16 @@
 - (id)initWithCoder:(NSCoder *)coder {
 	if ((self = [super initWithCoder:coder])) {
 		_frequency = [coder decodeDoubleForKey:@"frequency"];
-		[self observeChangesToProperty:@"frequency"];
+		_average = [coder decodeBoolForKey:@"average"];
+		[self addObserverForProperty:@"frequency"];
+		[self addObserverForProperty:@"average"];
 	}
 	return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
 	[coder encodeDouble:_frequency forKey:@"frequency"];
+	[coder encodeBool:_average forKey:@"average"];
 	[super encodeWithCoder:coder];
 }
 
@@ -75,13 +86,29 @@
 }
 
 - (void)receiveSignal:(Signal *)signal {
-	_signal = signal;
+	if (self.average) {
+		if (_samplesCount == 0 || !_signal || _signal.type != signal.type || _signal.width != signal.width) {
+			_signal = signal;
+		} else {
+			const double ourWeight = (double)_samplesCount / (double)(_samplesCount + 1);
+			const double newWeight = 1.0 / (double)(_samplesCount + 1);
+			NSMutableArray *values = [NSMutableArray arrayWithCapacity:_signal.width];
+			for (int i = 0; i < _signal.width; i++) {
+				const double value = [_signal valueAtIndex:i] * ourWeight + [signal valueAtIndex:i] * newWeight;
+				[values addObject:[NSNumber numberWithDouble:value]];
+			}
+			_signal = [[Signal alloc] initWithType:signal.type values:values labels:signal.labels];
+		}
+	} else {
+		_signal = signal;
+	}
 }
 
 - (void)sendTimedSignal:(NSTimer *)timer {
 	if (_signal) {
 		[self sendSignal:_signal];
 	}
+	_samplesCount = 0;
 }
 
 @end

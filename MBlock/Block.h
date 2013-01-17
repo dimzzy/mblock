@@ -43,6 +43,7 @@
 
 - (void)sendSignal:(Signal *)signal;
 - (void)blockDidChange;
-- (void)observeChangesToProperty:(NSString *)propertyName;
+- (void)addObserverForProperty:(NSString *)propertyName;
+- (void)removeObserverForProperty:(NSString *)propertyName;
 
 @end

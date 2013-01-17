@@ -30,10 +30,14 @@
 	return 100.0;
 }
 
+- (void)dealloc {
+	[self removeObserverForProperty:@"frequency"];
+}
+
 - (id)init {
 	if ((self = [super init])) {
 		_frequency = 10.0;
-		[self observeChangesToProperty:@"frequency"];
+		[self addObserverForProperty:@"frequency"];
 	}
 	return self;
 }
@@ -41,7 +45,7 @@
 - (id)initWithCoder:(NSCoder *)coder {
 	if ((self = [super initWithCoder:coder])) {
 		_frequency = [coder decodeDoubleForKey:@"frequency"];
-		[self observeChangesToProperty:@"frequency"];
+		[self addObserverForProperty:@"frequency"];
 	}
 	return self;
 }

@@ -10,6 +10,7 @@
 #import "UITableView+BALoading.h"
 #import "MotionBlock.h"
 #import "SequencerBlock.h"
+#import "SineBlock.h"
 #import "UDPSenderBlock.h"
 #import "FrequencyOptionCell.h"
 #import "SocketOptionCell.h"
@@ -28,6 +29,8 @@
 	if ([self.block isKindOfClass:[MotionBlock class]]) {
 		return 1;
 	} else if ([self.block isKindOfClass:[SequencerBlock class]]) {
+		return 1;
+	} else if ([self.block isKindOfClass:[SineBlock class]]) {
 		return 1;
 	} else if ([self.block isKindOfClass:[UDPSenderBlock class]]) {
 		return 1;
@@ -72,6 +75,10 @@
 		if (indexPath.row == 0) {
 			return [self makeFrequencyCell:tableView];
 		}
+	} else if ([self.block isKindOfClass:[SineBlock class]]) {
+		if (indexPath.row == 0) {
+			return [self makeFrequencyCell:tableView];
+		}
 	} else if ([self.block isKindOfClass:[UDPSenderBlock class]]) {
 		if (indexPath.row == 0) {
 			return [self makeSocketCell:tableView];
@@ -86,6 +93,10 @@
 			return kFrequencyOptionCellHeight;
 		}
 	} else if ([self.block isKindOfClass:[SequencerBlock class]]) {
+		if (indexPath.row == 0) {
+			return kFrequencyOptionCellHeight;
+		}
+	} else if ([self.block isKindOfClass:[SineBlock class]]) {
 		if (indexPath.row == 0) {
 			return kFrequencyOptionCellHeight;
 		}

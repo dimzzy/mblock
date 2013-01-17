@@ -28,3 +28,4 @@ TODO
 - Add block to rearrange signal data
 - Add scope block
 - Touch input events should keep their relative positions
+- Add block which calculates constant error

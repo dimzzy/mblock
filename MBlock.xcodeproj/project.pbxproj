@@ -17,6 +17,7 @@
 		1F59A579169B4F9D00F744C3 /* UIView+BACookie.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A578169B4F9D00F744C3 /* UIView+BACookie.m */; };
 		1F5A9A8616A6E16900E1CB0C /* mdump.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A9A7016A6E0C400E1CB0C /* mdump.c */; };
 		1F67136E16A44FD300408994 /* Workspace.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F67136D16A44FD300408994 /* Workspace.m */; };
+		1F6F330616A8ABFD00C1AE84 /* SineBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F330516A8ABFD00C1AE84 /* SineBlock.m */; };
 		1F80CD2E16A0BED400211FF8 /* BlockOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80CD2D16A0BED400211FF8 /* BlockOptionsViewController.m */; };
 		1F80CD3116A0CD0A00211FF8 /* SocketOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80CD3016A0CD0A00211FF8 /* SocketOptionCell.m */; };
 		1F80CD3316A0CD7300211FF8 /* SocketOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F80CD3216A0CD7300211FF8 /* SocketOptionCell.xib */; };
@@ -84,6 +85,8 @@
 		1F5A9A7B16A6E12700E1CB0C /* mdump */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mdump; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F67136C16A44FD300408994 /* Workspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workspace.h; sourceTree = "<group>"; };
 		1F67136D16A44FD300408994 /* Workspace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workspace.m; sourceTree = "<group>"; };
+		1F6F330416A8ABFD00C1AE84 /* SineBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SineBlock.h; sourceTree = "<group>"; };
+		1F6F330516A8ABFD00C1AE84 /* SineBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SineBlock.m; sourceTree = "<group>"; };
 		1F80CD2C16A0BED400211FF8 /* BlockOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockOptionsViewController.h; sourceTree = "<group>"; };
 		1F80CD2D16A0BED400211FF8 /* BlockOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockOptionsViewController.m; sourceTree = "<group>"; };
 		1F80CD2F16A0CD0A00211FF8 /* SocketOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketOptionCell.h; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				1FC76E4B169E2506003BDDF8 /* LocationBlock.m */,
 				1FC76E51169E2CB2003BDDF8 /* ProximityBlock.h */,
 				1FC76E52169E2CB2003BDDF8 /* ProximityBlock.m */,
+				1F6F330416A8ABFD00C1AE84 /* SineBlock.h */,
+				1F6F330516A8ABFD00C1AE84 /* SineBlock.m */,
 				1FC76E54169E2F57003BDDF8 /* TouchInputBlock.h */,
 				1FC76E55169E2F57003BDDF8 /* TouchInputBlock.m */,
 				1F67136C16A44FD300408994 /* Workspace.h */,
@@ -426,6 +431,7 @@
 				1F80CD2E16A0BED400211FF8 /* BlockOptionsViewController.m in Sources */,
 				1F80CD3116A0CD0A00211FF8 /* SocketOptionCell.m in Sources */,
 				1F67136E16A44FD300408994 /* Workspace.m in Sources */,
+				1F6F330616A8ABFD00C1AE84 /* SineBlock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

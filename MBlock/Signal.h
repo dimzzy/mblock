@@ -12,6 +12,7 @@ static const int32_t kMotionSignalType = 0x10;
 static const int32_t kLocationSignalType = 0x20;
 static const int32_t kProximitySignalType = 0x30;
 static const int32_t kTouchInputSignalType = 0x40;
+static const int32_t kSineSignalType = 0x50;
 
 @interface Signal : NSObject
 
