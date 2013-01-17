@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SignalService.h"
 #import "UDPClient.h"
+#import "Workspace.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -17,5 +18,6 @@
 
 @property UDPClient *dataClient;
 @property(readonly) NSArray *signalServices;
+@property(readonly) Workspace *workspace;
 
 @end

@@ -46,15 +46,6 @@
 		NSArray *blocks = [coder decodeObjectForKey:@"blocks"];
 		if ([blocks count] > 0) {
 			[self.mutableBlocks addObjectsFromArray:blocks];
-//			for (int i = 0; i < [self.mutableBlocks count]; i++) {
-//				Block *block = [self.mutableBlocks objectAtIndex:i];
-//				if (i < ([self.mutableBlocks count] - 1)) {
-//					Block *nextBlock = [self.mutableBlocks objectAtIndex:(i + 1)];
-//					block.signalReceiver = nextBlock;
-//				} else {
-//					block.signalReceiver = self.groupSink;
-//				}
-//			}
 			Block *lastBlock = [self.mutableBlocks lastObject];
 			lastBlock.signalReceiver = self.groupSink;
 		}
@@ -91,6 +82,8 @@
 	lastBlock.signalReceiver = block;
 	block.signalReceiver = self.groupSink;
 	[self.mutableBlocks addObject:block];
+	block.workspace = self.workspace;
+	[self blockDidChange];
 }
 
 - (void)insertBlock:(Block *)block atIndex:(NSUInteger)index {
@@ -107,10 +100,13 @@
 		block.signalReceiver = self.groupSink;
 	}
 	[self.mutableBlocks insertObject:block atIndex:index];
+	block.workspace = self.workspace;
+	[self blockDidChange];
 }
 
 - (void)removeBlockAtIndex:(NSUInteger)index {
 	Block *block = [self.mutableBlocks objectAtIndex:index];
+	block.workspace = nil;
 	block.signalReceiver = nil;
 	Block *prevBlock = nil;
 	if (index > 0) {
@@ -124,6 +120,7 @@
 		prevBlock.signalReceiver = self.groupSink;
 	}
 	[self.mutableBlocks removeObjectAtIndex:index];
+	[self blockDidChange];
 }
 
 - (void)moveBlockAtIndex:(NSUInteger)index toIndex:(NSUInteger)toIndex {
@@ -136,6 +133,13 @@
 		[self insertBlock:block atIndex:toIndex];
 	} else {
 		[self insertBlock:block atIndex:(toIndex - 1)];
+	}
+}
+
+- (void)setWorkspace:(Workspace *)workspace {
+	[super setWorkspace:workspace];
+	for (Block *block in self.blocks) {
+		block.workspace = workspace;
 	}
 }
 

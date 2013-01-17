@@ -55,19 +55,23 @@
 	touchService.frequency = [MUserPreferences instance].touchFrequency;
 	_signalServices = [NSArray arrayWithObjects:motionService, locationService, proximityService, touchService, nil];
 
-	GroupBlock *groupBlock = [[GroupBlock alloc] init];
-	MotionBlock *motionBlock = [[MotionBlock alloc] init];
-	LoggingBlock *loggingBlock = [[LoggingBlock alloc] init];
-	[groupBlock addBlock:motionBlock];
-	[groupBlock addBlock:loggingBlock];
-	
+	_workspace = [Workspace readGlobal];
+	if (!_workspace) {
+		_workspace = [[Workspace alloc] init];
+		GroupBlock *groupBlock = _workspace.mainBlock;
+		MotionBlock *motionBlock = [[MotionBlock alloc] init];
+		LoggingBlock *loggingBlock = [[LoggingBlock alloc] init];
+		[groupBlock addBlock:motionBlock];
+		[groupBlock addBlock:loggingBlock];
+	}
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
 //	ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
 //	viewController.title = @"MBlock";
 
 	GroupBlockViewController *viewController = [[GroupBlockViewController alloc] initWithStyle:UITableViewStyleGrouped];
-	viewController.groupBlock = groupBlock;
+	viewController.groupBlock = _workspace.mainBlock;
 
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
 	self.window.rootViewController = navController;

@@ -22,6 +22,8 @@
 		1F59A56B169B225C00F744C3 /* TouchSignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A56A169B225C00F744C3 /* TouchSignalService.m */; };
 		1F59A576169B4CDA00F744C3 /* TouchInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A575169B4CDA00F744C3 /* TouchInputViewController.m */; };
 		1F59A579169B4F9D00F744C3 /* UIView+BACookie.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A578169B4F9D00F744C3 /* UIView+BACookie.m */; };
+		1F5A9A8616A6E16900E1CB0C /* mdump.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A9A7016A6E0C400E1CB0C /* mdump.c */; };
+		1F67136E16A44FD300408994 /* Workspace.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F67136D16A44FD300408994 /* Workspace.m */; };
 		1F80CD2E16A0BED400211FF8 /* BlockOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80CD2D16A0BED400211FF8 /* BlockOptionsViewController.m */; };
 		1F80CD3116A0CD0A00211FF8 /* SocketOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80CD3016A0CD0A00211FF8 /* SocketOptionCell.m */; };
 		1F80CD3316A0CD7300211FF8 /* SocketOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F80CD3216A0CD7300211FF8 /* SocketOptionCell.xib */; };
@@ -64,6 +66,18 @@
 		1FFDFF6516977C400049B8DF /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFF6416977C3F0049B8DF /* OptionsViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1F5A9A7916A6E12700E1CB0C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1F153A47167FEA2D0046C7EC /* SignalServiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignalServiceCell.xib; sourceTree = "<group>"; };
 		1F153A4A167FEA520046C7EC /* SignalServiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalServiceCell.h; sourceTree = "<group>"; };
@@ -93,6 +107,12 @@
 		1F59A575169B4CDA00F744C3 /* TouchInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchInputViewController.m; sourceTree = "<group>"; };
 		1F59A577169B4F9D00F744C3 /* UIView+BACookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BACookie.h"; sourceTree = "<group>"; };
 		1F59A578169B4F9D00F744C3 /* UIView+BACookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BACookie.m"; sourceTree = "<group>"; };
+		1F5A9A7016A6E0C400E1CB0C /* mdump.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mdump.c; sourceTree = "<group>"; };
+		1F5A9A7216A6E0C400E1CB0C /* udpc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = udpc.c; sourceTree = "<group>"; };
+		1F5A9A7416A6E0C400E1CB0C /* udps.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = udps.c; sourceTree = "<group>"; };
+		1F5A9A7B16A6E12700E1CB0C /* mdump */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mdump; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F67136C16A44FD300408994 /* Workspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workspace.h; sourceTree = "<group>"; };
+		1F67136D16A44FD300408994 /* Workspace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workspace.m; sourceTree = "<group>"; };
 		1F80CD2C16A0BED400211FF8 /* BlockOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockOptionsViewController.h; sourceTree = "<group>"; };
 		1F80CD2D16A0BED400211FF8 /* BlockOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockOptionsViewController.m; sourceTree = "<group>"; };
 		1F80CD2F16A0CD0A00211FF8 /* SocketOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketOptionCell.h; sourceTree = "<group>"; };
@@ -163,6 +183,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1F5A9A7816A6E12700E1CB0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FF1115C167BAAD100972344 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -178,6 +205,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F5A9A6E16A6E0C400E1CB0C /* comm */ = {
+			isa = PBXGroup;
+			children = (
+				1F5A9A7016A6E0C400E1CB0C /* mdump.c */,
+				1F5A9A7216A6E0C400E1CB0C /* udpc.c */,
+				1F5A9A7416A6E0C400E1CB0C /* udps.c */,
+			);
+			path = comm;
+			sourceTree = "<group>";
+		};
 		1FC76E50169E2C6E003BDDF8 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +243,8 @@
 				1FC76E52169E2CB2003BDDF8 /* ProximityBlock.m */,
 				1FC76E54169E2F57003BDDF8 /* TouchInputBlock.h */,
 				1FC76E55169E2F57003BDDF8 /* TouchInputBlock.m */,
+				1F67136C16A44FD300408994 /* Workspace.h */,
+				1F67136D16A44FD300408994 /* Workspace.m */,
 			);
 			name = Blocks;
 			sourceTree = "<group>";
@@ -254,6 +293,7 @@
 		1FF11154167BAAD100972344 = {
 			isa = PBXGroup;
 			children = (
+				1F5A9A6E16A6E0C400E1CB0C /* comm */,
 				1FF11169167BAAD100972344 /* MBlock */,
 				1FF11162167BAAD100972344 /* Frameworks */,
 				1FF11160167BAAD100972344 /* Products */,
@@ -264,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				1FF1115F167BAAD100972344 /* MBlock.app */,
+				1F5A9A7B16A6E12700E1CB0C /* mdump */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,6 +395,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1F5A9A7A16A6E12700E1CB0C /* mdump */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F5A9A8216A6E12700E1CB0C /* Build configuration list for PBXNativeTarget "mdump" */;
+			buildPhases = (
+				1F5A9A7716A6E12700E1CB0C /* Sources */,
+				1F5A9A7816A6E12700E1CB0C /* Frameworks */,
+				1F5A9A7916A6E12700E1CB0C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mdump;
+			productName = mdump;
+			productReference = 1F5A9A7B16A6E12700E1CB0C /* mdump */;
+			productType = "com.apple.product-type.tool";
+		};
 		1FF1115E167BAAD100972344 /* MBlock */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FF11183167BAAD100972344 /* Build configuration list for PBXNativeTarget "MBlock" */;
@@ -393,6 +451,7 @@
 			projectRoot = "";
 			targets = (
 				1FF1115E167BAAD100972344 /* MBlock */,
+				1F5A9A7A16A6E12700E1CB0C /* mdump */,
 			);
 		};
 /* End PBXProject section */
@@ -422,6 +481,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1F5A9A7716A6E12700E1CB0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F5A9A8616A6E16900E1CB0C /* mdump.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FF1115B167BAAD100972344 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,6 +529,7 @@
 				1FC76E83169F6A0E003BDDF8 /* BlockCell.m in Sources */,
 				1F80CD2E16A0BED400211FF8 /* BlockOptionsViewController.m in Sources */,
 				1F80CD3116A0CD0A00211FF8 /* SocketOptionCell.m in Sources */,
+				1F67136E16A44FD300408994 /* Workspace.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +555,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1F5A9A8316A6E12700E1CB0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1F5A9A8416A6E12700E1CB0C /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = AdHoc;
+		};
+		1F5A9A8516A6E12700E1CB0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		1F74ED1316823B1000AB13E8 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -600,6 +706,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1F5A9A8216A6E12700E1CB0C /* Build configuration list for PBXNativeTarget "mdump" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F5A9A8316A6E12700E1CB0C /* Debug */,
+				1F5A9A8416A6E12700E1CB0C /* AdHoc */,
+				1F5A9A8516A6E12700E1CB0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		1FF11159167BAAD100972344 /* Build configuration list for PBXProject "MBlock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

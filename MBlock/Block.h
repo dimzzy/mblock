@@ -24,8 +24,11 @@
 @end
 
 
+@class Workspace;
+
 @interface Block : NSObject <SignalReceiver, NSCoding>
 
+@property(weak) Workspace *workspace;
 @property id<SignalReceiver> signalReceiver;
 @property(readonly) BOOL unique; // only a single instance is allowed
 @property(readonly) NSString *info;
@@ -39,5 +42,7 @@
 // private
 
 - (void)sendSignal:(Signal *)signal;
+- (void)blockDidChange;
+- (void)observeChangesToProperty:(NSString *)propertyName;
 
 @end

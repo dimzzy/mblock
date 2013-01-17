@@ -17,3 +17,14 @@ Proximity: payload contains one integer which is 1 if device is next to face and
 it changes.
 
 Byte order for iOS devices is little-endian.
+
+
+
+TODO
+
+- Allow to add nested group blocks
+- Add integrator block
+- Allow sequencer to calculate average value
+- Add block to rearrange signal data
+- Add scope block
+- Touch input events should keep their relative positions

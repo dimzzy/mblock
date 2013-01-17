@@ -7,6 +7,7 @@
 //
 
 #import "Block.h"
+#import "Workspace.h"
 
 @implementation Block
 
@@ -22,7 +23,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
-	if ([_signalReceiver conformsToProtocol:@protocol(NSCoding)]) {
+	if ([self.signalReceiver conformsToProtocol:@protocol(NSCoding)]) {
 		[coder encodeObject:_signalReceiver forKey:@"signalReceiver"];
 	}
 }
@@ -41,6 +42,38 @@
 
 - (void)stop {
 	_running = NO;
+}
+
+- (void)blockDidChange {
+	if (self.workspace) {
+		[self.workspace blockDidChange:self];
+	}
+}
+
+- (void)observeChangesToProperty:(NSString *)propertyName {
+	[self addObserver:self
+		   forKeyPath:propertyName
+			  options:0
+			  context:(__bridge void *)[self blockObservationContext]];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+					  ofObject:(id)object
+						change:(NSDictionary *)change
+					   context:(void *)context
+{
+	if (object == self && context == (__bridge void *)[self blockObservationContext]) {
+		NSLog(@"prop");
+		[self blockDidChange];
+	}
+}
+
+- (id)blockObservationContext {
+	static id context = nil;
+	if (!context) {
+		context = [[NSObject alloc] init];
+	}
+	return context;
 }
 
 @end
