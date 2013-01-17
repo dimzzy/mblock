@@ -7,54 +7,18 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
-#import "UDPClient.h"
-#import "MotionSignalService.h"
-#import "LocationSignalService.h"
-#import "ProximitySignalService.h"
-#import "TouchSignalService.h"
-#import "MUserPreferences.h"
 #import "GroupBlock.h"
 #import "MotionBlock.h"
 #import "LoggingBlock.h"
 #import "GroupBlockViewController.h"
 
-@implementation AppDelegate {
-@private
-	UDPClient *_dataClient;
-}
-
-- (UDPClient *)dataClient {
-	return _dataClient;
-}
-
-- (void)setDataClient:(UDPClient *)dataClient {
-	_dataClient = dataClient;
-	[UIApplication sharedApplication].idleTimerDisabled = dataClient.connected;
-	for (SignalService *service in self.signalServices) {
-		[service stop];
-		service.dataClient = dataClient;
-	}
-}
+@implementation AppDelegate
 
 - (UINavigationController *)navigationController {
 	return (UINavigationController *)self.window.rootViewController;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	MotionSignalService *motionService = [[MotionSignalService alloc] init];
-	motionService.frequency = [MUserPreferences instance].motionFrequency;
-	LocationSignalService *locationService = [[LocationSignalService alloc] init];
-	locationService.continuous = [MUserPreferences instance].locationContinuous;
-	locationService.frequency = [MUserPreferences instance].locationFrequency;
-	ProximitySignalService *proximityService = [[ProximitySignalService alloc] init];
-	proximityService.continuous = [MUserPreferences instance].proximityContinuous;
-	proximityService.frequency = [MUserPreferences instance].proximityFrequency;
-	TouchSignalService *touchService = [[TouchSignalService alloc] init];
-	touchService.continuous = [MUserPreferences instance].touchContinuous;
-	touchService.frequency = [MUserPreferences instance].touchFrequency;
-	_signalServices = [NSArray arrayWithObjects:motionService, locationService, proximityService, touchService, nil];
-
 	_workspace = [Workspace readGlobal];
 	if (!_workspace) {
 		_workspace = [[Workspace alloc] init];
@@ -64,15 +28,9 @@
 		[groupBlock addBlock:motionBlock];
 		[groupBlock addBlock:loggingBlock];
 	}
-
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-//	ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-//	viewController.title = @"MBlock";
-
 	GroupBlockViewController *viewController = [[GroupBlockViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	viewController.groupBlock = _workspace.mainBlock;
-
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
 	self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];

@@ -7,19 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F153A48167FEA2D0046C7EC /* SignalServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F153A47167FEA2D0046C7EC /* SignalServiceCell.xib */; };
-		1F153A4C167FEA520046C7EC /* SignalServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F153A4B167FEA520046C7EC /* SignalServiceCell.m */; };
 		1F153A4F167FEF480046C7EC /* BAKeyboardTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F153A4E167FEF480046C7EC /* BAKeyboardTracker.m */; };
-		1F153A56167FFD7F0046C7EC /* LocationSignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F153A55167FFD7F0046C7EC /* LocationSignalService.m */; };
-		1F2CBA051684B6BB008C43A5 /* ProximitySignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CBA041684B6BB008C43A5 /* ProximitySignalService.m */; };
 		1F52130C167EBAB700E93D65 /* UDPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F52130B167EBAB700E93D65 /* UDPServer.m */; };
 		1F521310167EBAFB00E93D65 /* UDPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F52130F167EBAFB00E93D65 /* UDPClient.m */; };
-		1F521314167ED88100E93D65 /* MotionSignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F521313167ED88100E93D65 /* MotionSignalService.m */; };
-		1F521318167ED9D100E93D65 /* SignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F521317167ED9D100E93D65 /* SignalService.m */; };
 		1F59A5631697924700F744C3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F59A5611697924700F744C3 /* Icon.png */; };
 		1F59A5641697924700F744C3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F59A5621697924700F744C3 /* Icon@2x.png */; };
 		1F59A5681697941000F744C3 /* TouchInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A5671697941000F744C3 /* TouchInputView.m */; };
-		1F59A56B169B225C00F744C3 /* TouchSignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A56A169B225C00F744C3 /* TouchSignalService.m */; };
 		1F59A576169B4CDA00F744C3 /* TouchInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A575169B4CDA00F744C3 /* TouchInputViewController.m */; };
 		1F59A579169B4F9D00F744C3 /* UIView+BACookie.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A578169B4F9D00F744C3 /* UIView+BACookie.m */; };
 		1F5A9A8616A6E16900E1CB0C /* mdump.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A9A7016A6E0C400E1CB0C /* mdump.c */; };
@@ -28,8 +21,6 @@
 		1F80CD3116A0CD0A00211FF8 /* SocketOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80CD3016A0CD0A00211FF8 /* SocketOptionCell.m */; };
 		1F80CD3316A0CD7300211FF8 /* SocketOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F80CD3216A0CD7300211FF8 /* SocketOptionCell.xib */; };
 		1F83F1DB168002D80014CFDD /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1F83F1DA168002D80014CFDD /* README.txt */; };
-		1F96CD60167EEA1A00C63FEE /* UDPClientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96CD5F167EEA1A00C63FEE /* UDPClientCell.m */; };
-		1F96CD63167EEA8300C63FEE /* UDPClientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F96CD62167EEA8300C63FEE /* UDPClientCell.xib */; };
 		1F96CD66167EED1B00C63FEE /* UITableView+BALoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96CD65167EED1B00C63FEE /* UITableView+BALoading.m */; };
 		1FC76E3C169DFFDE003BDDF8 /* Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E3B169DFFDE003BDDF8 /* Signal.m */; };
 		1FC76E40169E07B3003BDDF8 /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E3F169E07B3003BDDF8 /* Block.m */; };
@@ -44,7 +35,6 @@
 		1FC76E80169F6963003BDDF8 /* GroupBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E7F169F6963003BDDF8 /* GroupBlockViewController.m */; };
 		1FC76E83169F6A0E003BDDF8 /* BlockCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E82169F6A0E003BDDF8 /* BlockCell.m */; };
 		1FC76E85169F6A21003BDDF8 /* BlockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FC76E84169F6A21003BDDF8 /* BlockCell.xib */; };
-		1FCFB9C9168280750018CAD5 /* MUserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCFB9C8168280750018CAD5 /* MUserPreferences.m */; };
 		1FF11164167BAAD100972344 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF11163167BAAD100972344 /* UIKit.framework */; };
 		1FF11166167BAAD100972344 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF11165167BAAD100972344 /* Foundation.framework */; };
 		1FF11168167BAAD100972344 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF11167167BAAD100972344 /* CoreGraphics.framework */; };
@@ -54,16 +44,10 @@
 		1FF11176167BAAD100972344 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF11175167BAAD100972344 /* Default.png */; };
 		1FF11178167BAAD100972344 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF11177167BAAD100972344 /* Default@2x.png */; };
 		1FF1117A167BAAD100972344 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF11179167BAAD100972344 /* Default-568h@2x.png */; };
-		1FF1117D167BAAD100972344 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF1117C167BAAD100972344 /* ViewController.m */; };
-		1FF11180167BAAD100972344 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FF1117E167BAAD100972344 /* ViewController.xib */; };
 		1FF1118B167BAD1E00972344 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF1118A167BAD1E00972344 /* CoreLocation.framework */; };
 		1FF1118D167BAD2600972344 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF1118C167BAD2600972344 /* CoreMotion.framework */; };
-		1FFDFF5016976B990049B8DF /* EventfulSignalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFF4F16976B990049B8DF /* EventfulSignalService.m */; };
-		1FFDFF53169771580049B8DF /* ContinuousOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFF52169771580049B8DF /* ContinuousOptionCell.m */; };
 		1FFDFF56169771800049B8DF /* FrequencyOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFF551697717F0049B8DF /* FrequencyOptionCell.m */; };
-		1FFDFF58169771A40049B8DF /* ContinuousOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FFDFF57169771A40049B8DF /* ContinuousOptionCell.xib */; };
 		1FFDFF5A169772AF0049B8DF /* FrequencyOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FFDFF59169772AF0049B8DF /* FrequencyOptionCell.xib */; };
-		1FFDFF6516977C400049B8DF /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFF6416977C3F0049B8DF /* OptionsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,30 +63,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1F153A47167FEA2D0046C7EC /* SignalServiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignalServiceCell.xib; sourceTree = "<group>"; };
-		1F153A4A167FEA520046C7EC /* SignalServiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalServiceCell.h; sourceTree = "<group>"; };
-		1F153A4B167FEA520046C7EC /* SignalServiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalServiceCell.m; sourceTree = "<group>"; };
 		1F153A4D167FEF480046C7EC /* BAKeyboardTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAKeyboardTracker.h; sourceTree = "<group>"; };
 		1F153A4E167FEF480046C7EC /* BAKeyboardTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAKeyboardTracker.m; sourceTree = "<group>"; };
-		1F153A54167FFD7F0046C7EC /* LocationSignalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSignalService.h; sourceTree = "<group>"; };
-		1F153A55167FFD7F0046C7EC /* LocationSignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSignalService.m; sourceTree = "<group>"; };
-		1F2CBA031684B6BB008C43A5 /* ProximitySignalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProximitySignalService.h; sourceTree = "<group>"; };
-		1F2CBA041684B6BB008C43A5 /* ProximitySignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProximitySignalService.m; sourceTree = "<group>"; };
 		1F52130A167EBAB700E93D65 /* UDPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPServer.h; sourceTree = "<group>"; };
 		1F52130B167EBAB700E93D65 /* UDPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPServer.m; sourceTree = "<group>"; };
 		1F52130E167EBAFB00E93D65 /* UDPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPClient.h; sourceTree = "<group>"; };
 		1F52130F167EBAFB00E93D65 /* UDPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPClient.m; sourceTree = "<group>"; };
 		1F521311167ED6F300E93D65 /* DataClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataClient.h; sourceTree = "<group>"; };
-		1F521312167ED88100E93D65 /* MotionSignalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionSignalService.h; sourceTree = "<group>"; };
-		1F521313167ED88100E93D65 /* MotionSignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionSignalService.m; sourceTree = "<group>"; };
-		1F521316167ED9D100E93D65 /* SignalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalService.h; sourceTree = "<group>"; };
-		1F521317167ED9D100E93D65 /* SignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalService.m; sourceTree = "<group>"; };
 		1F59A5611697924700F744C3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		1F59A5621697924700F744C3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		1F59A5661697941000F744C3 /* TouchInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchInputView.h; sourceTree = "<group>"; };
 		1F59A5671697941000F744C3 /* TouchInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchInputView.m; sourceTree = "<group>"; };
-		1F59A569169B225C00F744C3 /* TouchSignalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchSignalService.h; sourceTree = "<group>"; };
-		1F59A56A169B225C00F744C3 /* TouchSignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchSignalService.m; sourceTree = "<group>"; };
 		1F59A574169B4CDA00F744C3 /* TouchInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchInputViewController.h; sourceTree = "<group>"; };
 		1F59A575169B4CDA00F744C3 /* TouchInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchInputViewController.m; sourceTree = "<group>"; };
 		1F59A577169B4F9D00F744C3 /* UIView+BACookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BACookie.h"; sourceTree = "<group>"; };
@@ -119,9 +90,6 @@
 		1F80CD3016A0CD0A00211FF8 /* SocketOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketOptionCell.m; sourceTree = "<group>"; };
 		1F80CD3216A0CD7300211FF8 /* SocketOptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocketOptionCell.xib; sourceTree = "<group>"; };
 		1F83F1DA168002D80014CFDD /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = ../README.txt; sourceTree = "<group>"; };
-		1F96CD5E167EEA1A00C63FEE /* UDPClientCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPClientCell.h; sourceTree = "<group>"; };
-		1F96CD5F167EEA1A00C63FEE /* UDPClientCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPClientCell.m; sourceTree = "<group>"; };
-		1F96CD62167EEA8300C63FEE /* UDPClientCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UDPClientCell.xib; sourceTree = "<group>"; };
 		1F96CD64167EED1B00C63FEE /* UITableView+BALoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+BALoading.h"; sourceTree = "<group>"; };
 		1F96CD65167EED1B00C63FEE /* UITableView+BALoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BALoading.m"; sourceTree = "<group>"; };
 		1FC76E3A169DFFDE003BDDF8 /* Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signal.h; sourceTree = "<group>"; };
@@ -149,8 +117,6 @@
 		1FC76E81169F6A0E003BDDF8 /* BlockCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockCell.h; sourceTree = "<group>"; };
 		1FC76E82169F6A0E003BDDF8 /* BlockCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockCell.m; sourceTree = "<group>"; };
 		1FC76E84169F6A21003BDDF8 /* BlockCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlockCell.xib; sourceTree = "<group>"; };
-		1FCFB9C7168280750018CAD5 /* MUserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUserPreferences.h; sourceTree = "<group>"; };
-		1FCFB9C8168280750018CAD5 /* MUserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUserPreferences.m; sourceTree = "<group>"; };
 		1FF1115F167BAAD100972344 /* MBlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF11163167BAAD100972344 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1FF11165167BAAD100972344 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -164,22 +130,12 @@
 		1FF11175167BAAD100972344 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1FF11177167BAAD100972344 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1FF11179167BAAD100972344 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		1FF1117B167BAAD100972344 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1FF1117C167BAAD100972344 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1FF1117F167BAAD100972344 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		1FF1118A167BAD1E00972344 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1FF1118C167BAD2600972344 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		1FF1118E167BB2B800972344 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		1FFDFF4E16976B990049B8DF /* EventfulSignalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventfulSignalService.h; sourceTree = "<group>"; };
-		1FFDFF4F16976B990049B8DF /* EventfulSignalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventfulSignalService.m; sourceTree = "<group>"; };
-		1FFDFF51169771580049B8DF /* ContinuousOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinuousOptionCell.h; sourceTree = "<group>"; };
-		1FFDFF52169771580049B8DF /* ContinuousOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContinuousOptionCell.m; sourceTree = "<group>"; };
 		1FFDFF541697717F0049B8DF /* FrequencyOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrequencyOptionCell.h; sourceTree = "<group>"; };
 		1FFDFF551697717F0049B8DF /* FrequencyOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrequencyOptionCell.m; sourceTree = "<group>"; };
-		1FFDFF57169771A40049B8DF /* ContinuousOptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContinuousOptionCell.xib; sourceTree = "<group>"; };
 		1FFDFF59169772AF0049B8DF /* FrequencyOptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FrequencyOptionCell.xib; sourceTree = "<group>"; };
-		1FFDFF6316977C3F0049B8DF /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
-		1FFDFF6416977C3F0049B8DF /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,8 +228,6 @@
 		1FC76E7D169F6875003BDDF8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				1FCFB9C7168280750018CAD5 /* MUserPreferences.h */,
-				1FCFB9C8168280750018CAD5 /* MUserPreferences.m */,
 				1F59A5661697941000F744C3 /* TouchInputView.h */,
 				1F59A5671697941000F744C3 /* TouchInputView.m */,
 				1F59A574169B4CDA00F744C3 /* TouchInputViewController.h */,
@@ -328,8 +282,6 @@
 				1FC76E7D169F6875003BDDF8 /* UI */,
 				1FC76E50169E2C6E003BDDF8 /* Blocks */,
 				1FC76E7C169F6862003BDDF8 /* Blocks UI */,
-				1FFDFF4B169631CB0049B8DF /* Services */,
-				1FFDFF4D169631D40049B8DF /* Services UI */,
 				1FF1116A167BAAD100972344 /* Supporting Files */,
 			);
 			path = MBlock;
@@ -350,46 +302,6 @@
 				1FF11179167BAAD100972344 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		1FFDFF4B169631CB0049B8DF /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				1F521316167ED9D100E93D65 /* SignalService.h */,
-				1F521317167ED9D100E93D65 /* SignalService.m */,
-				1FFDFF4E16976B990049B8DF /* EventfulSignalService.h */,
-				1FFDFF4F16976B990049B8DF /* EventfulSignalService.m */,
-				1F521312167ED88100E93D65 /* MotionSignalService.h */,
-				1F521313167ED88100E93D65 /* MotionSignalService.m */,
-				1F153A54167FFD7F0046C7EC /* LocationSignalService.h */,
-				1F153A55167FFD7F0046C7EC /* LocationSignalService.m */,
-				1F2CBA031684B6BB008C43A5 /* ProximitySignalService.h */,
-				1F2CBA041684B6BB008C43A5 /* ProximitySignalService.m */,
-				1F59A569169B225C00F744C3 /* TouchSignalService.h */,
-				1F59A56A169B225C00F744C3 /* TouchSignalService.m */,
-			);
-			name = Services;
-			sourceTree = "<group>";
-		};
-		1FFDFF4D169631D40049B8DF /* Services UI */ = {
-			isa = PBXGroup;
-			children = (
-				1FF1117B167BAAD100972344 /* ViewController.h */,
-				1FF1117C167BAAD100972344 /* ViewController.m */,
-				1FF1117E167BAAD100972344 /* ViewController.xib */,
-				1F96CD5E167EEA1A00C63FEE /* UDPClientCell.h */,
-				1F96CD5F167EEA1A00C63FEE /* UDPClientCell.m */,
-				1F96CD62167EEA8300C63FEE /* UDPClientCell.xib */,
-				1F153A4A167FEA520046C7EC /* SignalServiceCell.h */,
-				1F153A4B167FEA520046C7EC /* SignalServiceCell.m */,
-				1F153A47167FEA2D0046C7EC /* SignalServiceCell.xib */,
-				1FFDFF6316977C3F0049B8DF /* OptionsViewController.h */,
-				1FFDFF6416977C3F0049B8DF /* OptionsViewController.m */,
-				1FFDFF51169771580049B8DF /* ContinuousOptionCell.h */,
-				1FFDFF52169771580049B8DF /* ContinuousOptionCell.m */,
-				1FFDFF57169771A40049B8DF /* ContinuousOptionCell.xib */,
-			);
-			name = "Services UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,11 +377,7 @@
 				1FF11176167BAAD100972344 /* Default.png in Resources */,
 				1FF11178167BAAD100972344 /* Default@2x.png in Resources */,
 				1FF1117A167BAAD100972344 /* Default-568h@2x.png in Resources */,
-				1FF11180167BAAD100972344 /* ViewController.xib in Resources */,
-				1F96CD63167EEA8300C63FEE /* UDPClientCell.xib in Resources */,
-				1F153A48167FEA2D0046C7EC /* SignalServiceCell.xib in Resources */,
 				1F83F1DB168002D80014CFDD /* README.txt in Resources */,
-				1FFDFF58169771A40049B8DF /* ContinuousOptionCell.xib in Resources */,
 				1FFDFF5A169772AF0049B8DF /* FrequencyOptionCell.xib in Resources */,
 				1F59A5631697924700F744C3 /* Icon.png in Resources */,
 				1F59A5641697924700F744C3 /* Icon@2x.png in Resources */,
@@ -495,24 +403,12 @@
 			files = (
 				1FF11170167BAAD100972344 /* main.m in Sources */,
 				1FF11174167BAAD100972344 /* AppDelegate.m in Sources */,
-				1FF1117D167BAAD100972344 /* ViewController.m in Sources */,
 				1F52130C167EBAB700E93D65 /* UDPServer.m in Sources */,
 				1F521310167EBAFB00E93D65 /* UDPClient.m in Sources */,
-				1F521314167ED88100E93D65 /* MotionSignalService.m in Sources */,
-				1F521318167ED9D100E93D65 /* SignalService.m in Sources */,
-				1F96CD60167EEA1A00C63FEE /* UDPClientCell.m in Sources */,
 				1F96CD66167EED1B00C63FEE /* UITableView+BALoading.m in Sources */,
-				1F153A4C167FEA520046C7EC /* SignalServiceCell.m in Sources */,
 				1F153A4F167FEF480046C7EC /* BAKeyboardTracker.m in Sources */,
-				1F153A56167FFD7F0046C7EC /* LocationSignalService.m in Sources */,
-				1FCFB9C9168280750018CAD5 /* MUserPreferences.m in Sources */,
-				1F2CBA051684B6BB008C43A5 /* ProximitySignalService.m in Sources */,
-				1FFDFF5016976B990049B8DF /* EventfulSignalService.m in Sources */,
-				1FFDFF53169771580049B8DF /* ContinuousOptionCell.m in Sources */,
 				1FFDFF56169771800049B8DF /* FrequencyOptionCell.m in Sources */,
-				1FFDFF6516977C400049B8DF /* OptionsViewController.m in Sources */,
 				1F59A5681697941000F744C3 /* TouchInputView.m in Sources */,
-				1F59A56B169B225C00F744C3 /* TouchSignalService.m in Sources */,
 				1F59A576169B4CDA00F744C3 /* TouchInputViewController.m in Sources */,
 				1F59A579169B4F9D00F744C3 /* UIView+BACookie.m in Sources */,
 				1FC76E3C169DFFDE003BDDF8 /* Signal.m in Sources */,
@@ -542,14 +438,6 @@
 				1FF1116D167BAAD100972344 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		1FF1117E167BAAD100972344 /* ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1FF1117F167BAAD100972344 /* en */,
-			);
-			name = ViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -714,6 +602,7 @@
 				1F5A9A8516A6E12700E1CB0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1FF11159167BAAD100972344 /* Build configuration list for PBXProject "MBlock" */ = {
 			isa = XCConfigurationList;
