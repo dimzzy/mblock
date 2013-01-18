@@ -13,6 +13,7 @@
 #import "SineBlock.h"
 #import "UDPSenderBlock.h"
 #import "FrequencyOptionCell.h"
+#import "AverageOptionCell.h"
 #import "SocketOptionCell.h"
 
 @implementation BlockOptionsViewController
@@ -29,7 +30,7 @@
 	if ([self.block isKindOfClass:[MotionBlock class]]) {
 		return 1;
 	} else if ([self.block isKindOfClass:[SequencerBlock class]]) {
-		return 1;
+		return 2;
 	} else if ([self.block isKindOfClass:[SineBlock class]]) {
 		return 1;
 	} else if ([self.block isKindOfClass:[UDPSenderBlock class]]) {
@@ -48,6 +49,17 @@
 	cell.frequency = [[self.block valueForKey:@"frequency"] doubleValue];
 	cell.updater = ^(double frequency) {
 		[self.block setValue:[NSNumber numberWithDouble:frequency] forKey:@"frequency"];
+	};
+	return cell;
+}
+
+- (AverageOptionCell *)makeAverageCell:(UITableView *)tableView {
+	BOOL loaded = NO;
+	AverageOptionCell *cell = (AverageOptionCell *)[tableView dequeueOrLoadReusableCellWithClass:[AverageOptionCell class]
+																						  loaded:&loaded];
+	cell.averageView.on = [[self.block valueForKey:@"average"] boolValue];
+	cell.updater = ^(BOOL average) {
+		[self.block setValue:[NSNumber numberWithBool:average] forKey:@"average"];
 	};
 	return cell;
 }
@@ -74,6 +86,8 @@
 	} else if ([self.block isKindOfClass:[SequencerBlock class]]) {
 		if (indexPath.row == 0) {
 			return [self makeFrequencyCell:tableView];
+		} else if (indexPath.row == 1) {
+			return [self makeAverageCell:tableView];
 		}
 	} else if ([self.block isKindOfClass:[SineBlock class]]) {
 		if (indexPath.row == 0) {
@@ -95,6 +109,8 @@
 	} else if ([self.block isKindOfClass:[SequencerBlock class]]) {
 		if (indexPath.row == 0) {
 			return kFrequencyOptionCellHeight;
+		} else if (indexPath.row == 1) {
+			return kAverageOptionCellHeight;
 		}
 	} else if ([self.block isKindOfClass:[SineBlock class]]) {
 		if (indexPath.row == 0) {

@@ -24,7 +24,6 @@ TODO
 
 - Allow to add nested group blocks
 - Add integrator block
-- Allow sequencer to calculate average value
 - Add block to rearrange signal data
 - Add scope block
 - Touch input events should keep their relative positions
