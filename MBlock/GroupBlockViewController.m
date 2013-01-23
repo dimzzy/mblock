@@ -121,32 +121,51 @@
 	} else {
 		block = [self.newBlocks objectAtIndex:indexPath.row];
 	}
-	BOOL loaded = NO;
-	BlockCell *cell = (BlockCell *)[tableView dequeueOrLoadReusableCellWithClass:[BlockCell class]
-																		  loaded:&loaded];
-	if (loaded) {
-		[cell.actionButton addTarget:self action:@selector(performBlockAction:) forControlEvents:UIControlEventTouchUpInside];
+//	BOOL loaded = NO;
+//	BlockCell *cell = (BlockCell *)[tableView dequeueOrLoadReusableCellWithClass:[BlockCell class]
+//																		  loaded:&loaded];
+//	if (loaded) {
+//		[cell.actionButton addTarget:self action:@selector(performBlockAction:) forControlEvents:UIControlEventTouchUpInside];
+//	}
+//	cell.infoView.text = block.info;
+//	if (indexPath.section == 0 && [block conformsToProtocol:@protocol(Actionable)]) {
+//		cell.actionButton.cookie = block;
+//		id<Actionable> actionable = (id<Actionable>)block;
+//		[cell.actionButton setTitle:[actionable actionTitle] forState:UIControlStateNormal];
+//	}
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GBlockCell"];
+	if (!cell) {
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GBlockCell"];
 	}
-	cell.infoView.text = block.info;
+	cell.textLabel.text = block.name;
 	if (indexPath.section == 0 && [block conformsToProtocol:@protocol(Actionable)]) {
-		cell.actionButton.cookie = block;
-		id<Actionable> actionable = (id<Actionable>)block;
-		[cell.actionButton setTitle:[actionable actionTitle] forState:UIControlStateNormal];
+		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+	} else {
+		cell.accessoryType = UITableViewCellAccessoryNone;
 	}
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//	if (indexPath.section == 0) {
+//		Block *block = [self.groupBlock.blocks objectAtIndex:indexPath.row];
+//		if ([block conformsToProtocol:@protocol(Actionable)]) {
+//			return kBlockCellExtHeight;
+//		}
+//		return kBlockCellHeight;
+//	} else if (indexPath.section == 1) {
+//		return kBlockCellHeight;
+//	}
+//	return 0;
+//}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 0) {
 		Block *block = [self.groupBlock.blocks objectAtIndex:indexPath.row];
 		if ([block conformsToProtocol:@protocol(Actionable)]) {
-			return kBlockCellExtHeight;
+			[(id<Actionable>)block performAction];
 		}
-		return kBlockCellHeight;
-	} else if (indexPath.section == 1) {
-		return kBlockCellHeight;
 	}
-	return 0;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -200,6 +219,10 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (self.groupBlock.running) {
+		[tableView deselectRowAtIndexPath:indexPath animated:YES];
+		return;
+	}
 	Block *block = [self.groupBlock.blocks objectAtIndex:indexPath.row];
 	BlockOptionsViewController *controller = [[BlockOptionsViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	controller.block = block;

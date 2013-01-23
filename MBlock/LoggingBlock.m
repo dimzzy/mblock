@@ -10,6 +10,10 @@
 
 @implementation LoggingBlock
 
+- (NSString *)name {
+	return @"Console";
+}
+
 - (NSString *)info {
 	return @"Prints signal to console.";
 }

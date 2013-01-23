@@ -28,6 +28,18 @@
 	}
 }
 
+- (BOOL)unique {
+	return NO;
+}
+
+- (NSString *)name {
+	return nil;
+}
+
+- (NSString *)info {
+	return nil;
+}
+
 - (void)receiveSignal:(Signal *)signal {
 	[self sendSignal:signal];
 }

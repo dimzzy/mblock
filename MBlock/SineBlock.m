@@ -14,6 +14,10 @@
 	CFAbsoluteTime _time0;
 }
 
+- (NSString *)name {
+	return @"sin(t)";
+}
+
 - (NSString *)info {
 	return @"Sine wave generator.";
 }

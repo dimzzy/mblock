@@ -17,6 +17,10 @@
 	return YES;
 }
 
+- (NSString *)name {
+	return @"Device Location";
+}
+
 - (NSString *)info {
 	return @"Geographical coordinates and altitude of the device’s location.";
 }

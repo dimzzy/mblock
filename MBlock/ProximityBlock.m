@@ -14,6 +14,10 @@
 	return YES;
 }
 
+- (NSString *)name {
+	return @"Proximity";
+}
+
 - (NSString *)info {
 	return @"Checks if device is close to the user.";
 }

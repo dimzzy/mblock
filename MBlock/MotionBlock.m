@@ -18,6 +18,10 @@
 	return YES;
 }
 
+- (NSString *)name {
+	return @"Device Motion";
+}
+
 - (NSString *)info {
 	return @"Measurements of the attitude and acceleration of a device.";
 }

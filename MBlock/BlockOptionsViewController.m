@@ -124,4 +124,11 @@
     return 0;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	if (section == 0) {
+		return self.block.info;
+	}
+	return nil;
+}
+
 @end

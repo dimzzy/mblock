@@ -15,6 +15,10 @@
 	NSUInteger _samplesCount;
 }
 
+- (NSString *)name {
+	return @"Sequencer";
+}
+
 - (NSString *)info {
 	return @"Resends last received signal at the specified frequency.";
 }

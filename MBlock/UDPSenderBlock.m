@@ -19,6 +19,10 @@ static const int kPacketMinWidth = 6;
 	UDPClient *_connection;
 }
 
+- (NSString *)name {
+	return @"UDP Out";
+}
+
 - (NSString *)info {
 	return @"Sends signal via UDP socket.";
 }

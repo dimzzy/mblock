@@ -12,8 +12,12 @@
 
 @implementation TouchInputBlock
 
+- (NSString *)name {
+	return @"Touches";
+}
+
 - (NSString *)info {
-	return @"Reports coordinates of the fingers on the screen.";
+	return @"Fingers coordinates on the screen.";
 }
 
 - (id)initWithCoder:(NSCoder *)coder {

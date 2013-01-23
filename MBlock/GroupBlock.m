@@ -37,6 +37,10 @@
 	NSMutableArray *_blocks;
 }
 
+- (NSString *)name {
+	return @"Subsystem";
+}
+
 - (NSString *)info {
 	return @"Groups several blocks in chain.";
 }
