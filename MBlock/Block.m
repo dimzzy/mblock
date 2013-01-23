@@ -40,6 +40,10 @@
 	return nil;
 }
 
+- (BlockCategory *)category {
+	return [BlockCategory other];
+}
+
 - (void)receiveSignal:(Signal *)signal {
 	[self sendSignal:signal];
 }

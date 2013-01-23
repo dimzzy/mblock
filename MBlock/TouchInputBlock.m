@@ -20,6 +20,10 @@
 	return @"Fingers coordinates on the screen.";
 }
 
+- (BlockCategory *)category {
+	return [BlockCategory generators];
+}
+
 - (id)initWithCoder:(NSCoder *)coder {
 	if ((self = [super initWithCoder:coder])) {
 	}

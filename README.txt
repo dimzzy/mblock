@@ -22,12 +22,10 @@ Byte order for iOS devices is little-endian.
 
 TODO
 
-- Use block groups
-- Group new blocks by groups
-- Allow several top blocks in workspace
 - Show when block generates signal
 - Move start/stop button to the bottom bar
 - Show status at the bottom (running, stopped, failed to start)
+- Allow several top blocks in workspace
 
 - Allow to add nested group blocks
 - Add integrator block

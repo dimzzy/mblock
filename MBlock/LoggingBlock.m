@@ -18,6 +18,10 @@
 	return @"Prints signal to console.";
 }
 
+- (BlockCategory *)category {
+	return [BlockCategory io];
+}
+
 - (id)initWithCoder:(NSCoder *)coder {
 	if ((self = [super initWithCoder:coder])) {
 	}

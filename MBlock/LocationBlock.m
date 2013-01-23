@@ -25,6 +25,10 @@
 	return @"Geographical coordinates and altitude of the device’s location.";
 }
 
+- (BlockCategory *)category {
+	return [BlockCategory generators];
+}
+
 - (id)initWithCoder:(NSCoder *)coder {
 	if ((self = [super initWithCoder:coder])) {
 	}

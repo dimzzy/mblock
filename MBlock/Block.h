@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Signal.h"
+#import "BlockCategory.h"
 
 @protocol SignalReceiver <NSObject>
 
@@ -33,6 +34,7 @@
 @property(readonly) BOOL unique; // only a single instance is allowed
 @property(readonly) NSString *name;
 @property(readonly) NSString *info;
+@property(readonly) BlockCategory *category;
 @property(readonly) BOOL running;
 
 - (void)start;

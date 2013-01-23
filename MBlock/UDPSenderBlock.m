@@ -27,6 +27,10 @@ static const int kPacketMinWidth = 6;
 	return @"Sends signal via UDP socket.";
 }
 
+- (BlockCategory *)category {
+	return [BlockCategory io];
+}
+
 - (void)dealloc {
 	[self removeObserver:self forKeyPath:@"IPAddress"];
 	[self removeObserver:self forKeyPath:@"port"];

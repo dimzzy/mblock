@@ -9,7 +9,6 @@
 #import "GroupBlockViewController.h"
 #import "UITableView+BALoading.h"
 #import "UIView+BACookie.h"
-#import "BlockCell.h"
 #import "SequencerBlock.h"
 #import "LoggingBlock.h"
 #import "UDPSenderBlock.h"
@@ -24,13 +23,13 @@
 
 @property UIBarButtonItem *startBarButtonItem;
 @property UIBarButtonItem *stopBarButtonItem;
-@property(readonly) NSArray *newBlocks;
+@property(readonly) NSDictionary *factoryBlocks;
 
 @end
 
 @implementation GroupBlockViewController {
 @private
-	NSArray *_newBlocks;
+	NSMutableDictionary *_factoryBlocks; // <category_name:NSString -> [:Block]>
 }
 
 - (void)viewDidLoad {
@@ -47,34 +46,27 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (NSArray *)newBlocks {
-	if (!_newBlocks) {
-		_newBlocks = @[
-		[[SequencerBlock alloc] init],
-		[[LoggingBlock alloc] init],
-		[[UDPSenderBlock alloc] init],
-		[[MotionBlock alloc] init],
-		[[LocationBlock alloc] init],
-		[[ProximityBlock alloc] init],
-		[[SineBlock alloc] init],
-		[[TouchInputBlock alloc] init]
-		];
-	}
-	return _newBlocks;
+- (void)addFactoryBlock:(Block *)block {
+	NSMutableArray *blocks = [_factoryBlocks objectForKey:block.category.name];
+	[blocks addObject:block];
 }
 
-- (Block *)makeBlockAtIndex:(NSUInteger)index {
-	switch (index) {
-		case 0: return [[SequencerBlock alloc] init];
-		case 1: return [[LoggingBlock alloc] init];
-		case 2: return [[UDPSenderBlock alloc] init];
-		case 3: return [[MotionBlock alloc] init];
-		case 4: return [[LocationBlock alloc] init];
-		case 5: return [[ProximityBlock alloc] init];
-		case 6: return [[SineBlock alloc] init];
-		case 7: return [[TouchInputBlock alloc] init];
+- (NSDictionary *)factoryBlocks {
+	if (!_factoryBlocks) {
+		_factoryBlocks = [[NSMutableDictionary alloc] init];
+		for (BlockCategory *category in [BlockCategory allCategories]) {
+			[_factoryBlocks setObject:[NSMutableArray array] forKey:category.name];
+		}
+		[self addFactoryBlock:[[SequencerBlock alloc] init]];
+		[self addFactoryBlock:[[LoggingBlock alloc] init]];
+		[self addFactoryBlock:[[UDPSenderBlock alloc] init]];
+		[self addFactoryBlock:[[MotionBlock alloc] init]];
+		[self addFactoryBlock:[[LocationBlock alloc] init]];
+		[self addFactoryBlock:[[ProximityBlock alloc] init]];
+		[self addFactoryBlock:[[SineBlock alloc] init]];
+		[self addFactoryBlock:[[TouchInputBlock alloc] init]];
 	}
-	return nil;
+	return _factoryBlocks;
 }
 
 - (IBAction)startBlock {
@@ -87,31 +79,32 @@
 	self.navigationItem.leftBarButtonItem = self.startBarButtonItem;
 }
 
-- (IBAction)performBlockAction:(UIButton *)sender {
-	if (self.editing) {
-		return;
-	}
-	id<Actionable> actionable = sender.cookie;
-	[actionable performAction];
-}
-
 - (void)setEditing:(BOOL)editing animated:(BOOL)animate {
 	[super setEditing:editing animated:animate];
 	[self.tableView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.editing ? 2 : 1;
+	NSInteger count = 1;
+	if (self.editing) {
+		count += [self.factoryBlocks count];
+	}
+	return count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	if (section == 0) {
 		return [self.groupBlock.blocks count];
-	} else if (section == 1) {
-		return [self.newBlocks count];
 	} else {
-		return 0;
+		BlockCategory *category = [[BlockCategory allCategories] objectAtIndex:(section - 1)];
+		NSArray *blocks = [self.factoryBlocks objectForKey:category.name];
+		return [blocks count];
 	}
+}
+- (Block *)factoryBlockAtIndexPath:(NSIndexPath *)indexPath {
+	BlockCategory *category = [[BlockCategory allCategories] objectAtIndex:(indexPath.section - 1)];
+	NSArray *blocks = [self.factoryBlocks objectForKey:category.name];
+	return [blocks objectAtIndex:indexPath.row];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -119,20 +112,9 @@
 	if (indexPath.section == 0) {
 		block = [self.groupBlock.blocks objectAtIndex:indexPath.row];
 	} else {
-		block = [self.newBlocks objectAtIndex:indexPath.row];
+		block = [self factoryBlockAtIndexPath:indexPath];
 	}
-//	BOOL loaded = NO;
-//	BlockCell *cell = (BlockCell *)[tableView dequeueOrLoadReusableCellWithClass:[BlockCell class]
-//																		  loaded:&loaded];
-//	if (loaded) {
-//		[cell.actionButton addTarget:self action:@selector(performBlockAction:) forControlEvents:UIControlEventTouchUpInside];
-//	}
-//	cell.infoView.text = block.info;
-//	if (indexPath.section == 0 && [block conformsToProtocol:@protocol(Actionable)]) {
-//		cell.actionButton.cookie = block;
-//		id<Actionable> actionable = (id<Actionable>)block;
-//		[cell.actionButton setTitle:[actionable actionTitle] forState:UIControlStateNormal];
-//	}
+
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GBlockCell"];
 	if (!cell) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GBlockCell"];
@@ -143,21 +125,9 @@
 	} else {
 		cell.accessoryType = UITableViewCellAccessoryNone;
 	}
+	cell.selectionStyle = indexPath.section == 0 ? UITableViewCellSelectionStyleBlue : UITableViewCellSelectionStyleNone;
     return cell;
 }
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//	if (indexPath.section == 0) {
-//		Block *block = [self.groupBlock.blocks objectAtIndex:indexPath.row];
-//		if ([block conformsToProtocol:@protocol(Actionable)]) {
-//			return kBlockCellExtHeight;
-//		}
-//		return kBlockCellHeight;
-//	} else if (indexPath.section == 1) {
-//		return kBlockCellHeight;
-//	}
-//	return 0;
-//}
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 0) {
@@ -188,7 +158,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 		[self.groupBlock removeBlockAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-		Block *newBlock = [self makeBlockAtIndex:indexPath.row];
+		Block *factoryBlock = [self factoryBlockAtIndexPath:indexPath];
+		NSData *data = [NSKeyedArchiver archivedDataWithRootObject:factoryBlock];
+		Block *newBlock = [NSKeyedUnarchiver unarchiveObjectWithData:data];
 		[self.groupBlock addBlock:newBlock];
 		NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:([self.groupBlock.blocks count] - 1) inSection:0];
 		[tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -228,6 +200,16 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	controller.block = block;
 	controller.title = @"Options";
 	[self.navigationController pushViewController:controller animated:YES];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	if (section == 0) {
+		return nil;
+	} else {
+		BlockCategory *category = [[BlockCategory allCategories] objectAtIndex:(section - 1)];
+		return category.name;
+	}
+	return nil;
 }
 
 @end

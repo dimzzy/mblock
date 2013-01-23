@@ -26,6 +26,10 @@
 	return @"Measurements of the attitude and acceleration of a device.";
 }
 
+- (BlockCategory *)category {
+	return [BlockCategory generators];
+}
+
 - (double)minFrequency {
 	return 1.0;
 }

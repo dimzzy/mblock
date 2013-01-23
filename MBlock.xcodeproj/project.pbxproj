@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0D4CA216B06E4000A7E010 /* BlockCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D4CA116B06E4000A7E010 /* BlockCategory.m */; };
 		1F153A4F167FEF480046C7EC /* BAKeyboardTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F153A4E167FEF480046C7EC /* BAKeyboardTracker.m */; };
 		1F52130C167EBAB700E93D65 /* UDPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F52130B167EBAB700E93D65 /* UDPServer.m */; };
 		1F521310167EBAFB00E93D65 /* UDPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F52130F167EBAFB00E93D65 /* UDPClient.m */; };
@@ -36,8 +37,6 @@
 		1FC76E59169F09B0003BDDF8 /* GroupBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E58169F09B0003BDDF8 /* GroupBlock.m */; };
 		1FC76E5C169F14B5003BDDF8 /* SequencerBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E5B169F14B5003BDDF8 /* SequencerBlock.m */; };
 		1FC76E80169F6963003BDDF8 /* GroupBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E7F169F6963003BDDF8 /* GroupBlockViewController.m */; };
-		1FC76E83169F6A0E003BDDF8 /* BlockCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E82169F6A0E003BDDF8 /* BlockCell.m */; };
-		1FC76E85169F6A21003BDDF8 /* BlockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FC76E84169F6A21003BDDF8 /* BlockCell.xib */; };
 		1FF11164167BAAD100972344 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF11163167BAAD100972344 /* UIKit.framework */; };
 		1FF11166167BAAD100972344 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF11165167BAAD100972344 /* Foundation.framework */; };
 		1FF11168167BAAD100972344 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF11167167BAAD100972344 /* CoreGraphics.framework */; };
@@ -66,6 +65,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F0D4CA016B06E4000A7E010 /* BlockCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockCategory.h; sourceTree = "<group>"; };
+		1F0D4CA116B06E4000A7E010 /* BlockCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockCategory.m; sourceTree = "<group>"; };
 		1F153A4D167FEF480046C7EC /* BAKeyboardTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAKeyboardTracker.h; sourceTree = "<group>"; };
 		1F153A4E167FEF480046C7EC /* BAKeyboardTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAKeyboardTracker.m; sourceTree = "<group>"; };
 		1F52130A167EBAB700E93D65 /* UDPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPServer.h; sourceTree = "<group>"; };
@@ -122,9 +123,6 @@
 		1FC76E5B169F14B5003BDDF8 /* SequencerBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequencerBlock.m; sourceTree = "<group>"; };
 		1FC76E7E169F6963003BDDF8 /* GroupBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupBlockViewController.h; sourceTree = "<group>"; };
 		1FC76E7F169F6963003BDDF8 /* GroupBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupBlockViewController.m; sourceTree = "<group>"; };
-		1FC76E81169F6A0E003BDDF8 /* BlockCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockCell.h; sourceTree = "<group>"; };
-		1FC76E82169F6A0E003BDDF8 /* BlockCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockCell.m; sourceTree = "<group>"; };
-		1FC76E84169F6A21003BDDF8 /* BlockCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlockCell.xib; sourceTree = "<group>"; };
 		1FF1115F167BAAD100972344 /* MBlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF11163167BAAD100972344 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1FF11165167BAAD100972344 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -211,6 +209,8 @@
 				1FC76E55169E2F57003BDDF8 /* TouchInputBlock.m */,
 				1F67136C16A44FD300408994 /* Workspace.h */,
 				1F67136D16A44FD300408994 /* Workspace.m */,
+				1F0D4CA016B06E4000A7E010 /* BlockCategory.h */,
+				1F0D4CA116B06E4000A7E010 /* BlockCategory.m */,
 			);
 			name = Blocks;
 			sourceTree = "<group>";
@@ -220,9 +220,6 @@
 			children = (
 				1FC76E7E169F6963003BDDF8 /* GroupBlockViewController.h */,
 				1FC76E7F169F6963003BDDF8 /* GroupBlockViewController.m */,
-				1FC76E81169F6A0E003BDDF8 /* BlockCell.h */,
-				1FC76E82169F6A0E003BDDF8 /* BlockCell.m */,
-				1FC76E84169F6A21003BDDF8 /* BlockCell.xib */,
 				1F80CD2C16A0BED400211FF8 /* BlockOptionsViewController.h */,
 				1F80CD2D16A0BED400211FF8 /* BlockOptionsViewController.m */,
 				1FFDFF541697717F0049B8DF /* FrequencyOptionCell.h */,
@@ -394,7 +391,6 @@
 				1FFDFF5A169772AF0049B8DF /* FrequencyOptionCell.xib in Resources */,
 				1F59A5631697924700F744C3 /* Icon.png in Resources */,
 				1F59A5641697924700F744C3 /* Icon@2x.png in Resources */,
-				1FC76E85169F6A21003BDDF8 /* BlockCell.xib in Resources */,
 				1F80CD3316A0CD7300211FF8 /* SocketOptionCell.xib in Resources */,
 				1F6F330B16A8B42400C1AE84 /* AverageOptionCell.xib in Resources */,
 			);
@@ -436,12 +432,12 @@
 				1FC76E59169F09B0003BDDF8 /* GroupBlock.m in Sources */,
 				1FC76E5C169F14B5003BDDF8 /* SequencerBlock.m in Sources */,
 				1FC76E80169F6963003BDDF8 /* GroupBlockViewController.m in Sources */,
-				1FC76E83169F6A0E003BDDF8 /* BlockCell.m in Sources */,
 				1F80CD2E16A0BED400211FF8 /* BlockOptionsViewController.m in Sources */,
 				1F80CD3116A0CD0A00211FF8 /* SocketOptionCell.m in Sources */,
 				1F67136E16A44FD300408994 /* Workspace.m in Sources */,
 				1F6F330616A8ABFD00C1AE84 /* SineBlock.m in Sources */,
 				1F6F330916A8B40400C1AE84 /* AverageOptionCell.m in Sources */,
+				1F0D4CA216B06E4000A7E010 /* BlockCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

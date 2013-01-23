@@ -22,6 +22,10 @@
 	return @"Checks if device is close to the user.";
 }
 
+- (BlockCategory *)category {
+	return [BlockCategory generators];
+}
+
 - (id)initWithCoder:(NSCoder *)coder {
 	if ((self = [super initWithCoder:coder])) {
 	}
