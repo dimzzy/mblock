@@ -12,6 +12,7 @@
 
 - (id)initWithType:(int32_t)type values:(NSArray *)values labels:(NSArray *)labels {
 	if ((self = [super init])) {
+		_type = type;
 		_values = [NSArray arrayWithArray:values];
 		_labels = labels ? [NSArray arrayWithArray:labels] : [NSArray array];
 	}
