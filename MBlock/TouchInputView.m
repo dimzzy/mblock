@@ -10,6 +10,8 @@
 
 NSString * const TouchesDidChangeNotification = @"TouchesDidChange";
 
+static const int32_t kInvalidTouchInfoId = 0;
+
 static const CGFloat kMarksStep = 40.0;
 static const CGFloat kMarksWidth = 3.0;
 static const CGFloat kTouchesWidth = 40.0;
@@ -18,7 +20,9 @@ static int32_t nextTouchInfoIdentifier = 1;
 
 @interface TouchInfo ()
 
+- (void)startMove;
 - (void)moveTo:(CGPoint)point;
+- (void)endMove;
 - (CGFloat)distanceToPoint2:(CGPoint)point;
 
 @end
@@ -27,9 +31,13 @@ static int32_t nextTouchInfoIdentifier = 1;
 
 - (id)init {
     if ((self = [super init])) {
-		_identifier = nextTouchInfoIdentifier++;
+		_identifier = kInvalidTouchInfoId;
     }
     return self;
+}
+
+- (void)startMove {
+	_identifier = nextTouchInfoIdentifier++;
 }
 
 - (void)moveTo:(CGPoint)point {
@@ -37,10 +45,20 @@ static int32_t nextTouchInfoIdentifier = 1;
 	_y = point.y;
 }
 
+- (void)endMove {
+	_identifier = kInvalidTouchInfoId;
+	_x = 0;
+	_y = 0;
+}
+
 - (CGFloat)distanceToPoint2:(CGPoint)point {
 	CGFloat dx = _x - point.x;
 	CGFloat dy = _y - point.y;
 	return dx * dx + dy * dy;
+}
+
+- (BOOL)valid {
+	return _identifier != kInvalidTouchInfoId;
 }
 
 @end
@@ -51,15 +69,13 @@ static int32_t nextTouchInfoIdentifier = 1;
 	NSMutableArray *_touchInfos;
 }
 
-- (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-		_touchInfos = [NSMutableArray array];
-    }
-    return self;
-}
-
 - (NSArray *)touchInfos {
+	if (!_touchInfos) {
+		_touchInfos = [NSMutableArray arrayWithCapacity:5];
+		for (int i = 0; i < 5; i++) {
+			[_touchInfos addObject:[[TouchInfo alloc] init]];
+		}
+	}
 	return _touchInfos;
 }
 
@@ -85,6 +101,9 @@ static int32_t nextTouchInfoIdentifier = 1;
 		[self.touchesColor set];
 		CGContextSetLineWidth(ctx, 1);
 		for (TouchInfo *touchInfo in self.touchInfos) {
+			if (!touchInfo.valid) {
+				continue;
+			}
 			CGContextStrokeEllipseInRect(ctx, CGRectMake(touchInfo.x - kTouchesWidth,
 														 touchInfo.y - kTouchesWidth,
 														 kTouchesWidth * 2,
@@ -116,29 +135,30 @@ static int32_t nextTouchInfoIdentifier = 1;
 - (void)printTouchInfos {
 	/*
 	NSMutableString *str = [NSMutableString stringWithString:@"Touch Infos:"];
-	for (TouchInfo *touchInfo in _touchInfos) {
+	for (TouchInfo *touchInfo in self.touchInfos) {
 		[str appendFormat:@" <%d %g,%g>", touchInfo.identifier, touchInfo.x, touchInfo.y];
 	}
 	NSLog(@"%@", str);
 	 */
 }
 
-- (void)addTouches:(NSSet *)touches {
-	for (UITouch *touch in touches) {
-		TouchInfo *touchInfo = [[TouchInfo alloc] init];
-		[touchInfo moveTo:[touch locationInView:self]];
-		[_touchInfos addObject:touchInfo];
+- (TouchInfo *)firstAvailableTouchInfo {
+	for (TouchInfo *touchInfo in self.touchInfos) {
+		if (!touchInfo.valid) {
+			return touchInfo;
+		}
 	}
-	[self printTouchInfos];
-	[self setNeedsDisplay];
-	[[NSNotificationCenter defaultCenter] postNotificationName:TouchesDidChangeNotification object:self];
+	return nil;
 }
 
 - (TouchInfo *)closestTouchInfo:(UITouch *)touch {
 	const CGPoint ploc = [touch previousLocationInView:self];
 	TouchInfo *closestTouchInfo = nil;
 	CGFloat closestDistance = CGFLOAT_MAX;
-	for (TouchInfo *touchInfo in _touchInfos) {
+	for (TouchInfo *touchInfo in self.touchInfos) {
+		if (!touchInfo.valid) {
+			continue;
+		}
 		CGFloat distance = [touchInfo distanceToPoint2:ploc];
 		if (distance < closestDistance) {
 			closestDistance = distance;
@@ -148,12 +168,21 @@ static int32_t nextTouchInfoIdentifier = 1;
 	return closestTouchInfo;
 }
 
+- (void)addTouches:(NSSet *)touches {
+	for (UITouch *touch in touches) {
+		TouchInfo *touchInfo = [self firstAvailableTouchInfo];
+		[touchInfo startMove];
+		[touchInfo moveTo:[touch locationInView:self]];
+	}
+	[self printTouchInfos];
+	[self setNeedsDisplay];
+	[[NSNotificationCenter defaultCenter] postNotificationName:TouchesDidChangeNotification object:self];
+}
+
 - (void)updateTouches:(NSSet *)touches {
 	for (UITouch *touch in touches) {
 		TouchInfo *touchInfo = [self closestTouchInfo:touch];
-		if (touchInfo) {
-			[touchInfo moveTo:[touch locationInView:self]];
-		}
+		[touchInfo moveTo:[touch locationInView:self]];
 	}
 	[self printTouchInfos];
 	[self setNeedsDisplay];
@@ -163,9 +192,7 @@ static int32_t nextTouchInfoIdentifier = 1;
 - (void)removeTouches:(NSSet *)touches {
 	for (UITouch *touch in touches) {
 		TouchInfo *touchInfo = [self closestTouchInfo:touch];
-		if (touchInfo) {
-			[_touchInfos removeObject:touchInfo];
-		}
+		[touchInfo endMove];
 	}
 	[self printTouchInfos];
 	[self setNeedsDisplay];

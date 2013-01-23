@@ -15,6 +15,7 @@ extern NSString * const TouchesDidChangeNotification;
 @property(readonly) int32_t identifier;
 @property(readonly) CGFloat x;
 @property(readonly) CGFloat y;
+@property(readonly) BOOL valid;
 
 @end
 
