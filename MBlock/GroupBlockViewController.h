@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "GroupBlock.h"
 
-@interface GroupBlockViewController : UITableViewController
+@interface GroupBlockViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property GroupBlock *groupBlock;
+
+@property IBOutlet UITableView *tableView;
+@property IBOutlet UIBarButtonItem *runItem;
+@property IBOutlet UILabel *statusLabel;
+
+- (IBAction)runAction;
 
 @end

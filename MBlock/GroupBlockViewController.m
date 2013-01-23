@@ -34,16 +34,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.startBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Start"
-															   style:UIBarButtonItemStyleBordered
-															  target:self
-															  action:@selector(startBlock)];
-	self.stopBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Stop"
-															  style:UIBarButtonItemStyleBordered
-															 target:self
-															 action:@selector(stopBlock)];
-	self.navigationItem.leftBarButtonItem = self.groupBlock.running ? self.stopBarButtonItem : self.startBarButtonItem;
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	[self updateStatus];
 }
 
 - (void)addFactoryBlock:(Block *)block {
@@ -69,18 +61,23 @@
 	return _factoryBlocks;
 }
 
-- (IBAction)startBlock {
-	[self.groupBlock start];
-	self.navigationItem.leftBarButtonItem = self.stopBarButtonItem;
+- (void)updateStatus {
+	self.runItem.title = self.groupBlock.running ? @"Stop" : @"Start";
+	self.statusLabel.text = @"";
 }
 
-- (IBAction)stopBlock {
-	[self.groupBlock stop];
-	self.navigationItem.leftBarButtonItem = self.startBarButtonItem;
+- (IBAction)runAction {
+	if (self.groupBlock.running) {
+		[self.groupBlock stop];
+	} else {
+		[self.groupBlock start];
+	}
+	[self updateStatus];
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animate {
 	[super setEditing:editing animated:animate];
+	[self.tableView setEditing:editing animated:animate];
 	[self.tableView reloadData];
 }
 
@@ -191,8 +188,8 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	if (self.groupBlock.running) {
-		[tableView deselectRowAtIndexPath:indexPath animated:YES];
 		return;
 	}
 	Block *block = [self.groupBlock.blocks objectAtIndex:indexPath.row];

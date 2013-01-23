@@ -22,17 +22,16 @@ Byte order for iOS devices is little-endian.
 
 TODO
 
-- Show when block generates signal
-- Move start/stop button to the bottom bar
 - Show status at the bottom (running, stopped, failed to start)
 - Allow several top blocks in workspace
+- Enforce block uniquess
+- Show when block generates signal
 
 - Allow to add nested group blocks
 - Add integrator block
 - Add block to rearrange signal data
 - Add scope block
 - Add block which calculates constant error
-- Enforce block uniquess
 - Support UDP broadcast
 
 - Support audio in

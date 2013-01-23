@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F0D4CA216B06E4000A7E010 /* BlockCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D4CA116B06E4000A7E010 /* BlockCategory.m */; };
+		1F0D4CA516B079DB00A7E010 /* GroupBlockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D4CA416B079DB00A7E010 /* GroupBlockViewController.xib */; };
 		1F153A4F167FEF480046C7EC /* BAKeyboardTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F153A4E167FEF480046C7EC /* BAKeyboardTracker.m */; };
 		1F52130C167EBAB700E93D65 /* UDPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F52130B167EBAB700E93D65 /* UDPServer.m */; };
 		1F521310167EBAFB00E93D65 /* UDPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F52130F167EBAFB00E93D65 /* UDPClient.m */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		1F0D4CA016B06E4000A7E010 /* BlockCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockCategory.h; sourceTree = "<group>"; };
 		1F0D4CA116B06E4000A7E010 /* BlockCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockCategory.m; sourceTree = "<group>"; };
+		1F0D4CA416B079DB00A7E010 /* GroupBlockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupBlockViewController.xib; sourceTree = "<group>"; };
 		1F153A4D167FEF480046C7EC /* BAKeyboardTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAKeyboardTracker.h; sourceTree = "<group>"; };
 		1F153A4E167FEF480046C7EC /* BAKeyboardTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAKeyboardTracker.m; sourceTree = "<group>"; };
 		1F52130A167EBAB700E93D65 /* UDPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPServer.h; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				1FC76E7E169F6963003BDDF8 /* GroupBlockViewController.h */,
 				1FC76E7F169F6963003BDDF8 /* GroupBlockViewController.m */,
+				1F0D4CA416B079DB00A7E010 /* GroupBlockViewController.xib */,
 				1F80CD2C16A0BED400211FF8 /* BlockOptionsViewController.h */,
 				1F80CD2D16A0BED400211FF8 /* BlockOptionsViewController.m */,
 				1FFDFF541697717F0049B8DF /* FrequencyOptionCell.h */,
@@ -393,6 +396,7 @@
 				1F59A5641697924700F744C3 /* Icon@2x.png in Resources */,
 				1F80CD3316A0CD7300211FF8 /* SocketOptionCell.xib in Resources */,
 				1F6F330B16A8B42400C1AE84 /* AverageOptionCell.xib in Resources */,
+				1F0D4CA516B079DB00A7E010 /* GroupBlockViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

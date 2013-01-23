@@ -29,7 +29,8 @@
 		[groupBlock addBlock:loggingBlock];
 	}
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	GroupBlockViewController *viewController = [[GroupBlockViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	GroupBlockViewController *viewController = [[GroupBlockViewController alloc] initWithNibName:@"GroupBlockViewController"
+																						  bundle:nil];
 	viewController.groupBlock = _workspace.mainBlock;
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
 	self.window.rootViewController = navController;
