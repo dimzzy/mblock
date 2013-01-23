@@ -8,6 +8,7 @@
 
 #import "UDPSenderBlock.h"
 #import "UDPClient.h"
+#import "Workspace.h"
 #include <sys/time.h>
 
 static const double kSignalAmplification = 1000.0; // signals are multiplied by this value and sent as ints
@@ -68,6 +69,8 @@ static const int kPacketMinWidth = 6;
 	}
 	_connection = [[UDPClient alloc] initWithIPAddress:self.IPAddress port:self.port];
 	if (!_connection.connected) {
+		self.workspace.lastFailedBlock = self;
+		self.workspace.lastStartFailure = @"Unable to setup UDP connection";
 		return;
 	}
 	[super start];

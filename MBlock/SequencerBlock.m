@@ -7,6 +7,7 @@
 //
 
 #import "SequencerBlock.h"
+#import "Workspace.h"
 
 @implementation SequencerBlock {
 @private
@@ -66,14 +67,16 @@
 	if (self.running) {
 		return;
 	}
-	if (self.frequency > 0) {
-		const NSTimeInterval interval = 1.0 / self.frequency;
-		_sendTimer = [NSTimer scheduledTimerWithTimeInterval:interval
-													  target:self
-													selector:@selector(sendTimedSignal:)
-													userInfo:nil
-													 repeats:YES];
+	if (self.frequency <= 0) {
+		self.workspace.lastFailedBlock = self;
+		self.workspace.lastStartFailure = @"Invalid sequencer frequency";
 	}
+	const NSTimeInterval interval = 1.0 / self.frequency;
+	_sendTimer = [NSTimer scheduledTimerWithTimeInterval:interval
+												  target:self
+												selector:@selector(sendTimedSignal:)
+												userInfo:nil
+												 repeats:YES];
 	[super start];
 }
 

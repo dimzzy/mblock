@@ -18,6 +18,7 @@
 #import "TouchInputBlock.h"
 #import "SineBlock.h"
 #import "BlockOptionsViewController.h"
+#import "Workspace.h"
 
 @interface GroupBlockViewController ()
 
@@ -63,10 +64,15 @@
 
 - (void)updateStatus {
 	self.runItem.title = self.groupBlock.running ? @"Stop" : @"Start";
-	self.statusLabel.text = @"";
+	self.statusLabel.text = self.groupBlock.running ? @"Running" : @"Idle";
+	if (self.groupBlock.workspace.lastStartFailure) {
+		self.statusLabel.text = self.groupBlock.workspace.lastStartFailure;
+	}
 }
 
 - (IBAction)runAction {
+	self.groupBlock.workspace.lastFailedBlock = nil;
+	self.groupBlock.workspace.lastStartFailure = nil;
 	if (self.groupBlock.running) {
 		[self.groupBlock stop];
 	} else {

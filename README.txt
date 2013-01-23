@@ -22,7 +22,6 @@ Byte order for iOS devices is little-endian.
 
 TODO
 
-- Show status at the bottom (running, stopped, failed to start)
 - Allow several top blocks in workspace
 - Enforce block uniquess
 - Show when block generates signal

@@ -7,6 +7,7 @@
 //
 
 #import "MotionBlock.h"
+#import "Workspace.h"
 #import <CoreMotion/CoreMotion.h>
 
 @implementation MotionBlock {
@@ -72,7 +73,12 @@
 }
 
 - (void)start {
-	if (self.running || self.frequency <= 0) {
+	if (self.running) {
+		return;
+	}
+	if (self.frequency <= 0) {
+		self.workspace.lastFailedBlock = self;
+		self.workspace.lastStartFailure = @"Invalid motion frequency";
 		return;
 	}
 	__weak MotionBlock *weakSelf = self;
