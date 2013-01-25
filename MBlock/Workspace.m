@@ -62,4 +62,25 @@
     setxattr([[URL path] fileSystemRepresentation], "com.apple.MobileBackup", &b, 1, 0, 0);
 }
 
+- (BOOL)groupBlock:(GroupBlock *)groupBlock containsBlockOfType:(Class)type {
+	if ([groupBlock isKindOfClass:type]) {
+		return YES;
+	}
+	for (Block *block in groupBlock.blocks) {
+		if ([block isKindOfClass:[GroupBlock class]]) {
+			BOOL contains = [self groupBlock:(GroupBlock *)block containsBlockOfType:type];
+			if (contains) {
+				return YES;
+			}
+		} else if ([block isKindOfClass:type]) {
+			return YES;
+		}
+	}
+	return NO;
+}
+
+- (BOOL)containsBlockOfType:(Class)type {
+	return [self groupBlock:self.mainBlock containsBlockOfType:type];
+}
+
 @end

@@ -150,6 +150,10 @@
     if (indexPath.section == 0) {
         return UITableViewCellEditingStyleDelete;
     } else {
+		Block *factoryBlock = [self factoryBlockAtIndexPath:indexPath];
+		if (factoryBlock.unique && [self.groupBlock.workspace containsBlockOfType:[factoryBlock class]]) {
+			return UITableViewCellEditingStyleNone;
+		}
         return UITableViewCellEditingStyleInsert;
     }
 }
@@ -160,14 +164,20 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
 		[self.groupBlock removeBlockAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+		NSMutableIndexSet *sections = [NSMutableIndexSet indexSet];
+		for (NSInteger section = 1; section <= [[BlockCategory allCategories] count]; section++) {
+			[sections addIndex:section];
+		}
+		[tableView reloadSections:sections withRowAnimation:UITableViewRowAnimationAutomatic];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
 		Block *factoryBlock = [self factoryBlockAtIndexPath:indexPath];
 		NSData *data = [NSKeyedArchiver archivedDataWithRootObject:factoryBlock];
 		Block *newBlock = [NSKeyedUnarchiver unarchiveObjectWithData:data];
 		[self.groupBlock addBlock:newBlock];
 		NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:([self.groupBlock.blocks count] - 1) inSection:0];
-		[tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+		[tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+		[tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }   
 }
 

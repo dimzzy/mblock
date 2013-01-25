@@ -15,6 +15,8 @@
 @property NSString *lastStartFailure;
 @property Block *lastFailedBlock;
 
+- (BOOL)containsBlockOfType:(Class)type;
+
 - (void)write;
 + (Workspace *)readGlobal;
 

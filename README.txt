@@ -23,7 +23,6 @@ Byte order for iOS devices is little-endian.
 TODO
 
 - Allow several top blocks in workspace
-- Enforce block uniquess
 - Show when block generates signal
 
 - Add block which shows ball in 3D
