@@ -71,6 +71,7 @@ static const int kPacketMinWidth = 6;
 	if (!_connection.connected) {
 		self.workspace.lastFailedBlock = self;
 		self.workspace.lastStartFailure = @"Unable to setup UDP connection";
+		_connection = nil;
 		return;
 	}
 	[super start];

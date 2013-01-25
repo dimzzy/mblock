@@ -156,13 +156,30 @@
 }
 
 - (void)start {
+	if (self.running) {
+		return;
+	}
+	BOOL failed = NO;
 	for (Block *block in self.blocks) {
 		[block start];
+		if (!block.running) {
+			failed = YES;
+			break;
+		}
+	}
+	if (failed) {
+		for (Block *block in self.blocks) {
+			[block stop];
+		}
+		return;
 	}
 	[super start];
 }
 
 - (void)stop {
+	if (!self.running) {
+		return;
+	}
 	for (Block *block in self.blocks) {
 		[block stop];
 	}

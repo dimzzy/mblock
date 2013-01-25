@@ -35,7 +35,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	[self updateStatus];
 }
 
@@ -68,6 +67,7 @@
 	if (self.groupBlock.workspace.lastStartFailure) {
 		self.statusLabel.text = self.groupBlock.workspace.lastStartFailure;
 	}
+    self.navigationItem.rightBarButtonItem = self.groupBlock.running ? nil : self.editButtonItem;
 }
 
 - (IBAction)runAction {
@@ -76,6 +76,7 @@
 	if (self.groupBlock.running) {
 		[self.groupBlock stop];
 	} else {
+		[self setEditing:NO];
 		[self.groupBlock start];
 	}
 	[self updateStatus];

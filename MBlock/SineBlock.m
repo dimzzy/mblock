@@ -7,6 +7,7 @@
 //
 
 #import "SineBlock.h"
+#import "Workspace.h"
 
 @implementation SineBlock {
 @private
@@ -63,15 +64,18 @@
 	if (self.running) {
 		return;
 	}
-	_time0 = CFAbsoluteTimeGetCurrent();
-	if (self.frequency > 0) {
-		const NSTimeInterval interval = 1.0 / self.frequency;
-		_sendTimer = [NSTimer scheduledTimerWithTimeInterval:interval
-													  target:self
-													selector:@selector(sendTimedSignal:)
-													userInfo:nil
-													 repeats:YES];
+	if (self.frequency <= 0) {
+		self.workspace.lastFailedBlock = self;
+		self.workspace.lastStartFailure = @"Invalid sine frequency";
+		return;
 	}
+	_time0 = CFAbsoluteTimeGetCurrent();
+	const NSTimeInterval interval = 1.0 / self.frequency;
+	_sendTimer = [NSTimer scheduledTimerWithTimeInterval:interval
+												  target:self
+												selector:@selector(sendTimedSignal:)
+												userInfo:nil
+												 repeats:YES];
 	[super start];
 }
 

@@ -70,6 +70,7 @@
 	if (self.frequency <= 0) {
 		self.workspace.lastFailedBlock = self;
 		self.workspace.lastStartFailure = @"Invalid sequencer frequency";
+		return;
 	}
 	const NSTimeInterval interval = 1.0 / self.frequency;
 	_sendTimer = [NSTimer scheduledTimerWithTimeInterval:interval

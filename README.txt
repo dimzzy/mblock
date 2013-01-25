@@ -26,6 +26,10 @@ TODO
 - Enforce block uniquess
 - Show when block generates signal
 
+- Add block which shows ball in 3D
+- Add UDP receiver block
+- Add TCP receiver block
+- Add TCP sender block
 - Allow to add nested group blocks
 - Add integrator block
 - Add block to rearrange signal data
