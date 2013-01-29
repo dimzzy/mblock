@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UDPClient.h"
 #import "Workspace.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

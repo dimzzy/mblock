@@ -10,8 +10,12 @@
 		1F0D4CA216B06E4000A7E010 /* BlockCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D4CA116B06E4000A7E010 /* BlockCategory.m */; };
 		1F0D4CA516B079DB00A7E010 /* GroupBlockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D4CA416B079DB00A7E010 /* GroupBlockViewController.xib */; };
 		1F153A4F167FEF480046C7EC /* BAKeyboardTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F153A4E167FEF480046C7EC /* BAKeyboardTracker.m */; };
-		1F52130C167EBAB700E93D65 /* UDPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F52130B167EBAB700E93D65 /* UDPServer.m */; };
-		1F521310167EBAFB00E93D65 /* UDPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F52130F167EBAFB00E93D65 /* UDPClient.m */; };
+		1F356FC016B8617F00F1BA1A /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F356FBF16B8617F00F1BA1A /* DDLog.m */; };
+		1F356FC516B8618B00F1BA1A /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F356FC216B8618B00F1BA1A /* GCDAsyncSocket.m */; };
+		1F356FC616B8618B00F1BA1A /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F356FC416B8618B00F1BA1A /* GCDAsyncUdpSocket.m */; };
+		1F356FC716B861C800F1BA1A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF1118E167BB2B800972344 /* CFNetwork.framework */; };
+		1F356FC916B8621400F1BA1A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F356FC816B8621400F1BA1A /* Security.framework */; };
+		1F356FCC16B8640600F1BA1A /* UDPReceiverBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F356FCB16B8640600F1BA1A /* UDPReceiverBlock.m */; };
 		1F59A5631697924700F744C3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F59A5611697924700F744C3 /* Icon.png */; };
 		1F59A5641697924700F744C3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F59A5621697924700F744C3 /* Icon@2x.png */; };
 		1F59A5681697941000F744C3 /* TouchInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A5671697941000F744C3 /* TouchInputView.m */; };
@@ -71,11 +75,15 @@
 		1F0D4CA416B079DB00A7E010 /* GroupBlockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupBlockViewController.xib; sourceTree = "<group>"; };
 		1F153A4D167FEF480046C7EC /* BAKeyboardTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAKeyboardTracker.h; sourceTree = "<group>"; };
 		1F153A4E167FEF480046C7EC /* BAKeyboardTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAKeyboardTracker.m; sourceTree = "<group>"; };
-		1F52130A167EBAB700E93D65 /* UDPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPServer.h; sourceTree = "<group>"; };
-		1F52130B167EBAB700E93D65 /* UDPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPServer.m; sourceTree = "<group>"; };
-		1F52130E167EBAFB00E93D65 /* UDPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPClient.h; sourceTree = "<group>"; };
-		1F52130F167EBAFB00E93D65 /* UDPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPClient.m; sourceTree = "<group>"; };
-		1F521311167ED6F300E93D65 /* DataClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataClient.h; sourceTree = "<group>"; };
+		1F356FBE16B8617F00F1BA1A /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		1F356FBF16B8617F00F1BA1A /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		1F356FC116B8618B00F1BA1A /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		1F356FC216B8618B00F1BA1A /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		1F356FC316B8618B00F1BA1A /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		1F356FC416B8618B00F1BA1A /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		1F356FC816B8621400F1BA1A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1F356FCA16B8640600F1BA1A /* UDPReceiverBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPReceiverBlock.h; sourceTree = "<group>"; };
+		1F356FCB16B8640600F1BA1A /* UDPReceiverBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPReceiverBlock.m; sourceTree = "<group>"; };
 		1F59A5611697924700F744C3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		1F59A5621697924700F744C3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		1F59A5661697941000F744C3 /* TouchInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchInputView.h; sourceTree = "<group>"; };
@@ -158,6 +166,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F356FC916B8621400F1BA1A /* Security.framework in Frameworks */,
+				1F356FC716B861C800F1BA1A /* CFNetwork.framework in Frameworks */,
 				1FF1118D167BAD2600972344 /* CoreMotion.framework in Frameworks */,
 				1FF1118B167BAD1E00972344 /* CoreLocation.framework in Frameworks */,
 				1FF11164167BAAD100972344 /* UIKit.framework in Frameworks */,
@@ -169,6 +179,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F356FBD16B8616700F1BA1A /* AsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				1F356FC116B8618B00F1BA1A /* GCDAsyncSocket.h */,
+				1F356FC216B8618B00F1BA1A /* GCDAsyncSocket.m */,
+				1F356FC316B8618B00F1BA1A /* GCDAsyncUdpSocket.h */,
+				1F356FC416B8618B00F1BA1A /* GCDAsyncUdpSocket.m */,
+				1F356FBE16B8617F00F1BA1A /* DDLog.h */,
+				1F356FBF16B8617F00F1BA1A /* DDLog.m */,
+			);
+			name = AsyncSocket;
+			sourceTree = "<group>";
+		};
 		1F5A9A6E16A6E0C400E1CB0C /* comm */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,13 +228,10 @@
 			children = (
 				1FC76E4D169E27EA003BDDF8 /* LoggingBlock.h */,
 				1FC76E4E169E27EA003BDDF8 /* LoggingBlock.m */,
-				1F521311167ED6F300E93D65 /* DataClient.h */,
-				1F52130E167EBAFB00E93D65 /* UDPClient.h */,
-				1F52130F167EBAFB00E93D65 /* UDPClient.m */,
-				1F52130A167EBAB700E93D65 /* UDPServer.h */,
-				1F52130B167EBAB700E93D65 /* UDPServer.m */,
 				1FC76E41169E1092003BDDF8 /* UDPSenderBlock.h */,
 				1FC76E42169E1092003BDDF8 /* UDPSenderBlock.m */,
+				1F356FCA16B8640600F1BA1A /* UDPReceiverBlock.h */,
+				1F356FCB16B8640600F1BA1A /* UDPReceiverBlock.m */,
 			);
 			name = IO;
 			sourceTree = "<group>";
@@ -303,6 +323,7 @@
 		1FF11162167BAAD100972344 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F356FC816B8621400F1BA1A /* Security.framework */,
 				1FF1118E167BB2B800972344 /* CFNetwork.framework */,
 				1FF1118C167BAD2600972344 /* CoreMotion.framework */,
 				1FF1118A167BAD1E00972344 /* CoreLocation.framework */,
@@ -316,6 +337,7 @@
 		1FF11169167BAAD100972344 /* MBlock */ = {
 			isa = PBXGroup;
 			children = (
+				1F356FBD16B8616700F1BA1A /* AsyncSocket */,
 				1FC76E7D169F6875003BDDF8 /* UI */,
 				1FC76E50169E2C6E003BDDF8 /* Blocks */,
 				1FC76E7C169F6862003BDDF8 /* Blocks UI */,
@@ -441,8 +463,6 @@
 			files = (
 				1FF11170167BAAD100972344 /* main.m in Sources */,
 				1FF11174167BAAD100972344 /* AppDelegate.m in Sources */,
-				1F52130C167EBAB700E93D65 /* UDPServer.m in Sources */,
-				1F521310167EBAFB00E93D65 /* UDPClient.m in Sources */,
 				1F96CD66167EED1B00C63FEE /* UITableView+BALoading.m in Sources */,
 				1F153A4F167FEF480046C7EC /* BAKeyboardTracker.m in Sources */,
 				1FFDFF56169771800049B8DF /* FrequencyOptionCell.m in Sources */,
@@ -466,6 +486,10 @@
 				1F6F330616A8ABFD00C1AE84 /* SineBlock.m in Sources */,
 				1F6F330916A8B40400C1AE84 /* AverageOptionCell.m in Sources */,
 				1F0D4CA216B06E4000A7E010 /* BlockCategory.m in Sources */,
+				1F356FC016B8617F00F1BA1A /* DDLog.m in Sources */,
+				1F356FC516B8618B00F1BA1A /* GCDAsyncSocket.m in Sources */,
+				1F356FC616B8618B00F1BA1A /* GCDAsyncUdpSocket.m in Sources */,
+				1F356FCC16B8640600F1BA1A /* UDPReceiverBlock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

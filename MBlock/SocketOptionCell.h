@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-static const CGFloat kSocketOptionCellHeight = 90;
+static const CGFloat kSocketOptionCellHeight = 50;
+static const CGFloat kSocketOptionFullCellHeight = 90;
 
 typedef void (^SocketOptionUpdater)(NSString *IPAddress, int port);
 

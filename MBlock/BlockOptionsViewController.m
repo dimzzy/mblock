@@ -12,6 +12,7 @@
 #import "SequencerBlock.h"
 #import "SineBlock.h"
 #import "UDPSenderBlock.h"
+#import "UDPReceiverBlock.h"
 #import "FrequencyOptionCell.h"
 #import "AverageOptionCell.h"
 #import "SocketOptionCell.h"
@@ -34,6 +35,8 @@
 	} else if ([self.block isKindOfClass:[SineBlock class]]) {
 		return 1;
 	} else if ([self.block isKindOfClass:[UDPSenderBlock class]]) {
+		return 1;
+	} else if ([self.block isKindOfClass:[UDPReceiverBlock class]]) {
 		return 1;
 	}
     return 0;
@@ -68,6 +71,18 @@
 	BOOL loaded = NO;
 	SocketOptionCell *cell = (SocketOptionCell *)[tableView dequeueOrLoadReusableCellWithClass:[SocketOptionCell class]
 																						loaded:&loaded];
+	int port = [[self.block valueForKey:@"port"] intValue];
+	cell.portView.text = [NSString stringWithFormat:@"%d", port];
+	cell.updater = ^(NSString *IPAddress, int port) {
+		[self.block setValue:[NSNumber numberWithInt:port] forKey:@"port"];
+	};
+	return cell;
+}
+
+- (SocketOptionCell *)makeFullSocketCell:(UITableView *)tableView {
+	BOOL loaded = NO;
+	SocketOptionCell *cell = (SocketOptionCell *)[tableView dequeueOrLoadReusableCellWithClass:[SocketOptionCell class]
+																						loaded:&loaded];
 	cell.IPAddressView.text = [self.block valueForKey:@"IPAddress"];
 	int port = [[self.block valueForKey:@"port"] intValue];
 	cell.portView.text = [NSString stringWithFormat:@"%d", port];
@@ -95,6 +110,10 @@
 		}
 	} else if ([self.block isKindOfClass:[UDPSenderBlock class]]) {
 		if (indexPath.row == 0) {
+			return [self makeFullSocketCell:tableView];
+		}
+	} else if ([self.block isKindOfClass:[UDPReceiverBlock class]]) {
+		if (indexPath.row == 0) {
 			return [self makeSocketCell:tableView];
 		}
 	}
@@ -117,6 +136,10 @@
 			return kFrequencyOptionCellHeight;
 		}
 	} else if ([self.block isKindOfClass:[UDPSenderBlock class]]) {
+		if (indexPath.row == 0) {
+			return kSocketOptionFullCellHeight;
+		}
+	} else if ([self.block isKindOfClass:[UDPReceiverBlock class]]) {
 		if (indexPath.row == 0) {
 			return kSocketOptionCellHeight;
 		}

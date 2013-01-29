@@ -7,17 +7,15 @@
 //
 
 #import "UDPSenderBlock.h"
-#import "UDPClient.h"
+#import "GCDAsyncUdpSocket.h"
 #import "Workspace.h"
 #include <sys/time.h>
 
-static const double kSignalAmplification = 1000.0; // signals are multiplied by this value and sent as ints
-static const int kPacketHeaderWidth = 4;
 static const int kPacketMinWidth = 6;
 
 @implementation UDPSenderBlock {
 @private
-	UDPClient *_connection;
+	GCDAsyncUdpSocket *_connection;
 }
 
 - (NSString *)name {
@@ -67,10 +65,12 @@ static const int kPacketMinWidth = 6;
 	if (self.running) {
 		return;
 	}
-	_connection = [[UDPClient alloc] initWithIPAddress:self.IPAddress port:self.port];
-	if (!_connection.connected) {
+	_connection = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+	NSError *error = nil;
+	if (![_connection connectToHost:self.IPAddress onPort:self.port error:&error]) {
 		self.workspace.lastFailedBlock = self;
 		self.workspace.lastStartFailure = @"Unable to setup UDP connection";
+		[_connection close];
 		_connection = nil;
 		return;
 	}
@@ -81,6 +81,7 @@ static const int kPacketMinWidth = 6;
 	if (!self.running) {
 		return;
 	}
+	[_connection close];
 	_connection = nil;
 	[super stop];
 }
@@ -98,7 +99,8 @@ static const int kPacketMinWidth = 6;
 	for (int i = kPacketHeaderWidth + signal.width; i < kPacketHeaderWidth + kPacketMinWidth; i++) {
 		packet[i] = 0;
 	}
-	[_connection sendData:packet length:packetLength];
+	NSData *data = [NSData dataWithBytes:packet length:packetLength];
+	[_connection sendData:data withTimeout:5 tag:0];
 	free(packet);
 
 	[super sendSignal:signal];

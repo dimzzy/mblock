@@ -10,6 +10,9 @@
 #import "Signal.h"
 #import "BlockCategory.h"
 
+static const double kSignalAmplification = 1000.0; // signals are multiplied by this value and sent as ints
+static const int kPacketHeaderWidth = 4;
+
 @protocol SignalReceiver <NSObject>
 
 - (void)receiveSignal:(Signal *)signal;

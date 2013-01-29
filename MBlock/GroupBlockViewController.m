@@ -12,6 +12,7 @@
 #import "SequencerBlock.h"
 #import "LoggingBlock.h"
 #import "UDPSenderBlock.h"
+#import "UDPReceiverBlock.h"
 #import "MotionBlock.h"
 #import "LocationBlock.h"
 #import "ProximityBlock.h"
@@ -52,6 +53,7 @@
 		[self addFactoryBlock:[[SequencerBlock alloc] init]];
 		[self addFactoryBlock:[[LoggingBlock alloc] init]];
 		[self addFactoryBlock:[[UDPSenderBlock alloc] init]];
+		[self addFactoryBlock:[[UDPReceiverBlock alloc] init]];
 		[self addFactoryBlock:[[MotionBlock alloc] init]];
 		[self addFactoryBlock:[[LocationBlock alloc] init]];
 		[self addFactoryBlock:[[ProximityBlock alloc] init]];
