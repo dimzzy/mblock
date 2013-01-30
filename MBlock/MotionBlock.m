@@ -77,8 +77,7 @@
 		return;
 	}
 	if (self.frequency <= 0) {
-		self.workspace.lastFailedBlock = self;
-		self.workspace.lastStartFailure = @"Invalid motion frequency";
+		self.startFailure = @"Invalid motion frequency";
 		return;
 	}
 	__weak MotionBlock *weakSelf = self;

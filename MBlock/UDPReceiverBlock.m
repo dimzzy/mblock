@@ -59,15 +59,13 @@
 	_connection = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
 	NSError *error = nil;
 	if (![_connection bindToPort:self.port error:&error]) {
-		self.workspace.lastFailedBlock = self;
-		self.workspace.lastStartFailure = @"Unable to setup UDP connection";
+		self.startFailure = @"Unable to setup UDP connection";
 		[_connection close];
 		_connection = nil;
 		return;
 	}
 	if (![_connection beginReceiving:&error]) {
-		self.workspace.lastFailedBlock = self;
-		self.workspace.lastStartFailure = @"Unable to setup UDP connection";
+		self.startFailure = @"Unable to setup UDP connection";
 		[_connection close];
 		_connection = nil;
 		return;

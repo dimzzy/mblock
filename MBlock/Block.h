@@ -39,6 +39,7 @@ static const int kPacketHeaderWidth = 4;
 @property(readonly) NSString *info;
 @property(readonly) BlockCategory *category;
 @property(readonly) BOOL running;
+@property NSString *startFailure;
 
 - (void)start;
 - (void)stop;

@@ -13,22 +13,25 @@
 
 - (id)init {
 	if ((self = [super init])) {
-		_mainBlock = [[GroupBlock alloc] init];
-		_mainBlock.workspace = self;
+		_groupBlocks = [[NSMutableArray alloc] init];
 	}
 	return self;
 }
 
 - (id)initWithCoder:(NSCoder *)coder {
 	if ((self = [super init])) {
-		_mainBlock = [coder decodeObjectForKey:@"block"];
-		_mainBlock.workspace = self;
+		_groupBlocks = [[NSMutableArray alloc] init];
+		NSArray *groupBlocks = [coder decodeObjectForKey:@"blocks"];
+		for (GroupBlock *groupBlock in groupBlocks) {
+			groupBlock.workspace = self;
+			[_groupBlocks addObject:groupBlock];
+		}
 	}
 	return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
-	[coder encodeObject:_mainBlock forKey:@"block"];
+	[coder encodeObject:_groupBlocks forKey:@"blocks"];
 }
 
 - (void)blockDidChange:(Block *)block {
@@ -80,7 +83,12 @@
 }
 
 - (BOOL)containsBlockOfType:(Class)type {
-	return [self groupBlock:self.mainBlock containsBlockOfType:type];
+	for (GroupBlock *groupBlock in self.groupBlocks) {
+		if ([self groupBlock:groupBlock containsBlockOfType:type]) {
+			return YES;
+		}
+	}
+	return NO;
 }
 
 @end

@@ -11,6 +11,7 @@
 #import "MotionBlock.h"
 #import "LoggingBlock.h"
 #import "GroupBlockViewController.h"
+#import "WorkspacesViewController.h"
 
 @implementation AppDelegate
 
@@ -20,21 +21,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	_workspace = [Workspace readGlobal];
-	if (!_workspace) {
+	if ([_workspace.groupBlocks count] < 1) {
 		_workspace = [[Workspace alloc] init];
-		GroupBlock *groupBlock = _workspace.mainBlock;
+		GroupBlock *groupBlock = [[GroupBlock alloc] init];
 		MotionBlock *motionBlock = [[MotionBlock alloc] init];
 		LoggingBlock *loggingBlock = [[LoggingBlock alloc] init];
 		[groupBlock addBlock:motionBlock];
 		[groupBlock addBlock:loggingBlock];
+		[_workspace.groupBlocks addObject:groupBlock];
 	}
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	GroupBlockViewController *viewController = [[GroupBlockViewController alloc] initWithNibName:@"GroupBlockViewController"
-																						  bundle:nil];
-	viewController.groupBlock = _workspace.mainBlock;
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+	WorkspacesViewController *topController = [[WorkspacesViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:topController];
 	self.window.rootViewController = navController;
-    [self.window makeKeyAndVisible];
+
+	if ([_workspace.groupBlocks count] > 0) {
+		GroupBlockViewController *viewController = [[GroupBlockViewController alloc] initWithNibName:@"GroupBlockViewController"
+																							  bundle:nil];
+		viewController.groupBlock = [_workspace.groupBlocks objectAtIndex:0];
+		[navController pushViewController:viewController animated:YES];
+	}
+
+	[self.window makeKeyAndVisible];
     return YES;
 }
 

@@ -17,4 +17,6 @@
 - (void)removeBlockAtIndex:(NSUInteger)index;
 - (void)moveBlockAtIndex:(NSUInteger)index toIndex:(NSUInteger)index;
 
+- (NSString *)firstStartFailure;
+
 @end

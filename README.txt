@@ -22,11 +22,9 @@ Byte order for iOS devices is little-endian.
 
 TODO
 
-- Allow several top blocks in workspace
 - Show when block generates signal
 
 - Add block which shows ball in 3D
-- Add UDP receiver block
 - Add TCP receiver block
 - Add TCP sender block
 - Allow to add nested group blocks

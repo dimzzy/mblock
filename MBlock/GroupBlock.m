@@ -186,4 +186,19 @@
 	[super stop];
 }
 
+- (NSString *)firstStartFailure {
+	for (Block *block in self.blocks) {
+		NSString *result;
+		if ([block isKindOfClass:[GroupBlock class]]) {
+			result = [(GroupBlock *)block firstStartFailure];
+		} else if (block.startFailure) {
+			result = block.startFailure;
+		}
+		if (result) {
+			return result;
+		}
+	}
+	return self.startFailure;
+}
+
 @end

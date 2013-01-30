@@ -36,6 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.navigationItem.title = @"Lane";
 	[self updateStatus];
 }
 
@@ -66,15 +67,14 @@
 - (void)updateStatus {
 	self.runItem.title = self.groupBlock.running ? @"Stop" : @"Start";
 	self.statusLabel.text = self.groupBlock.running ? @"Running" : @"Idle";
-	if (self.groupBlock.workspace.lastStartFailure) {
-		self.statusLabel.text = self.groupBlock.workspace.lastStartFailure;
+	NSString *startFailure = [self.groupBlock firstStartFailure];
+	if (startFailure) {
+		self.statusLabel.text = startFailure;
 	}
     self.navigationItem.rightBarButtonItem = self.groupBlock.running ? nil : self.editButtonItem;
 }
 
 - (IBAction)runAction {
-	self.groupBlock.workspace.lastFailedBlock = nil;
-	self.groupBlock.workspace.lastStartFailure = nil;
 	if (self.groupBlock.running) {
 		[self.groupBlock stop];
 	} else {

@@ -53,6 +53,7 @@
 }
 
 - (void)start {
+	self.startFailure = nil;
 	_running = YES;
 }
 

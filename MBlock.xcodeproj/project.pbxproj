@@ -31,6 +31,7 @@
 		1F80CD3316A0CD7300211FF8 /* SocketOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F80CD3216A0CD7300211FF8 /* SocketOptionCell.xib */; };
 		1F83F1DB168002D80014CFDD /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1F83F1DA168002D80014CFDD /* README.txt */; };
 		1F96CD66167EED1B00C63FEE /* UITableView+BALoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96CD65167EED1B00C63FEE /* UITableView+BALoading.m */; };
+		1FA5A42A16B881F20069F418 /* WorkspacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5A42916B881F20069F418 /* WorkspacesViewController.m */; };
 		1FC76E3C169DFFDE003BDDF8 /* Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E3B169DFFDE003BDDF8 /* Signal.m */; };
 		1FC76E40169E07B3003BDDF8 /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E3F169E07B3003BDDF8 /* Block.m */; };
 		1FC76E43169E1092003BDDF8 /* UDPSenderBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E42169E1092003BDDF8 /* UDPSenderBlock.m */; };
@@ -111,6 +112,8 @@
 		1F83F1DA168002D80014CFDD /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = ../README.txt; sourceTree = "<group>"; };
 		1F96CD64167EED1B00C63FEE /* UITableView+BALoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+BALoading.h"; sourceTree = "<group>"; };
 		1F96CD65167EED1B00C63FEE /* UITableView+BALoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BALoading.m"; sourceTree = "<group>"; };
+		1FA5A42816B881F20069F418 /* WorkspacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkspacesViewController.h; sourceTree = "<group>"; };
+		1FA5A42916B881F20069F418 /* WorkspacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkspacesViewController.m; sourceTree = "<group>"; };
 		1FC76E3A169DFFDE003BDDF8 /* Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signal.h; sourceTree = "<group>"; };
 		1FC76E3B169DFFDE003BDDF8 /* Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Signal.m; sourceTree = "<group>"; };
 		1FC76E3E169E07B3003BDDF8 /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
@@ -268,6 +271,8 @@
 		1FC76E7C169F6862003BDDF8 /* Blocks UI */ = {
 			isa = PBXGroup;
 			children = (
+				1FA5A42816B881F20069F418 /* WorkspacesViewController.h */,
+				1FA5A42916B881F20069F418 /* WorkspacesViewController.m */,
 				1FC76E7E169F6963003BDDF8 /* GroupBlockViewController.h */,
 				1FC76E7F169F6963003BDDF8 /* GroupBlockViewController.m */,
 				1F0D4CA416B079DB00A7E010 /* GroupBlockViewController.xib */,
@@ -490,6 +495,7 @@
 				1F356FC516B8618B00F1BA1A /* GCDAsyncSocket.m in Sources */,
 				1F356FC616B8618B00F1BA1A /* GCDAsyncUdpSocket.m in Sources */,
 				1F356FCC16B8640600F1BA1A /* UDPReceiverBlock.m in Sources */,
+				1FA5A42A16B881F20069F418 /* WorkspacesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

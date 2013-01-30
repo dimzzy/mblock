@@ -65,8 +65,7 @@
 		return;
 	}
 	if (self.frequency <= 0) {
-		self.workspace.lastFailedBlock = self;
-		self.workspace.lastStartFailure = @"Invalid sine frequency";
+		self.startFailure = @"Invalid sine frequency";
 		return;
 	}
 	_time0 = CFAbsoluteTimeGetCurrent();
