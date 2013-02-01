@@ -22,7 +22,6 @@ static const int kPacketHeaderWidth = 4;
 
 @protocol Actionable <NSObject>
 
-- (NSString *)actionTitle;
 - (void)performAction;
 
 @end

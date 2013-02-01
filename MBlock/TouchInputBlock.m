@@ -72,10 +72,6 @@
 	[self sendSignal:[[Signal alloc] initWithType:kTouchInputSignalType values:values labels:labels]];
 }
 
-- (NSString *)actionTitle {
-	return @"Touchpad";
-}
-
 - (void)performAction {
 	TouchInputViewController *controller = [[TouchInputViewController alloc] init];
 	AppDelegate *appd = (AppDelegate *)[UIApplication sharedApplication].delegate;

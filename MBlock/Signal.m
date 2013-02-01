@@ -7,20 +7,30 @@
 //
 
 #import "Signal.h"
+#include <sys/time.h>
 
 @implementation Signal
 
-- (id)initWithType:(int32_t)type values:(NSArray *)values labels:(NSArray *)labels {
+- (id)initWithType:(int32_t)type time:(int32_t)time values:(NSArray *)values labels:(NSArray *)labels {
 	if ((self = [super init])) {
 		_type = type;
+		_time = time;
 		_values = [NSArray arrayWithArray:values];
 		_labels = labels ? [NSArray arrayWithArray:labels] : [NSArray array];
 	}
 	return self;
 }
 
+- (id)initWithType:(int32_t)type time:(int32_t)time values:(NSArray *)values {
+	return [self initWithType:type time:[self currentTimeMillis] values:values labels:nil];
+}
+
+- (id)initWithType:(int32_t)type values:(NSArray *)values labels:(NSArray *)labels {
+	return [self initWithType:type time:[self currentTimeMillis] values:values labels:labels];
+}
+
 - (id)initWithType:(int32_t)type values:(NSArray *)values {
-	return [self initWithType:type values:values labels:nil];
+	return [self initWithType:type time:[self currentTimeMillis] values:values labels:nil];
 }
 
 - (NSUInteger)width {
@@ -49,6 +59,12 @@
 			break;
 		}
 	}
+}
+
+- (int)currentTimeMillis {
+	struct timeval tv;
+	gettimeofday(&tv, NULL);
+	return (tv.tv_sec) * 1000 + (tv.tv_usec) / 1000;
 }
 
 @end

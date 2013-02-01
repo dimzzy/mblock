@@ -95,7 +95,7 @@ withFilterContext:(id)filterContext
 	if (packet[0] != 0x600df00d) {
 		return; // not for us
 	}
-	//const int timestamp = packet[1];
+	const int32_t signalTime = packet[1];
 	const int32_t signalType = packet[2];
 	const int32_t signalWidth = packet[3];
 	const size_t dataSize = packetLength - kPacketHeaderWidth * sizeof(int32_t);
@@ -107,7 +107,7 @@ withFilterContext:(id)filterContext
 		double value = (double)packet[i] / kSignalAmplification;
 		[values addObject:[NSNumber numberWithDouble:value]];
 	}
-	Signal *signal = [[Signal alloc] initWithType:signalType values:values];
+	Signal *signal = [[Signal alloc] initWithType:signalType time:signalTime values:values];
 	[self sendSignal:signal];
 }
 

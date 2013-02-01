@@ -32,6 +32,13 @@
 		1F83F1DB168002D80014CFDD /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1F83F1DA168002D80014CFDD /* README.txt */; };
 		1F96CD66167EED1B00C63FEE /* UITableView+BALoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96CD65167EED1B00C63FEE /* UITableView+BALoading.m */; };
 		1FA5A42A16B881F20069F418 /* WorkspacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5A42916B881F20069F418 /* WorkspacesViewController.m */; };
+		1FA5A42D16B8B9570069F418 /* ScopeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5A42C16B8B9570069F418 /* ScopeView.m */; };
+		1FA5A43016B8B97D0069F418 /* ScopeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5A42F16B8B97D0069F418 /* ScopeViewController.m */; };
+		1FA5A43316B8BA450069F418 /* ScopeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5A43216B8BA450069F418 /* ScopeBlock.m */; };
+		1FA5A43616B8C4D30069F418 /* SignalCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5A43516B8C4D20069F418 /* SignalCapture.m */; };
+		1FC265F216B98ABD00E9F6EF /* SignalPathBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC265F116B98ABD00E9F6EF /* SignalPathBuilder.m */; };
+		1FC265F516B9CE6C00E9F6EF /* SignalBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC265F416B9CE6C00E9F6EF /* SignalBuilder.m */; };
+		1FC265F716B9DE7500E9F6EF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC265F616B9DE7500E9F6EF /* QuartzCore.framework */; };
 		1FC76E3C169DFFDE003BDDF8 /* Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E3B169DFFDE003BDDF8 /* Signal.m */; };
 		1FC76E40169E07B3003BDDF8 /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E3F169E07B3003BDDF8 /* Block.m */; };
 		1FC76E43169E1092003BDDF8 /* UDPSenderBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC76E42169E1092003BDDF8 /* UDPSenderBlock.m */; };
@@ -114,6 +121,19 @@
 		1F96CD65167EED1B00C63FEE /* UITableView+BALoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BALoading.m"; sourceTree = "<group>"; };
 		1FA5A42816B881F20069F418 /* WorkspacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkspacesViewController.h; sourceTree = "<group>"; };
 		1FA5A42916B881F20069F418 /* WorkspacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkspacesViewController.m; sourceTree = "<group>"; };
+		1FA5A42B16B8B9570069F418 /* ScopeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScopeView.h; sourceTree = "<group>"; };
+		1FA5A42C16B8B9570069F418 /* ScopeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScopeView.m; sourceTree = "<group>"; };
+		1FA5A42E16B8B97D0069F418 /* ScopeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScopeViewController.h; sourceTree = "<group>"; };
+		1FA5A42F16B8B97D0069F418 /* ScopeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScopeViewController.m; sourceTree = "<group>"; };
+		1FA5A43116B8BA440069F418 /* ScopeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScopeBlock.h; sourceTree = "<group>"; };
+		1FA5A43216B8BA450069F418 /* ScopeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScopeBlock.m; sourceTree = "<group>"; };
+		1FA5A43416B8C4D20069F418 /* SignalCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalCapture.h; sourceTree = "<group>"; };
+		1FA5A43516B8C4D20069F418 /* SignalCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalCapture.m; sourceTree = "<group>"; };
+		1FC265F016B98ABD00E9F6EF /* SignalPathBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalPathBuilder.h; sourceTree = "<group>"; };
+		1FC265F116B98ABD00E9F6EF /* SignalPathBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalPathBuilder.m; sourceTree = "<group>"; };
+		1FC265F316B9CE6C00E9F6EF /* SignalBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalBuilder.h; sourceTree = "<group>"; };
+		1FC265F416B9CE6C00E9F6EF /* SignalBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalBuilder.m; sourceTree = "<group>"; };
+		1FC265F616B9DE7500E9F6EF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1FC76E3A169DFFDE003BDDF8 /* Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signal.h; sourceTree = "<group>"; };
 		1FC76E3B169DFFDE003BDDF8 /* Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Signal.m; sourceTree = "<group>"; };
 		1FC76E3E169E07B3003BDDF8 /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
@@ -169,6 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FC265F716B9DE7500E9F6EF /* QuartzCore.framework in Frameworks */,
 				1F356FC916B8621400F1BA1A /* Security.framework in Frameworks */,
 				1F356FC716B861C800F1BA1A /* CFNetwork.framework in Frameworks */,
 				1FF1118D167BAD2600972344 /* CoreMotion.framework in Frameworks */,
@@ -246,6 +267,18 @@
 				1FC76E58169F09B0003BDDF8 /* GroupBlock.m */,
 				1FC76E5A169F14B5003BDDF8 /* SequencerBlock.h */,
 				1FC76E5B169F14B5003BDDF8 /* SequencerBlock.m */,
+				1FA5A43116B8BA440069F418 /* ScopeBlock.h */,
+				1FA5A43216B8BA450069F418 /* ScopeBlock.m */,
+				1FA5A42B16B8B9570069F418 /* ScopeView.h */,
+				1FA5A42C16B8B9570069F418 /* ScopeView.m */,
+				1FA5A42E16B8B97D0069F418 /* ScopeViewController.h */,
+				1FA5A42F16B8B97D0069F418 /* ScopeViewController.m */,
+				1FA5A43416B8C4D20069F418 /* SignalCapture.h */,
+				1FA5A43516B8C4D20069F418 /* SignalCapture.m */,
+				1FC265F016B98ABD00E9F6EF /* SignalPathBuilder.h */,
+				1FC265F116B98ABD00E9F6EF /* SignalPathBuilder.m */,
+				1FC265F316B9CE6C00E9F6EF /* SignalBuilder.h */,
+				1FC265F416B9CE6C00E9F6EF /* SignalBuilder.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -291,7 +324,7 @@
 			name = "Blocks UI";
 			sourceTree = "<group>";
 		};
-		1FC76E7D169F6875003BDDF8 /* UI */ = {
+		1FC76E7D169F6875003BDDF8 /* BaseAppKit */ = {
 			isa = PBXGroup;
 			children = (
 				1F59A577169B4F9D00F744C3 /* UIView+BACookie.h */,
@@ -300,10 +333,8 @@
 				1F153A4E167FEF480046C7EC /* BAKeyboardTracker.m */,
 				1F96CD64167EED1B00C63FEE /* UITableView+BALoading.h */,
 				1F96CD65167EED1B00C63FEE /* UITableView+BALoading.m */,
-				1FF11172167BAAD100972344 /* AppDelegate.h */,
-				1FF11173167BAAD100972344 /* AppDelegate.m */,
 			);
-			name = UI;
+			name = BaseAppKit;
 			sourceTree = "<group>";
 		};
 		1FF11154167BAAD100972344 = {
@@ -328,6 +359,7 @@
 		1FF11162167BAAD100972344 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1FC265F616B9DE7500E9F6EF /* QuartzCore.framework */,
 				1F356FC816B8621400F1BA1A /* Security.framework */,
 				1FF1118E167BB2B800972344 /* CFNetwork.framework */,
 				1FF1118C167BAD2600972344 /* CoreMotion.framework */,
@@ -343,7 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				1F356FBD16B8616700F1BA1A /* AsyncSocket */,
-				1FC76E7D169F6875003BDDF8 /* UI */,
+				1FC76E7D169F6875003BDDF8 /* BaseAppKit */,
 				1FC76E50169E2C6E003BDDF8 /* Blocks */,
 				1FC76E7C169F6862003BDDF8 /* Blocks UI */,
 				1FF1116A167BAAD100972344 /* Supporting Files */,
@@ -357,6 +389,8 @@
 				1F83F1DA168002D80014CFDD /* README.txt */,
 				1FF1116B167BAAD100972344 /* MBlock-Info.plist */,
 				1FF1116C167BAAD100972344 /* InfoPlist.strings */,
+				1FF11172167BAAD100972344 /* AppDelegate.h */,
+				1FF11173167BAAD100972344 /* AppDelegate.m */,
 				1FF1116F167BAAD100972344 /* main.m */,
 				1FF11171167BAAD100972344 /* MBlock-Prefix.pch */,
 				1F59A5611697924700F744C3 /* Icon.png */,
@@ -496,6 +530,12 @@
 				1F356FC616B8618B00F1BA1A /* GCDAsyncUdpSocket.m in Sources */,
 				1F356FCC16B8640600F1BA1A /* UDPReceiverBlock.m in Sources */,
 				1FA5A42A16B881F20069F418 /* WorkspacesViewController.m in Sources */,
+				1FA5A42D16B8B9570069F418 /* ScopeView.m in Sources */,
+				1FA5A43016B8B97D0069F418 /* ScopeViewController.m in Sources */,
+				1FA5A43316B8BA450069F418 /* ScopeBlock.m in Sources */,
+				1FA5A43616B8C4D30069F418 /* SignalCapture.m in Sources */,
+				1FC265F216B98ABD00E9F6EF /* SignalPathBuilder.m in Sources */,
+				1FC265F516B9CE6C00E9F6EF /* SignalBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

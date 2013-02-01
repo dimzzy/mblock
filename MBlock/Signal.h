@@ -16,10 +16,13 @@ static const int32_t kSineSignalType = 0x50;
 
 @interface Signal : NSObject
 
+- (id)initWithType:(int32_t)type time:(int32_t)time values:(NSArray *)values labels:(NSArray *)labels;
+- (id)initWithType:(int32_t)type time:(int32_t)time values:(NSArray *)values;
 - (id)initWithType:(int32_t)type values:(NSArray *)values labels:(NSArray *)labels;
 - (id)initWithType:(int32_t)type values:(NSArray *)values;
 
 @property(readonly) int32_t type;
+@property(readonly) int32_t time; // milliseconds, unix time
 @property(readonly) NSArray *values; // [:double]
 @property(readonly) NSArray *labels; // [:NSString *]
 @property(readonly) NSUInteger width;

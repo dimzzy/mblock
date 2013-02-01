@@ -18,6 +18,7 @@
 #import "ProximityBlock.h"
 #import "TouchInputBlock.h"
 #import "SineBlock.h"
+#import "ScopeBlock.h"
 #import "BlockOptionsViewController.h"
 #import "Workspace.h"
 
@@ -60,6 +61,7 @@
 		[self addFactoryBlock:[[ProximityBlock alloc] init]];
 		[self addFactoryBlock:[[SineBlock alloc] init]];
 		[self addFactoryBlock:[[TouchInputBlock alloc] init]];
+		[self addFactoryBlock:[[ScopeBlock alloc] init]];
 	}
 	return _factoryBlocks;
 }

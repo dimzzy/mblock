@@ -30,7 +30,6 @@ TODO
 - Allow to add nested group blocks
 - Add integrator block
 - Add block to rearrange signal data
-- Add scope block
 - Add block which calculates constant error
 - Support UDP broadcast
 

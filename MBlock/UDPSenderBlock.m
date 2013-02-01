@@ -9,7 +9,6 @@
 #import "UDPSenderBlock.h"
 #import "GCDAsyncUdpSocket.h"
 #import "Workspace.h"
-#include <sys/time.h>
 
 static const int kPacketMinWidth = 6;
 
@@ -89,7 +88,7 @@ static const int kPacketMinWidth = 6;
 	const size_t packetLength = (kPacketHeaderWidth + MAX(signal.width, kPacketMinWidth)) * sizeof(int32_t);
 	int32_t *packet = malloc(packetLength);
 	packet[0] = 0x600df00d;
-	packet[1] = [self currentTimeMillis];
+	packet[1] = signal.time;
 	packet[2] = signal.type;
 	packet[3] = signal.width;
 	[signal enumerateWithBlock:^(double value, NSString *label, NSUInteger index, BOOL *stop) {
@@ -103,12 +102,6 @@ static const int kPacketMinWidth = 6;
 	free(packet);
 
 	[super sendSignal:signal];
-}
-
-- (int)currentTimeMillis {
-	struct timeval tv;
-	gettimeofday(&tv, NULL);
-	return (tv.tv_sec) * 1000 + (tv.tv_usec) / 1000;
 }
 
 @end
